@@ -21,13 +21,8 @@ public class TestService implements CrudInterface {
     
     public List<TestDTO> getAll() {
         List<TestDTO> data = testRepository.findAll();
-        
-        String name = data.get(1).getUsername();
-
-        System.out.println(name);
     
         return data;
-            
     }
 
     @Override
