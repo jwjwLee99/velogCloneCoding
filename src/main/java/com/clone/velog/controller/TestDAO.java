@@ -59,7 +59,7 @@ public class TestDAO implements CrudInterface{
     public String getAll(Model model) {
         List<TestDTO> test = serviceTest.getAll();
         model.addAttribute("tests", test);
-        return "index/home";
+        return "home";
     }
 
 
