@@ -1,4 +1,4 @@
-# velogCloneCoding
+# <link rel="shortcut icon" href="https://static.velog.io/favicon.ico" type="image/x-icon"> velogCloneCoding
 
 > ### 2022.09.05
 > > - 프로젝트 생성
