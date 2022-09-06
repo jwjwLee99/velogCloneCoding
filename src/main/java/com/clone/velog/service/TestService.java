@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.clone.velog.entity.TestEntity;
+import com.clone.velog.models.TestModels;
 import com.clone.velog.repository.CrudInterface;
 import com.clone.velog.repository.TestRepository;
 
@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 
 // 임시 생성 파일, Service 관련 폴더
 // 데이터 처리 로직
+// 직접 데이터 베이스에 접근하는 로직 처리
 @Service
 @RequiredArgsConstructor
 public class TestService implements CrudInterface {
@@ -19,20 +20,20 @@ public class TestService implements CrudInterface {
     private final TestRepository testRepository;
 
     
-    public List<TestEntity> getAll() {
-        List<TestEntity> data = testRepository.findAll();
+    public List<TestModels> getAll() {
+        List<TestModels> data = testRepository.findAll();
     
         return data;
     }
 
     @Override
-    public int create(TestEntity testEntity) {
+    public int create(TestModels testEntity) {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public int update(TestEntity testEntity) {
+    public int update(TestModels testEntity) {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -44,7 +45,7 @@ public class TestService implements CrudInterface {
     }
 
     @Override
-    public TestEntity read(Integer id) {
+    public TestModels read(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }

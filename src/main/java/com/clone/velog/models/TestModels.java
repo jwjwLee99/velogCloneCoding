@@ -1,4 +1,4 @@
-package com.clone.velog.entity;
+package com.clone.velog.models;
 
 import java.time.LocalDateTime;
 
@@ -15,16 +15,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// 임시 생성 파일, DTO 관련 폴더
-// Data Transfer Object
-// RestfulController
+// 임시 생성 파일, Model 관련 폴더
+// Database의 컬럼명와 일치되는 class 변수
+// MVC 모델의 Models 부분
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity(name ="test")
 @EntityListeners(AuditingEntityListener.class)
-public class TestEntity {
+public class TestModels {
     @Id
     @GeneratedValue
     private Integer id;
