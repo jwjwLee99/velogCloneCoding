@@ -21,6 +21,7 @@
 > - fragment html 생성
 > - test용 데이터베이스 구축
 > - favicon 추가
+> - reset.css 
 
 
 
