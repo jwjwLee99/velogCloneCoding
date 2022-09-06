@@ -1,4 +1,4 @@
-package com.clone.velog.dto;
+package com.clone.velog.entity;
 
 import java.time.LocalDateTime;
 
@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity(name ="test")
 @EntityListeners(AuditingEntityListener.class)
-public class TestDTO {
+public class TestEntity {
     @Id
     @GeneratedValue
     private Integer id;

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.clone.velog.dto.TestDTO;
+import com.clone.velog.entity.TestEntity;
 import com.clone.velog.repository.CrudInterface;
 import com.clone.velog.service.TestService;
 
@@ -22,14 +22,14 @@ import lombok.RequiredArgsConstructor;
 @Controller
 @RequestMapping("")
 @RequiredArgsConstructor
-public class TestDAO implements CrudInterface{
+public class TestController implements CrudInterface{
     
     @Autowired
     private final TestService serviceTest;
     
     @Override
     @PostMapping("")
-    public int create(TestDTO testDTO) {
+    public int create(TestEntity testEntity) {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -43,13 +43,13 @@ public class TestDAO implements CrudInterface{
 
     @Override
     @PutMapping("")
-    public int update(TestDTO testDTO) {
+    public int update(TestEntity testDTO) {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public TestDTO read(Integer id) {
+    public TestEntity read(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -57,7 +57,7 @@ public class TestDAO implements CrudInterface{
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String getAll(Model model) {
-        List<TestDTO> test = serviceTest.getAll();
+        List<TestEntity> test = serviceTest.getAll();
         model.addAttribute("tests", test);
         return "home";
     }

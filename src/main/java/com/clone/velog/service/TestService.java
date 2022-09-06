@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.clone.velog.dto.TestDTO;
+import com.clone.velog.entity.TestEntity;
 import com.clone.velog.repository.CrudInterface;
 import com.clone.velog.repository.TestRepository;
 
@@ -19,20 +19,20 @@ public class TestService implements CrudInterface {
     private final TestRepository testRepository;
 
     
-    public List<TestDTO> getAll() {
-        List<TestDTO> data = testRepository.findAll();
+    public List<TestEntity> getAll() {
+        List<TestEntity> data = testRepository.findAll();
     
         return data;
     }
 
     @Override
-    public int create(TestDTO testDTO) {
+    public int create(TestEntity testEntity) {
         // TODO Auto-generated method stub
         return 0;
     }
 
     @Override
-    public int update(TestDTO testDTO) {
+    public int update(TestEntity testEntity) {
         // TODO Auto-generated method stub
         return 0;
     }
@@ -44,7 +44,7 @@ public class TestService implements CrudInterface {
     }
 
     @Override
-    public TestDTO read(Integer id) {
+    public TestEntity read(Integer id) {
         // TODO Auto-generated method stub
         return null;
     }
