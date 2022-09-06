@@ -1,4 +1,4 @@
-# <img src="https://static.velog.io/favicon.ico" type="image/x-icon" width="22px"/> velogCloneCoding
+# <img src="https://static.velog.io/favicon.ico" type="image/x-icon" width="28px"/> velogCloneCoding
 
 > ### 2022.09.05
 > > - 프로젝트 생성
