@@ -2,6 +2,7 @@ package com.clone.velog.service;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clone.velog.models.TestModels;
@@ -17,12 +18,13 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TestService implements CrudInterface {
     
+    @Autowired
     private TestRepository testRepository;
 
     
     public List<TestModels> getAll() {
         List<TestModels> data = testRepository.findAll();
-    
+        System.out.println(data.size());
         return data;
     }
 
