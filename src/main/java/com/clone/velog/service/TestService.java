@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TestService implements CrudInterface {
     
-    private final TestRepository testRepository;
+    private TestRepository testRepository;
 
     
     public List<TestModels> getAll() {
