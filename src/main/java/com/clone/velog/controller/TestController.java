@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class TestController implements CrudInterface{
     
     @Autowired
-    private final TestService serviceTest;
+    private TestService serviceTest;
     
     @Override
     @PostMapping("")
