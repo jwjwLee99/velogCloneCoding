@@ -16,7 +16,7 @@ import lombok.RequiredArgsConstructor;
 // 직접 데이터 베이스에 접근하는 로직 처리
 @Service
 @RequiredArgsConstructor
-public class TestService implements CrudInterface {
+public class TestService {
     
     @Autowired
     private TestRepository testRepository;
@@ -28,28 +28,5 @@ public class TestService implements CrudInterface {
         return data;
     }
 
-    @Override
-    public int create(TestModels testEntity) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int update(TestModels testEntity) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public int delete(Integer id) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
-
-    @Override
-    public TestModels read(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
 }
