@@ -1,0 +1,5 @@
+package com.clone.velog.models.entity.post;
+
+public class PostEntity {
+    
+}

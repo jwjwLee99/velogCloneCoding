@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.clone.velog.models.TestModels;
-import com.clone.velog.repository.CrudInterface;
+import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.repository.TestRepository;
 
 import lombok.RequiredArgsConstructor;

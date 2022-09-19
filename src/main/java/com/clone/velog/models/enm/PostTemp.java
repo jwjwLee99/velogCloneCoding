@@ -1,4 +1,4 @@
-package com.clone.velog.enm;
+package com.clone.velog.models.enm;
 
 public enum PostTemp {
     SAVE, TEMP, DELETE, UPDATE
