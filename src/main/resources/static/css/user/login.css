@@ -1,0 +1,618 @@
+.find-pw,.find-id, .clink, .dlink { cursor: pointer !important; user-select: none !important; }
+.find-pw, .find-id {
+    display: inline;
+    color: #12B886;
+    text-decoration: none;
+}
+.login {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 20;
+}
+.login .loginpage {
+    width: 606px;
+    height: 530px;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    display: flex;
+}
+.login .loginpage .gray-block {
+    width: 216px;
+    background: #F8F9FA;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.login .loginpage .gray-block img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.login .loginpage .gray-block .welcome {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    color: #495057;
+    text-align: center;
+    font-weight: 600;
+}
+
+.login .loginpage .white-block {
+    flex: 1 1 0%;
+    background: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.login .loginpage .white-block .exit-loginpage {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: #868E96;
+    margin-bottom: 2.25rem;
+}
+.login .loginpage .white-block .block-login {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+}
+.content-login {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+.content-login h2 {
+    font-size: 1.3125rem;
+    color: #212529;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.content-login h4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: #868E96;
+    user-select: none;
+}
+.pwid {
+    width: 100%;
+    height: 3rem;
+
+}
+.loginSection {
+    display: flex;
+    justify-content: space-between;
+}
+.pwid input {
+    display: block;
+    border-radius: 2px;
+    font-size: 1rem;
+    color: #000000;
+    flex: 1 1 0%;
+    padding: 1rem;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgb(0 0 0 / 9%) 1px 1px 1px 1px;
+    margin-bottom: 0.2rem;
+    appearance: none;
+    outline: none;
+}
+.pwid input:focus {
+    appearance: none;
+    outline: 2px solid #12B886;
+}
+button.loginSubmit {
+    position: relative;
+    right: 10px;
+    background: #12B886;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 6.2rem;
+    word-break: keep-all;
+    cursor: pointer;
+    height: 6.6rem;
+}
+.sosciallogin {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1.5rem;
+}
+.git {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.125s ease-in 0s;
+    color: white;
+}
+.google {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.125s ease-in 0s;
+    color: white;
+    border: 1px solid #DEE2E6;
+}
+.facebook {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.125s ease-in 0s;
+    color: white;
+}
+.content-login .foot span {
+    margin-right: 0.25rem;
+}
+.content-login .foot {
+    text-align: right;
+}
+.content-login .foot .link {
+    display: inline-block;
+    font-weight: bold;
+    color: #12B886;
+    cursor: pointer;
+}
+button:hover.loginSubmit, button:focus.loginsubmit {
+    background: #20C997;
+}
+b {
+    color: #12B886;
+    text-decoration: none;
+}
+.account {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 20;
+}
+.account .accountpage {
+    width: 606px;
+    height: 530px;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    display: flex;
+}
+.account .accountpage .white-block {
+    flex: 1 1 0%;
+    background: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.account .accountpage .white-block .exit-accountpage {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: #868E96;
+    margin-bottom: 2.25rem;
+}
+.account .accountpage .white-block .block-accountpage {
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+}
+.content-accountpage {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+.content-accountpage h2 {
+    font-size: 1.3125rem;
+    color: #212529;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.content-accountpage h4 {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+    color: #868E96;
+}
+.creataccount {
+    width: 100%;
+    height: 0.5rem;
+}
+.accountSection {
+    display: flex;
+    justify-content: space-between;
+}
+.creataccount input {
+    display: block;
+    border-radius: 2px;
+    font-size: 1rem;
+    color: #000000;
+    flex: 1 1 0%;
+    padding: 0.1rem;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgb(0 0 0 / 9%) 1px 1px 1px 1px;
+    margin-bottom: 0.2rem;
+    appearance: none;
+    outline: none;
+}
+.pn input {
+    display: inline;
+}
+.creataccount input:focus {
+    appearance: none;
+    outline: 2px solid #12B886;
+}
+button.accountSubmit {
+    position: fixed ;
+    right: 10px;
+    background: #12B886;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 10.2rem;
+    word-break: keep-all;
+    cursor: pointer;
+    height: 10.6rem;
+}
+
+.content-accountpage .alink {
+    text-align: right;
+    display: inline-block;
+    font-weight: bold;
+    color: #12B886;
+    cursor: pointer;
+}
+
+.search {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 20;
+}
+.search .searchpage {
+    width: 606px;
+    height: 530px;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    display: flex;
+}
+.search .searchpage .white-block {
+    flex: 1 1 0%;
+    background: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.search .searchpage .white-block .exit-searchpage {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: #868E96;
+    margin-bottom: 0.25rem;
+}
+.content-searchpage {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+.content-searchpage h2 {
+    font-size: 1.5rem;
+    color: #212529;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+.find-name input {
+    border-radius: 2px;
+    color: #000000;
+    flex: 1 1 0%;
+    padding: 0.1rem;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgb(0 0 0 / 9%) 1px 1px 1px 1px;
+    margin-bottom: 0.2rem;
+    appearance: none;
+    outline: none;
+}
+.find-name input:focus {
+    appearance: none;
+    outline: 2px solid #12B886;
+}
+.find-name {
+    line-height: 4rem;
+    font-size: 1.4rem;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin-bottom: 1rem;
+    bottom: 450px;
+}
+button.enter {
+    justify-content: center;
+    right: 10px;
+    background: #12B886;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 15rem;
+    word-break: keep-all;
+    cursor: pointer;
+    height: 3.5rem;
+    margin-right: 2px;
+}
+
+.findsubmit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: -220px;
+}
+.clink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    bottom: -240px;
+    text-align: right;
+    justify-content: center;
+    color: #12B886;
+}
+.name , .pnum {
+    font-weight: 550;
+}
+
+.findpw {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 20;
+}
+.findpw .findpwpage {
+    width: 606px;
+    height: 530px;
+    animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
+    display: flex;
+}
+.findpw .findpwpage .white-block {
+    flex: 1 1 0%;
+    background: #FFFFFF;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.findpw .findpwpage .white-block .exit-findpwpage {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    color: #868E96;
+    margin-bottom: 0.25rem;
+}
+.content-findpwpage {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.5;
+}
+.content-findpwpage h2 {
+    font-size: 1.5rem;
+    color: #212529;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: 900;
+}
+.find-pw1 input {
+    border-radius: 2px;
+    color: #000000;
+    flex: 1 1 0%;
+    padding: 0.1rem;
+    background: #ffffff;
+    border: none;
+    box-shadow: rgb(0 0 0 / 9%) 1px 1px 1px 1px;
+    margin-bottom: 0.2rem;
+    appearance: none;
+    outline: none;
+}
+.find-pw1 input:focus {
+    appearance: none;
+    outline: 2px solid #12B886;
+}
+.find-pw1 {
+    line-height: 4rem;
+    font-size: 1.4rem;
+    position: absolute;
+    left:50%;
+    transform:translateX(-50%);
+    margin-bottom: 1rem;
+    bottom: 450px;
+}
+button.pwenter {
+    justify-content: center;
+    right: 10px;
+    background: #12B886;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 15rem;
+    word-break: keep-all;
+    cursor: pointer;
+    height: 3.5rem;
+    margin-right: 2px;
+}
+button.pwcancle {
+    position: relative;
+    right: 10px;
+    background: #12B886;
+    color: #FFFFFF;
+    font-size: 1rem;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 10.2rem;
+    word-break: keep-all;
+    cursor: pointer;
+    height: 3rem;
+}
+.findpwsubmit {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: -220px;
+}
+.dlink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -240px;
+    text-align: right;
+    color: #12B886;
+}
+.pw , .email {
+    font-weight: 550;
+}
+
+/*--bg-page1: #F8F9FA;
+--bg-page2: #FFFFFF;
+--bg-element1: #FFFFFF;
+--bg-element2: #F8F9FA;
+--bg-element3: #E9ECEF;
+--bg-element4: #DEE2E6;
+--bg-element5: #212529;
+--bg-element6: #343A40;
+--bg-element7: #FFFFFF;
+--bg-element8: #FBFDFC;
+--bg-invert: #1E1E1E;
+--bg-inline-code: #E9ECEF;
+--bg-tag: #F8F9FA;
+--text1: #212529;
+--text2: #495057;
+--text3: #868E96;
+--text4: #CED4DA;
+--border1: #343A40;
+--border2: #ADB5BD;
+--border3: #DEE2E6;
+--border4: #F1F3F5;
+--primary1: #12B886;
+--primary2: #20C997;
+--destructive1: #FF6B6B;
+--destructive2: #FF8787;
+--button-text: #FFFFFF;
+--slight-layer: rgba(0,0,0,0.05);
+--opaque-layer: rgba(249,249,249,0.85);
+--editor-footer: #FFFFFF;
+--prism-bg: #fbfcfd;
+--prism-default-text: #24292e;
+--prism-selection-bg: rgba(0,0,0,0.15);
+--prism-code-block-bg: #fbfcfd;
+--prism-code-1: #969896;
+--prism-code-2: #24292e;
+--prism-code-3: #a626a4;
+--prism-code-4: #63a35c;
+--prism-code-5: #0184bc;
+--prism-code-6: #50a14f;
+--prism-code-7: #a626a4;
+--prism-code-8: #005cc5;
+--prism-code-9: #a626a4;
+--prism-line-number: #585c63;*/

@@ -1,0 +1,781 @@
+<!-- 게시물 상세 내용 -->
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>velog</title>
+    <link rel="shortcut icon" href="https://static.velog.io/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/src/main/resources/static/css/header.css">
+    <script src="/src/main/resources/static/javascript/header.js"></script>
+
+    <link rel="stylesheet" href="/src/main/resources/static/css/post/post.css">
+    <script src="/src/main/resources/static/javascript/post/post.js" type="text/javascript"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 고정 헤더 -->
+        <header>
+            <div class="headerBox">
+                <div class="logo">
+                    <div class="indexLogo dpNone">
+                        <a href="">
+                            <svg width="71" height="24" viewBox="0 0 71 24" fill="none" data-testid="velog-logo"
+                                class="velog-logo">
+                                <path
+                                    d="M12.248 5.328L7.76 18H4.64L0.152 5.328H3.056L6.248 15.768L9.488 5.328H12.248ZM17.7586 12.528C17.8386 13.76 18.1906 14.688 18.8146 15.312C19.4546 15.92 20.2546 16.224 21.2146 16.224C21.8066 16.224 22.3666 16.136 22.8946 15.96C23.4386 15.768 23.9906 15.488 24.5506 15.12L25.7026 16.752C25.1106 17.248 24.4146 17.632 23.6146 17.904C22.8146 18.176 21.9746 18.312 21.0946 18.312C19.1586 18.312 17.6546 17.712 16.5826 16.512C15.5106 15.296 14.9746 13.68 14.9746 11.664C14.9746 10.4 15.2066 9.264 15.6706 8.256C16.1346 7.232 16.8066 6.432 17.6866 5.856C18.5666 5.28 19.5906 4.992 20.7586 4.992C22.4386 4.992 23.7666 5.56 24.7426 6.696C25.7346 7.816 26.2306 9.36 26.2306 11.328C26.2306 11.808 26.2066 12.208 26.1586 12.528H17.7586ZM20.7826 6.984C19.9186 6.984 19.2146 7.296 18.6706 7.92C18.1266 8.544 17.8146 9.472 17.7346 10.704H23.6146C23.5826 9.504 23.3266 8.584 22.8466 7.944C22.3666 7.304 21.6786 6.984 20.7826 6.984ZM35.4853 14.544C35.4853 15.616 36.1253 16.152 37.4053 16.152C38.0453 16.152 38.7173 16.008 39.4213 15.72L40.0933 17.592C39.2133 18.072 38.1253 18.312 36.8293 18.312C35.5653 18.312 34.5733 17.96 33.8533 17.256C33.1493 16.536 32.7973 15.552 32.7973 14.304V2.208H28.9813V0.24H35.4853V14.544ZM49.3959 4.992C51.2199 4.992 52.6279 5.592 53.6199 6.792C54.6119 7.976 55.1079 9.592 55.1079 11.64C55.1079 13.688 54.6039 15.312 53.5959 16.512C52.5879 17.712 51.1799 18.312 49.3719 18.312C47.5479 18.312 46.1319 17.728 45.1239 16.56C44.1319 15.376 43.6359 13.744 43.6359 11.664C43.6359 9.648 44.1399 8.032 45.1479 6.816C46.1719 5.6 47.5879 4.992 49.3959 4.992ZM49.3959 7.08C48.4199 7.08 47.6839 7.456 47.1879 8.208C46.7079 8.96 46.4679 10.112 46.4679 11.664C46.4679 13.232 46.7079 14.392 47.1879 15.144C47.6679 15.88 48.3959 16.248 49.3719 16.248C50.3479 16.248 51.0759 15.872 51.5559 15.12C52.0359 14.368 52.2759 13.208 52.2759 11.64C52.2759 10.088 52.0359 8.944 51.5559 8.208C51.0759 7.456 50.3559 7.08 49.3959 7.08ZM70.0745 5.952C69.6105 6.112 69.0825 6.224 68.4905 6.288C67.9145 6.336 67.2185 6.36 66.4025 6.36C67.1705 6.712 67.7465 7.152 68.1305 7.68C68.5145 8.208 68.7065 8.848 68.7065 9.6C68.7065 10.432 68.4985 11.168 68.0825 11.808C67.6825 12.448 67.1065 12.952 66.3545 13.32C65.6025 13.688 64.7145 13.872 63.6905 13.872C62.9705 13.872 62.3945 13.8 61.9625 13.656C61.7865 13.784 61.6505 13.944 61.5545 14.136C61.4585 14.312 61.4105 14.504 61.4105 14.712C61.4105 15.352 61.9305 15.672 62.9705 15.672H65.1785C66.0745 15.672 66.8745 15.824 67.5785 16.128C68.2825 16.432 68.8265 16.856 69.2105 17.4C69.6105 17.928 69.8105 18.528 69.8105 19.2C69.8105 20.464 69.2665 21.44 68.1785 22.128C67.0905 22.832 65.5225 23.184 63.4745 23.184C62.0505 23.184 60.9225 23.032 60.0905 22.728C59.2745 22.44 58.6905 22.008 58.3385 21.432C58.0025 20.872 57.8345 20.144 57.8345 19.248H60.2345C60.2345 19.728 60.3225 20.104 60.4985 20.376C60.6905 20.664 61.0185 20.872 61.4825 21C61.9465 21.144 62.6185 21.216 63.4985 21.216C64.7785 21.216 65.6985 21.056 66.2585 20.736C66.8185 20.432 67.0985 19.976 67.0985 19.368C67.0985 18.856 66.8745 18.456 66.4265 18.168C65.9945 17.896 65.4025 17.76 64.6505 17.76H62.4665C61.3305 17.76 60.4665 17.528 59.8745 17.064C59.2985 16.6 59.0105 16.016 59.0105 15.312C59.0105 14.88 59.1305 14.464 59.3705 14.064C59.6105 13.664 59.9545 13.32 60.4025 13.032C59.6505 12.632 59.0985 12.152 58.7465 11.592C58.4105 11.016 58.2425 10.312 58.2425 9.48C58.2425 8.6 58.4665 7.824 58.9145 7.152C59.3625 6.464 59.9865 5.936 60.7865 5.568C61.5865 5.184 62.4985 4.992 63.5225 4.992C64.8985 5.008 65.9865 4.912 66.7865 4.704C67.6025 4.496 68.4665 4.168 69.3785 3.72L70.0745 5.952ZM63.5465 6.864C62.6985 6.864 62.0585 7.104 61.6265 7.584C61.1945 8.048 60.9785 8.68 60.9785 9.48C60.9785 10.296 61.1945 10.944 61.6265 11.424C62.0745 11.888 62.7225 12.12 63.5705 12.12C64.3705 12.12 64.9785 11.888 65.3945 11.424C65.8105 10.96 66.0185 10.296 66.0185 9.432C66.0185 7.72 65.1945 6.864 63.5465 6.864Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="postingLogo">
+                        <a href="" class="imgLogo">
+                            <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="userLogo">user velog</a>
+                    </div>
+                </div>
+                <nav>
+                    <button class="visualMode">
+                        <div class="visualBtn">
+                            <div class="visual">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M4.069 13h-4.069v-2h4.069c-.041.328-.069.661-.069 1s.028.672.069 1zm3.034-7.312l-2.881-2.881-1.414 1.414 2.881 2.881c.411-.529.885-1.003 1.414-1.414zm11.209 1.414l2.881-2.881-1.414-1.414-2.881 2.881c.528.411 1.002.886 1.414 1.414zm-6.312-3.102c.339 0 .672.028 1 .069v-4.069h-2v4.069c.328-.041.661-.069 1-.069zm0 16c-.339 0-.672-.028-1-.069v4.069h2v-4.069c-.328.041-.661.069-1 .069zm7.931-9c.041.328.069.661.069 1s-.028.672-.069 1h4.069v-2h-4.069zm-3.033 7.312l2.88 2.88 1.415-1.414-2.88-2.88c-.412.528-.886 1.002-1.415 1.414zm-11.21-1.415l-2.88 2.88 1.414 1.414 2.88-2.88c-.528-.411-1.003-.885-1.414-1.414zm6.312-10.897c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                    <a class="search">
+                        <svg width="17" height="17" viewBox="0 0 17 17">
+                            <path fill-rule="evenodd"
+                                d="M13.66 7.36a6.3 6.3 0 1 1-12.598 0 6.3 6.3 0 0 1 12.598 0zm-1.73 5.772a7.36 7.36 0 1 1 1.201-1.201l3.636 3.635c.31.31.31.815 0 1.126l-.075.075a.796.796 0 0 1-1.126 0l-3.636-3.635z"
+                                clip-rule="evenodd" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                    <button class="newPosting dpNone">
+                        새 글 작성
+                    </button>
+                    <div>
+                        <button class="userLoginBtn dpNone">로그인</button>
+                        <div class="userSection">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASbSURBVHgB7Z0tTytBFIYP914BDiQ4cIADB0EhwYFE8ifq7g/hJ2CRSCQ4kOCobF3ruHk3maS5aSnbdnfPOe/7JE0oCTvTnmc+dvbMsNbr9b5M0PLLBDUSgBwJQI4EIEcCkCMByJEA5EgAciQAORKAHAlAjgQgRwKQIwHIkQDkSAByJAA5EoAcCUCOBCBHApAjAciRAORIAHIkADkSgBwJQI4EIEcCkCMByJEA5EgAciQAOX+MhPX1dTs+Prbt7W3b3d21jY2N6ndgPB7bYDCw4XBor6+v9vHxUb1nIL0Ae3t7dn5+XgV9FhABYuC1v79f/Q4SPD8/28vLi2UmrQA/Cfx34O/wwjXu7u7S9gi/z87O/loyELTr62vb2tqyZcFQcXp6Wv2MXiEb6SaBCDwEWDVFqmykEgABOjo6sqbAtbNJkEaAi4uLRoNfQBmXl5eWhRQCIChlnG6Dk5OTVstrkvACYKLXxJg/D5RZ1hEiE14ABGIVs/26IPgZeoHQAiDwbYz7s4AA0XuB0AIsusizKsrycmRCC+Dhyz84OLDIhBUAra/rHgCgDpGHgbAC7OzsmBc81aUuYQXY3Nw0L3iqS13CCtDFrd8sPNWlLsoIIkcCkBNWAE8JGpGTRcIKgPw9L3iqS13CCvD5+Wle8FSXuoQVAJm8HlK0UAfUJSqhJ4Fvb2/WNcgcjkxoAfDld936oieKhhYAwX96erKuwJ6B6Oni4dcBIEAXvQAC//j4aNEJLwCC30UgUGaGzSIpVgLRC7Q5FKCsLFvG0iwFPzw8tBIUlIGyspDqWcD9/X2jEuDaKCMT6R4GIUBNzAlwzWzBByl3ByNYaK23t7dLP6vHfT6u9/7+bhlZ6/V6X5YYpI0jebRu/mD2wBfSHxCBngAv9ASQ4PDwsErhwvvJE0JGo1EV9H6/72KFsS1SCDAZyFngnh2vVUwSUV4WQUILULZnlR06aMGYqDW1QDN56khZho6+Ghh2DoBgXF1dTZ3koZWvcqWubECdtg0NZUQ+QiakAGjxOA9gHhABj4wXeWyMHgX5/j85Zwi9AXoeD4+n6xJOAASk7nbwkjyCGT0meXg/mcWDYOMsIJwShtaO3mWRHT/odaINCaHmAIsEHyCQOP6tHAHXFKVukSQIsxK4aPDbBnWMdG5ACAHwhUYIfgHzEwwjEXAvQFdHwCzLzc1NiC1jrgXA2I31/Ijbr1HnCEfKuRagq/N/VgXuJLzPB9wKgMBnOITJu8RuBUDXnwHvQ4FLAbDkGrnr/x8MBV7vClwKEHHWPw+vn8mdANlaf8FrL+BOgIytv+Dxs7kSAC0kY+sveOwFXAnQ5bGvbdH0A6m6uBLAw8GPTePtaFk3AmTv/gtYF/A0DLgRgKH1Fzx9VjcCIBuHBU89nRsBkKrFgqfNJm5SwpBGVc7fz/CvWKZRUsk9bS1PvzVMfI+OiiVHApAjAciRAORIAHIkADkSgBwJQI4EIEcCkCMByJEA5EgAciQAORKAHAlAjgQgRwKQIwHIkQDkSAByJAA5EoAcCUCOBCBHApAjAciRAORIAHIkADkSgBwJQI4EIOcfGjV2tEfztqEAAAAASUVORK5CYII=" alt="user"
+                                srcset="">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10l5 5 5-5z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- 고정 헤더 끝 -->
+        <!-- 스크롤 헤더 -->
+        <div id="scrollMoveHeader">
+            <div class="headerBox">
+                <div class="logo">
+                    <div class="indexLogo dpNone">
+                        <a href="">
+                            <svg width="71" height="24" viewBox="0 0 71 24" fill="none" data-testid="velog-logo"
+                                class="velog-logo">
+                                <path
+                                    d="M12.248 5.328L7.76 18H4.64L0.152 5.328H3.056L6.248 15.768L9.488 5.328H12.248ZM17.7586 12.528C17.8386 13.76 18.1906 14.688 18.8146 15.312C19.4546 15.92 20.2546 16.224 21.2146 16.224C21.8066 16.224 22.3666 16.136 22.8946 15.96C23.4386 15.768 23.9906 15.488 24.5506 15.12L25.7026 16.752C25.1106 17.248 24.4146 17.632 23.6146 17.904C22.8146 18.176 21.9746 18.312 21.0946 18.312C19.1586 18.312 17.6546 17.712 16.5826 16.512C15.5106 15.296 14.9746 13.68 14.9746 11.664C14.9746 10.4 15.2066 9.264 15.6706 8.256C16.1346 7.232 16.8066 6.432 17.6866 5.856C18.5666 5.28 19.5906 4.992 20.7586 4.992C22.4386 4.992 23.7666 5.56 24.7426 6.696C25.7346 7.816 26.2306 9.36 26.2306 11.328C26.2306 11.808 26.2066 12.208 26.1586 12.528H17.7586ZM20.7826 6.984C19.9186 6.984 19.2146 7.296 18.6706 7.92C18.1266 8.544 17.8146 9.472 17.7346 10.704H23.6146C23.5826 9.504 23.3266 8.584 22.8466 7.944C22.3666 7.304 21.6786 6.984 20.7826 6.984ZM35.4853 14.544C35.4853 15.616 36.1253 16.152 37.4053 16.152C38.0453 16.152 38.7173 16.008 39.4213 15.72L40.0933 17.592C39.2133 18.072 38.1253 18.312 36.8293 18.312C35.5653 18.312 34.5733 17.96 33.8533 17.256C33.1493 16.536 32.7973 15.552 32.7973 14.304V2.208H28.9813V0.24H35.4853V14.544ZM49.3959 4.992C51.2199 4.992 52.6279 5.592 53.6199 6.792C54.6119 7.976 55.1079 9.592 55.1079 11.64C55.1079 13.688 54.6039 15.312 53.5959 16.512C52.5879 17.712 51.1799 18.312 49.3719 18.312C47.5479 18.312 46.1319 17.728 45.1239 16.56C44.1319 15.376 43.6359 13.744 43.6359 11.664C43.6359 9.648 44.1399 8.032 45.1479 6.816C46.1719 5.6 47.5879 4.992 49.3959 4.992ZM49.3959 7.08C48.4199 7.08 47.6839 7.456 47.1879 8.208C46.7079 8.96 46.4679 10.112 46.4679 11.664C46.4679 13.232 46.7079 14.392 47.1879 15.144C47.6679 15.88 48.3959 16.248 49.3719 16.248C50.3479 16.248 51.0759 15.872 51.5559 15.12C52.0359 14.368 52.2759 13.208 52.2759 11.64C52.2759 10.088 52.0359 8.944 51.5559 8.208C51.0759 7.456 50.3559 7.08 49.3959 7.08ZM70.0745 5.952C69.6105 6.112 69.0825 6.224 68.4905 6.288C67.9145 6.336 67.2185 6.36 66.4025 6.36C67.1705 6.712 67.7465 7.152 68.1305 7.68C68.5145 8.208 68.7065 8.848 68.7065 9.6C68.7065 10.432 68.4985 11.168 68.0825 11.808C67.6825 12.448 67.1065 12.952 66.3545 13.32C65.6025 13.688 64.7145 13.872 63.6905 13.872C62.9705 13.872 62.3945 13.8 61.9625 13.656C61.7865 13.784 61.6505 13.944 61.5545 14.136C61.4585 14.312 61.4105 14.504 61.4105 14.712C61.4105 15.352 61.9305 15.672 62.9705 15.672H65.1785C66.0745 15.672 66.8745 15.824 67.5785 16.128C68.2825 16.432 68.8265 16.856 69.2105 17.4C69.6105 17.928 69.8105 18.528 69.8105 19.2C69.8105 20.464 69.2665 21.44 68.1785 22.128C67.0905 22.832 65.5225 23.184 63.4745 23.184C62.0505 23.184 60.9225 23.032 60.0905 22.728C59.2745 22.44 58.6905 22.008 58.3385 21.432C58.0025 20.872 57.8345 20.144 57.8345 19.248H60.2345C60.2345 19.728 60.3225 20.104 60.4985 20.376C60.6905 20.664 61.0185 20.872 61.4825 21C61.9465 21.144 62.6185 21.216 63.4985 21.216C64.7785 21.216 65.6985 21.056 66.2585 20.736C66.8185 20.432 67.0985 19.976 67.0985 19.368C67.0985 18.856 66.8745 18.456 66.4265 18.168C65.9945 17.896 65.4025 17.76 64.6505 17.76H62.4665C61.3305 17.76 60.4665 17.528 59.8745 17.064C59.2985 16.6 59.0105 16.016 59.0105 15.312C59.0105 14.88 59.1305 14.464 59.3705 14.064C59.6105 13.664 59.9545 13.32 60.4025 13.032C59.6505 12.632 59.0985 12.152 58.7465 11.592C58.4105 11.016 58.2425 10.312 58.2425 9.48C58.2425 8.6 58.4665 7.824 58.9145 7.152C59.3625 6.464 59.9865 5.936 60.7865 5.568C61.5865 5.184 62.4985 4.992 63.5225 4.992C64.8985 5.008 65.9865 4.912 66.7865 4.704C67.6025 4.496 68.4665 4.168 69.3785 3.72L70.0745 5.952ZM63.5465 6.864C62.6985 6.864 62.0585 7.104 61.6265 7.584C61.1945 8.048 60.9785 8.68 60.9785 9.48C60.9785 10.296 61.1945 10.944 61.6265 11.424C62.0745 11.888 62.7225 12.12 63.5705 12.12C64.3705 12.12 64.9785 11.888 65.3945 11.424C65.8105 10.96 66.0185 10.296 66.0185 9.432C66.0185 7.72 65.1945 6.864 63.5465 6.864Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="postingLogo">
+                        <a href="" class="imgLogo">
+                            <svg width="192" height="192" viewBox="0 0 192 192" fill="currentColor">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M24 0H168C181.255 0 192 10.7451 192 24V168C192 181.255 181.255 192 168 192H24C10.7451 192 0 181.255 0 168V24C0 10.7451 10.7451 0 24 0ZM49 57.9199V65.48H67L80.6799 142.52L98.5 141.26C116.02 119.06 127.84 102.44 133.96 91.3999C140.2 80.24 143.32 70.9399 143.32 63.5C143.32 59.0601 142 55.7 139.36 53.4199C136.84 51.1399 133.66 50 129.82 50C122.62 50 116.62 53.0601 111.82 59.1799C116.5 62.3 119.68 64.8799 121.36 66.9199C123.16 68.8401 124.06 71.4199 124.06 74.6599C124.06 80.0601 122.44 86.1799 119.2 93.02C116.08 99.8601 112.66 105.92 108.94 111.2C106.54 114.56 103.48 118.7 99.76 123.62L88.0601 57.2C87.1001 52.3999 84.1001 50 79.0601 50C76.78 50 72.3999 50.96 65.9199 52.8799C59.4399 54.6799 53.8 56.3601 49 57.9199Z"
+                                    fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="userLogo">user velog</a>
+                    </div>
+                </div>
+                <nav>
+                    <button class="visualMode">
+                        <div class="visualBtn">
+                            <div class="visual">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M4.069 13h-4.069v-2h4.069c-.041.328-.069.661-.069 1s.028.672.069 1zm3.034-7.312l-2.881-2.881-1.414 1.414 2.881 2.881c.411-.529.885-1.003 1.414-1.414zm11.209 1.414l2.881-2.881-1.414-1.414-2.881 2.881c.528.411 1.002.886 1.414 1.414zm-6.312-3.102c.339 0 .672.028 1 .069v-4.069h-2v4.069c.328-.041.661-.069 1-.069zm0 16c-.339 0-.672-.028-1-.069v4.069h2v-4.069c-.328.041-.661.069-1 .069zm7.931-9c.041.328.069.661.069 1s-.028.672-.069 1h4.069v-2h-4.069zm-3.033 7.312l2.88 2.88 1.415-1.414-2.88-2.88c-.412.528-.886 1.002-1.415 1.414zm-11.21-1.415l-2.88 2.88 1.414 1.414 2.88-2.88c-.528-.411-1.003-.885-1.414-1.414zm6.312-10.897c-3.314 0-6 2.686-6 6s2.686 6 6 6 6-2.686 6-6-2.686-6-6-6z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </button>
+                    <a class="search">
+                        <svg width="17" height="17" viewBox="0 0 17 17">
+                            <path fill-rule="evenodd"
+                                d="M13.66 7.36a6.3 6.3 0 1 1-12.598 0 6.3 6.3 0 0 1 12.598 0zm-1.73 5.772a7.36 7.36 0 1 1 1.201-1.201l3.636 3.635c.31.31.31.815 0 1.126l-.075.075a.796.796 0 0 1-1.126 0l-3.636-3.635z"
+                                clip-rule="evenodd" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                    <button class="newPosting dpNone">
+                        새 글 작성
+                    </button>
+                    <div>
+                        <button class="userLoginBtn">로그인</button>
+                        <div class="userSection dpNone">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASbSURBVHgB7Z0tTytBFIYP914BDiQ4cIADB0EhwYFE8ifq7g/hJ2CRSCQ4kOCobF3ruHk3maS5aSnbdnfPOe/7JE0oCTvTnmc+dvbMsNbr9b5M0PLLBDUSgBwJQI4EIEcCkCMByJEA5EgAciQAORKAHAlAjgQgRwKQIwHIkQDkSAByJAA5EoAcCUCOBCBHApAjAciRAORIAHIkADkSgBwJQI4EIEcCkCMByJEA5EgAciQAOX+MhPX1dTs+Prbt7W3b3d21jY2N6ndgPB7bYDCw4XBor6+v9vHxUb1nIL0Ae3t7dn5+XgV9FhABYuC1v79f/Q4SPD8/28vLi2UmrQA/Cfx34O/wwjXu7u7S9gi/z87O/loyELTr62vb2tqyZcFQcXp6Wv2MXiEb6SaBCDwEWDVFqmykEgABOjo6sqbAtbNJkEaAi4uLRoNfQBmXl5eWhRQCIChlnG6Dk5OTVstrkvACYKLXxJg/D5RZ1hEiE14ABGIVs/26IPgZeoHQAiDwbYz7s4AA0XuB0AIsusizKsrycmRCC+Dhyz84OLDIhBUAra/rHgCgDpGHgbAC7OzsmBc81aUuYQXY3Nw0L3iqS13CCtDFrd8sPNWlLsoIIkcCkBNWAE8JGpGTRcIKgPw9L3iqS13CCvD5+Wle8FSXuoQVAJm8HlK0UAfUJSqhJ4Fvb2/WNcgcjkxoAfDld936oieKhhYAwX96erKuwJ6B6Oni4dcBIEAXvQAC//j4aNEJLwCC30UgUGaGzSIpVgLRC7Q5FKCsLFvG0iwFPzw8tBIUlIGyspDqWcD9/X2jEuDaKCMT6R4GIUBNzAlwzWzBByl3ByNYaK23t7dLP6vHfT6u9/7+bhlZ6/V6X5YYpI0jebRu/mD2wBfSHxCBngAv9ASQ4PDwsErhwvvJE0JGo1EV9H6/72KFsS1SCDAZyFngnh2vVUwSUV4WQUILULZnlR06aMGYqDW1QDN56khZho6+Ghh2DoBgXF1dTZ3koZWvcqWubECdtg0NZUQ+QiakAGjxOA9gHhABj4wXeWyMHgX5/j85Zwi9AXoeD4+n6xJOAASk7nbwkjyCGT0meXg/mcWDYOMsIJwShtaO3mWRHT/odaINCaHmAIsEHyCQOP6tHAHXFKVukSQIsxK4aPDbBnWMdG5ACAHwhUYIfgHzEwwjEXAvQFdHwCzLzc1NiC1jrgXA2I31/Ijbr1HnCEfKuRagq/N/VgXuJLzPB9wKgMBnOITJu8RuBUDXnwHvQ4FLAbDkGrnr/x8MBV7vClwKEHHWPw+vn8mdANlaf8FrL+BOgIytv+Dxs7kSAC0kY+sveOwFXAnQ5bGvbdH0A6m6uBLAw8GPTePtaFk3AmTv/gtYF/A0DLgRgKH1Fzx9VjcCIBuHBU89nRsBkKrFgqfNJm5SwpBGVc7fz/CvWKZRUsk9bS1PvzVMfI+OiiVHApAjAciRAORIAHIkADkSgBwJQI4EIEcCkCMByJEA5EgAciQAORKAHAlAjgQgRwKQIwHIkQDkSAByJAA5EoAcCUCOBCBHApAjAciRAORIAHIkADkSgBwJQI4EIOcfGjV2tEfztqEAAAAASUVORK5CYII=" alt="user"
+                                srcset="">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10l5 5 5-5z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- 스크롤 헤더 끝 -->
+        <div id="container">
+            <!-- 게시물 상세 - 제목 및 기타 정보 -->
+            <div class="titleWrap">
+                <!-- 제목 -->
+                <h1 class="title">글제목</h1>
+                <!-- 제목 끝 -->
+                <!-- 기타 정보 -->
+                <div class="postInfo">
+                    <div class="info">
+                        <span class="authorId">
+                            <a href="">작성자 아이디</a>
+                        </span>
+                        <span class="separator">·</span>
+                        <span class="postRegDate">작성 일자</span>
+                    </div>
+                </div>
+                <!-- 기타 정보 끝 -->
+                <!-- 태그 리스트 -->
+                <div class="tagInfo">
+                    <a href="" class="tagElement">태그</a>
+                </div>
+                <!-- 태그 리스트 -->
+                <!-- 좌측 메뉴 -->
+                <div class="leftSideMenu">
+                    <div class="leftbox">
+                        <div class="likeAndShare">
+                            <div class="likeBox hoverLSM">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="likeCnt">
+                                100
+                            </div>
+                            <div class="shareBox">
+                                <div class="positioner">
+                                    <!-- facebook -->
+                                    <div class="etcbox1">
+                                        <div class="shareTag hoverLSM"">
+                                            <svg class="shareSvg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- twitter -->
+                                    <div class="etcbox2">
+                                        <div class="shareTag hoverLSM"">
+                                            <svg class="shareSvg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <!-- 링크복사 -->
+                                    <div class="etcbox3">
+                                        <div class="shareTag hoverLSM"">
+                                            <svg class="shareSvg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M21.586 10.461l-10.05 10.075c-1.95 1.949-5.122 1.949-7.071 0s-1.95-5.122 0-7.072l10.628-10.585c1.17-1.17 3.073-1.17 4.243 0 1.169 1.17 1.17 3.072 0 4.242l-8.507 8.464c-.39.39-1.024.39-1.414 0s-.39-1.024 0-1.414l7.093-7.05-1.415-1.414-7.093 7.049c-1.172 1.172-1.171 3.073 0 4.244s3.071 1.171 4.242 0l8.507-8.464c.977-.977 1.464-2.256 1.464-3.536 0-2.769-2.246-4.999-5-4.999-1.28 0-2.559.488-3.536 1.465l-10.627 10.583c-1.366 1.368-2.05 3.159-2.05 4.951 0 3.863 3.13 7 7 7 1.792 0 3.583-.684 4.95-2.05l10.05-10.075-1.414-1.414z" fill="currentColor"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="asdf">
+                                <div class="shareIcon hoverLSM">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" class="share">
+                                        <path fill="currentColor" d="M5 7c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5zm11.122 12.065c-.073.301-.122.611-.122.935 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-1.165 0-2.204.506-2.935 1.301l-5.488-2.927c-.23.636-.549 1.229-.943 1.764l5.488 2.927zm7.878-15.065c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 .324.049.634.122.935l-5.488 2.927c.395.535.713 1.127.943 1.764l5.488-2.927c.731.795 1.77 1.301 2.935 1.301 2.209 0 4-1.791 4-4z"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 좌측 메뉴 끝 -->
+                <!-- 우측 메뉴 -->
+                <div class="rightSideMenu">
+                    <div class="listBox">
+                        <div class="titleList">
+                            <div class="li">
+                                <a href="">제목 리스트</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 우측 메뉴 끝 -->
+                <!-- 시리즈 -->
+                <div class="seriesInfo">
+                    <h2>
+                        <a href="">시리즈 제목</a>
+                    </h2>
+                    <svg width="32" height="48" fill="currentColor" viewBox="0 0 32 48" class="rightTop">
+                        <path fill="currentColor" d="M32 0H0v48h.163l16-16L32 47.836V0z"></path>
+                    </svg>
+                    <!-- 목록 -->
+                    <ol>
+                        <li>
+                            <a href="" class="selectContents">목록1</a>
+                        </li>
+                        <li>
+                            <a href="" class="">목록2</a>
+                        </li>
+                    </ol>
+                    <!-- 목록 보기 or 숨기기 -->
+                    <div class="seriesHide">
+                        <!-- 목록 보기 & 숨기기-->
+                        <div class="seriesToggle showSeries"></div>
+                        <!-- 우측 -->
+                        <div class="countList">
+                            <div class="seriesNum">1/5</div>
+                            <div class="seriesArrow">
+                                <button class="leftArrow disable">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                                    </svg>
+                                </button>
+                                <button class="rightArrow">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 시리즈 -->
+            </div>
+            <!-- 게시물 상세 - 제목 및 기타 정보 끝 -->
+            <!-- 게시물 상세 - 내용 -->
+            <div class="mainContents">
+                Lorem Ipsum
+                "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+                "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+                
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus neque purus, non fermentum metus convallis vel. 
+                Vivamus id neque nunc. Nullam vitae sollicitudin nibh. Sed sed ligula in orci dapibus efficitur vitae et purus. 
+                Sed nec libero mauris. Curabitur in enim augue. Etiam nec ante metus. Donec augue orci, feugiat vitae accumsan vitae, 
+                lobortis vel felis. Etiam eu dignissim odio, id pellentesque diam. Cras nibh felis, semper eu aliquet at, viverra at turpis. 
+                Phasellus facilisis consectetur nunc, id malesuada dolor tempus at. 
+                Vivamus nec mauris ac sapien tristique pharetra id nec orci. Morbi vitae convallis nulla.
+                Etiam gravida libero id sapien pharetra, non pellentesque lectus mollis. 
+                Vestibulum mattis ultrices dolor, ac elementum sem ullamcorper fermentum. Cras vestibulum odio ac luctus ultrices.
+                
+                Fusce euismod ac neque quis pulvinar. Fusce non iaculis erat, at pellentesque tortor. 
+                Suspendisse ultricies ligula ac sapien tempor, sed pellentesque ex pulvinar. Integer fringilla, 
+                augue et vulputate malesuada, quam enim posuere elit, blandit consectetur purus metus ac risus. 
+                Duis ut massa mi. Aliquam interdum orci sit amet lorem aliquam porttitor. Phasellus fermentum, 
+                massa eget viverra mattis, eros elit tempor massa, quis interdum tortor ipsum convallis metus. 
+                Curabitur gravida congue neque, ac aliquet odio eleifend at. Integer urna ligula, tincidunt vitae interdum et, 
+                tristique at felis. Fusce vel erat commodo, gravida odio vitae, scelerisque massa. Quisque luctus accumsan tortor ut porta. 
+                Cras vitae finibus ligula. Quisque et pulvinar urna, ac ultrices magna. Etiam mauris felis, suscipit in risus ac, 
+                tempus sollicitudin quam.
+                
+                Mauris tincidunt odio velit. Mauris iaculis, ex ac ultricies imperdiet, sapien turpis scelerisque diam, 
+                iaculis interdum tellus ante vitae sapien. Cras nec egestas erat. Integer laoreet eu magna at lacinia. 
+                In viverra massa vel felis bibendum, et dignissim ante consequat. Duis sed vulputate tellus. 
+                Cras eget sem faucibus, varius ipsum ac, imperdiet nulla. Ut pharetra rhoncus ligula. Cras finibus, 
+                ante et rhoncus vestibulum, ex nibh mattis odio, vel ultrices quam ex et tortor. Ut augue metus, 
+                blandit tempus fringilla sed, varius nec dui.
+                
+                Quisque aliquet sodales erat, eu gravida sem feugiat in. Maecenas vestibulum elementum diam non fringilla. 
+                Etiam sed sapien eget felis bibendum vehicula vitae at enim. Vestibulum finibus ex sed feugiat ornare. 
+                Suspendisse dictum porta imperdiet. Aenean lobortis molestie lectus, non blandit ante rutrum non. 
+                Quisque posuere nunc neque, eget maximus mi porttitor non. Fusce rhoncus dui lectus, ut rutrum augue blandit eu. 
+                Proin eu molestie sapien. Duis ac neque ipsum. Integer nisl ex, euismod vitae hendrerit vel, aliquam a sem. 
+                Ut viverra aliquam suscipit. Morbi magna quam, cursus sed ligula eget, sollicitudin accumsan orci. 
+                Curabitur congue augue condimentum, malesuada tortor sit amet, scelerisque nisi. Proin in enim dignissim, 
+                bibendum dolor ut, commodo dui.
+                
+                Sed sed molestie eros, at rhoncus felis. Fusce molestie justo orci, id consequat odio porttitor ut. 
+                Integer posuere, metus sit amet pulvinar fringilla, purus nisi ullamcorper massa, vitae ultrices ligula massa ut nisi. 
+                Pellentesque ac purus euismod, mollis nisl quis, dignissim mauris. Pellentesque tortor velit, consequat sit amet lectus a, 
+                dictum lacinia lectus. Etiam quis nisl ultricies, iaculis quam vel, mollis sem.
+            </div>
+            <!-- 게시물 상세 - 내용 끝 -->
+            <!-- 게시물 상세 - 글쓴이 -->
+            <div class="authorInfo">
+                <div>
+                    <div class="author">
+                        <a href="">
+                            <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="글쓴이 프로필">
+                        </a>
+                        <div class="authorDetail">
+                            <div class="authorName">
+                                <a href="">글쓴이 이름</a>
+                            </div>
+                            <div class="authorDesc">
+                                글쓴이 소개
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crossLine"></div>
+                    <div class="authorEtc">
+                        <a href="" class="authorHover">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
+                                <mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse">
+                                    <path fill="#ffffff" fill-rule="evenodd" d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z" clip-rule="evenodd"></path>
+                                </mask>
+                                <g mask="url(#github)">
+                                    <path fill="currentColor" d="M0 0h20v20H0z"></path>
+                                </g>
+                            </svg>
+                        </a>
+                        <a href="" class="authorHover">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+                            </svg>
+                        </a>
+                        <a href="" class="authorHover authorEmail">
+                            <svg width="32" height="32" fill="none" viewBox="0 0 32 32" data-testid="email">
+                                <path fill="currentColor" d="M16 16.871L1.019 5H30.98L16 16.871zm0 3.146L1 8.131V27h30V8.131L16 20.017z"></path>
+                            </svg>
+                        </a>
+                        <div class="emailHover">
+                            글쓴이 이메일
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 게시물 상세 - 글쓴이 끝 -->
+            <!-- 게시물 상세 - 이전 글, 다음 글 -->
+            <div class="beforeAfter">
+                <div class="beforePost baHover">
+                    <a href="">
+                        <div class="beforeArrow">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
+                            </svg>
+                        </div>
+                        <div class="beforeTitle">
+                            <div class="beforeDesc">
+                                이전 포스트
+                            </div>
+                            <h3>이전 포스트 제목</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="afterPost baHover">
+                    <a href="">
+                        <div class="afterArrow">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
+                            </svg>
+                        </div>
+                        <div class="afterTitle">
+                            <div class="afterDesc">다음 포스트</div>
+                            <h3>다음 포스트 제목</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- 게시물 상세 - 이전 글, 다음 글 끝 -->
+            <!-- 게시물 상세 - 댓글 -->
+            <div class="replyWrap">
+                <h4>n개의 댓글</h4>
+                <div class="replyBox">
+                    <div class="writeReply">
+                        <textarea placeholder="댓글을 입력하세요" class="replyTextarea"></textarea>
+                        <div class="replySubmit w802px">
+                            <button>댓글 작성</button>
+                        </div>
+                    </div>
+                    <div class="replyList w802px">
+                        <!-- 댓글 for문 -->
+                        <div class="replyBox">
+                            <div class="replyElement">
+                                <div class="replyHeader">
+                                    <div class="replyProfile">
+                                        <a href="">
+                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG" alt="댓글 프로필">
+                                        </a>
+                                        <div class="replyInfo">
+                                            <div class="replyName">
+                                                <a href="">김아무개</a>
+                                            </div>
+                                            <div class="replyRegdate">등록날짜</div>
+                                        </div>
+                                    </div>
+                                    <!-- 자신의 댓글일 경우 -->
+                                    <div class="replyAction">
+                                        <a class="replyUpdateBtn">수정</a>
+                                        <a class="replyDel">삭제</a>
+                                    </div>
+                                </div>
+                                <div class="replyBody">
+                                    <div>
+                                        <div class="replyDesc">
+                                            <p>댓글 내용</p>
+                                        </div>
+                                    </div>
+                                    <div class="replyUpdate dpNone">
+                                        <textarea></textarea>
+                                        <div class="btnWrap">
+                                            <button class="upcancel">취소</button>
+                                            <button class="upSubmit">댓글 수정</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="replyToReply">
+                                    <!-- 답글보기 - 답글이 있을때 -->
+                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>n개의 답글</span></div>
+                                    <!-- 답글 달기 - 답글이 없을 때 -->
+                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>답글달기</span></div>
+                                    <!-- 답글 숨기기 -->
+                                    <div class="hideRtr rtrTogglBtn dpNone">
+                                        <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+                                            <path fill="currentColor" d="M9.5 6.5v-1h-7v1h7z"></path>
+                                            <path fill="currentColor" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>숨기기</span>
+                                    </div>
+                                    <!-- 답글 -->
+                                    <div class="rtrSection">
+                                        <!-- 답글 작성 textarea 답글 있을 시 display none -->
+                                        <div class="rtrTextArea">
+                                            <textarea placeholder="댓글을 작성하세요" class="rtrTA"></textarea>
+                                            <div class="btn-area">
+                                                <button class="closeBtn">취소</button>
+                                                <button class="btnSubmit">답글 작성</button>
+                                            </div>
+                                        </div>
+                                        <!-- 답글 리스트 for문 답글 없을 시 display none -->
+                                        <div class="rtr">
+                                            <div class="rtrList">
+                                                <div class="rtrBox">
+                                                    <div class="rtrUser">
+                                                        <div class="rtrProfile">
+                                                            <a href="">
+                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="답글프로필">
+                                                            </a>
+                                                            <div class="rtrInfo">
+                                                                <div class="rtrName">
+                                                                    <a href="">답글사용자이름</a>
+                                                                </div>
+                                                                <div class="rtrRegdate">답글등록날짜</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rtrDesc">
+                                                        <div>
+                                                            <div class="rtrText">
+                                                                <div>
+                                                                    <p>답글 내용</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rtrText2">
+                                                        <div class="rt2Btn rtrTogglBtn">
+                                                            <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+                                                                <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                            <span>답글 달기</span>
+                                                        </div>
+                                                    </div>
+                                                    <!-- 답글에 답글 -->
+                                                    <div class="3rdReply"></div>
+                                                </div>
+                                            </div>
+                                            <div class="empty"></div>
+                                            <button class="rtInBtn">답글 작성하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="replyBox">
+                            <div class="replyElement">
+                                <div class="replyHeader">
+                                    <div class="replyProfile">
+                                        <a href="">
+                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG" alt="댓글 프로필">
+                                        </a>
+                                        <div class="replyInfo">
+                                            <div class="replyName">
+                                                <a href="">김아무개</a>
+                                            </div>
+                                            <div class="replyRegdate">등록날짜</div>
+                                        </div>
+                                    </div>
+                                    <!-- 자신의 댓글일 경우 -->
+                                    <div class="replyAction">
+                                        <a class="replyUpdateBtn">수정</a>
+                                        <a class="replyDel">삭제</a>
+                                    </div>
+                                </div>
+                                <div class="replyBody">
+                                    <div>
+                                        <div class="replyDesc">
+                                            <p>댓글 내용2</p>
+                                        </div>
+                                    </div>
+                                    <div class="replyUpdate dpNone">
+                                        <textarea></textarea>
+                                        <div class="btnWrap">
+                                            <button class="upcancel">취소</button>
+                                            <button class="upSubmit">댓글 수정</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="replyToReply">
+                                    <!-- 답글보기 - 답글이 있을때 -->
+                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>n개의 답글</span></div>
+                                    <!-- 답글 달기 - 답글이 없을 때 -->
+                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>답글달기</span></div>
+                                    <!-- 답글 숨기기 -->
+                                    <div class="hideRtr rtrTogglBtn dpNone">
+                                        <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+                                            <path fill="currentColor" d="M9.5 6.5v-1h-7v1h7z"></path>
+                                            <path fill="currentColor" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z" clip-rule="evenodd"></path>
+                                        </svg>
+                                        <span>숨기기</span>
+                                    </div>
+                                    <!-- 답글 -->
+                                    <div class="rtrSection">
+                                        <!-- 답글 작성 textarea 답글 있을 시 display none -->
+                                        <div class="rtrTextArea">
+                                            <textarea placeholder="댓글을 작성하세요" class="rtrTA"></textarea>
+                                            <div class="btn-area">
+                                                <button class="closeBtn">취소</button>
+                                                <button class="btnSubmit">답글 작성</button>
+                                            </div>
+                                        </div>
+                                        <!-- 답글 리스트 for문 답글 없을 시 display none -->
+                                        <div class="rtr">
+                                            <div class="rtrList">
+                                                <div class="rtrBox">
+                                                    <div class="rtrUser">
+                                                        <div class="rtrProfile">
+                                                            <a href="">
+                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="답글프로필">
+                                                            </a>
+                                                            <div class="rtrInfo">
+                                                                <div class="rtrName">
+                                                                    <a href="">답글사용자이름</a>
+                                                                </div>
+                                                                <div class="rtrRegdate">답글등록날짜</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="rtrDesc">
+                                                        <div>
+                                                            <div class="rtrText">
+                                                                <div>
+                                                                    <p>답글 내용</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="rtrText2">
+                                                        <div class="rt2Btn rtrTogglBtn">
+                                                            <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
+                                                                <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path>
+                                                            </svg>
+                                                            <span>답글 달기</span>
+                                                        </div>
+                                                    </div> -->
+                                                    <!-- 답글에 답글 -->
+                                                    <div class="3rdReply"></div>
+                                                </div>
+                                            </div>
+                                            <div class="empty"></div>
+                                            <button class="rtInBtn">답글 작성하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 게시물 상세 - 댓글 끝 -->
+            <!-- 게시물 상세 - 관심 글 -->
+            <div class="interestingWrap">
+                <div class="iWrapHeader">관심 있을 만한 포스트</div>
+                <div class="iWrapContents">
+                    <div class="iWrapList">
+                        <div class="iWrapElement">
+                            <a class="iWrapHeaderImg">
+                                <div class="iWrapImgBox">
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
+                                </div>
+                            </a>
+                            <div class="iWrapDetail">
+                                <a href="" class="iWrapDetailLink">
+                                    <h4>추천글 제목</h4>
+                                    <div class="iWrapDesc">
+                                        <p>
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="iWrapSubInfo">
+                                    <span class="iWrapRegdate">포스트등록날짜</span>
+                                    <span class="separator">·</span>
+                                    <span class="replyCnt">n개의 댓글</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="iWrapElement">
+                            <a class="iWrapHeaderImg">
+                                <div class="iWrapImgBox">
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
+                                </div>
+                            </a>
+                            <div class="iWrapDetail">
+                                <a href="" class="iWrapDetailLink">
+                                    <h4>추천글 제목</h4>
+                                    <div class="iWrapDesc">
+                                        <p>
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="iWrapSubInfo">
+                                    <span class="iWrapRegdate">포스트등록날짜</span>
+                                    <span class="separator">·</span>
+                                    <span class="replyCnt">n개의 댓글</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="iWrapElement">
+                            <a class="iWrapHeaderImg">
+                                <div class="iWrapImgBox">
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
+                                </div>
+                            </a>
+                            <div class="iWrapDetail">
+                                <a href="" class="iWrapDetailLink">
+                                    <h4>추천글 제목</h4>
+                                    <div class="iWrapDesc">
+                                        <p>
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="iWrapSubInfo">
+                                    <span class="iWrapRegdate">포스트등록날짜</span>
+                                    <span class="separator">·</span>
+                                    <span class="replyCnt">n개의 댓글</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="iWrapElement">
+                            <a class="iWrapHeaderImg">
+                                <div class="iWrapImgBox">
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
+                                </div>
+                            </a>
+                            <div class="iWrapDetail">
+                                <a href="" class="iWrapDetailLink">
+                                    <h4>추천글 제목</h4>
+                                    <div class="iWrapDesc">
+                                        <p>
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="iWrapSubInfo">
+                                    <span class="iWrapRegdate">포스트등록날짜</span>
+                                    <span class="separator">·</span>
+                                    <span class="replyCnt">n개의 댓글</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="iWrapElement">
+                            <a class="iWrapHeaderImg">
+                                <div class="iWrapImgBox">
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
+                                </div>
+                            </a>
+                            <div class="iWrapDetail">
+                                <a href="" class="iWrapDetailLink">
+                                    <h4>추천글 제목</h4>
+                                    <div class="iWrapDesc">
+                                        <p>
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
+                                        </p>
+                                    </div>
+                                </a>
+                                <div class="iWrapSubInfo">
+                                    <span class="iWrapRegdate">포스트등록날짜</span>
+                                    <span class="separator">·</span>
+                                    <span class="replyCnt">n개의 댓글</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 게시물 상세 - 관심 글 끝 -->
+        </div>
+        <!-- footer -->
+        <footer>
+            <a href="">
+                <!-- <img src="https://graphcdn.io/badge.svg" alt="Powered by GraphCDN, the GraphQL CDN"> -->
+            </a>
+        </footer>
+        <!-- footer 끝 -->
+    </div>
+    <!-- modal -->
+    <div class="modal">
+        <!-- 댓글 삭제 모달 -->
+        <div class="replyRemove">
+            <div class="rrModalContents">
+                <div class="modalMain">
+                    <h3>댓글 삭제</h3>
+                    <div class="message">댓글을 정말로 삭제하시겠습니까?</div>
+                    <div class="modalBtnArea">
+                        <button class="btncss delcancel">취소</button>
+                        <button class="btncss delsubmit">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- model end -->
+</body>
+
+</html>

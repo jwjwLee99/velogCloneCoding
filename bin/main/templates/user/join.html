@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>velog</title>
+    <link rel="shortcut icon" href="https://static.velog.io/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="/src/main/resources/static/css/user/join.css">
+    <script src="/src/main/resources/static/javascript/user/join.js" type="text/javascript"></script>
+    <script src="/src/main/resources/static/javascript/user/regExp.js"></script>
+</head>
+<body oncopy="return false" oncut="return false" onpaste="return false">
+    <div class="account">
+        <!-- 회원가입 -->
+        <div class="accountpage">
+            <div class="white-block">
+                <div class="block-accountpage">
+                    <div class="content-accountpage">
+                        <div class="upper-accountpage">
+                            <h2 data-testid="title">Welcome to Velog</h2>
+                            <div class="etcNotice">
+                                <strong><span>*</span>은 필수 사항입니다.</strong>
+                            </div>
+                            <section>
+                                <input type="hidden" name="isidCheck" id="isidCheck" value="n">
+                                <input type="hidden" name="ispwCheck" id="ispwCheck" value="n">
+                                <table>
+                                    <tr>
+                                        <td class="tt"><span>*</span>아이디</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="아이디" type="text" id="userid" name="userid" class="etcInput">
+                                            <span class="focus-border"></span>
+                                            <div class="isIdBox">
+                                                <span class="isId"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>비밀번호</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="비밀번호" type="password" value="" id="userpw" name="userpw" class="etcInput">
+                                            <span class="focus-border"></span>
+                                            <div class="isPWBox">
+                                                <span class="isPW"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>비밀번호확인</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="비밀번호 재입력" type="password" value="" id="userpwcheck" name="userpwcheck" class="etcInput">
+                                            <span class="focus-border"></span>
+                                            <div class="isPWCBox">
+                                                <span class="isPWC"></span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>이름</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input autocomplete="off" placeholder="이름" type="text" value="" id="username"name="username" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>닉네임</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input autocomplete="off" placeholder="닉네임" type="text" value="" id="nickname"name="nickname" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>전화번호</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="전화번호" type="text" value="" id="userpnum" name="userpnum" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span>*</span>이메일</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="이메일" type="text" value="" id="useremail" name="useremail" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span></span>벨로그 제목</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="벨로그 제목" type="text" value="" id="velogtitle" name="velogtitle" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tt"><span></span>벨로그 설명</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="벨로그 설명" type="text" value="" id="velogdesc" name="velogdesc" class="etcInput">
+                                            <span class="focus-border"></span>
+                                        </td>
+                                    </tr>
+                                    <tr class="last">
+                                        <td class="tt">이메일 수신 설정</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="isAlims">
+                                            <ul>
+                                                <li>
+                                                    <span class="selection">댓글 알림</span>
+                                                    <button class="checkBox replyAlims">
+                                                        <div class="circle"></div>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <span class="selection">벨로그 업데이트 소식</span>
+                                                    <button class="checkBox updateAlims">
+                                                        <div class="circle"></div>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </section>
+                        </div>
+                        <div class="btnBox">
+                            <section>
+                                <button class="accountSubmit">회원가입</button>
+                                <button class="accountCancel">취소</button>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="background">
+        <div class="modal">
+            <h6>회원 가입을 완료 하시겠습니까?</h6>
+            <div class="descBtn">
+                <button class="modalAccept">확인</button>
+                <button class="modalCancel">취소</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
