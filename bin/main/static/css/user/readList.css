@@ -203,3 +203,6 @@
   margin-right: 0.5rem;
 }
 
+.headerBox{
+  height: 64px !important;
+}
