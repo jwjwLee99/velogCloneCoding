@@ -197,10 +197,11 @@ b {
 }
 
 #scrollMoveHeader .tabMenu .menu {
+    margin-top: 0.7rem;
     margin-left: 6rem;
 }
-.tabMenu {
-    margin-top: -0.3rem !important;
+#scrollMoveHeader .headerBox {
+    margin-top: 0.65rem !important;
 }
 .section {
     display: flex;

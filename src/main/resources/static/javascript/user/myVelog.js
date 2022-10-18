@@ -23,6 +23,7 @@ $(function() {
         introduceMain.css("display", "none")
         tag.css("display", "flex")
         SearchBar.css("display", "flex")
+        $(".introBox").css("display", "none")
         UnderBar.animate({
             left: "0%"
         }, 300)
@@ -37,6 +38,7 @@ $(function() {
         introduceMain.css("display", "none")
         tag.css("display", "none")
         SearchBar.css("display", "none")
+        $(".introBox").css("display", "none")
         UnderBar.animate({
             left: "33%"
         }, 300)

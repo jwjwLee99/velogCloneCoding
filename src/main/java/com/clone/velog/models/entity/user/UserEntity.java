@@ -5,7 +5,6 @@ import java.time.LocalDateTime;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
