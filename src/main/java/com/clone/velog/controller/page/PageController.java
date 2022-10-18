@@ -26,9 +26,9 @@ public class PageController {
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         if(session.getAttribute("userRes") != null){
-            model.addAttribute("loginURL", "/fragment/header_login");
+            model.addAttribute("loginURL", "fragment/header_login");
         }else{
-            model.addAttribute("loginURL", "/fragment/header");
+            model.addAttribute("loginURL", "fragment/header");
         }
         return new ModelAndView("index")
             .addObject("code", "index");
@@ -48,7 +48,7 @@ public class PageController {
         UserRes userRes = userService.login(id).getData();
         session.setAttribute("userRes", userRes);
         model.addAttribute("userRes", session.getAttribute("userRes"));
-        model.addAttribute("loginURL", "/fragment/header_login");
+        model.addAttribute("loginURL", "fragment/header_login");
 
         return new ModelAndView("index")
             .addObject("code", "index");
@@ -59,7 +59,7 @@ public class PageController {
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         session.invalidate();; // session delete
-        model.addAttribute("loginURL", "/fragment/header");
+        model.addAttribute("loginURL", "fragment/header");
         return new ModelAndView("index")
             .addObject("code", "index");
     }
