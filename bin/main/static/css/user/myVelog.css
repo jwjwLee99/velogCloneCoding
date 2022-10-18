@@ -1,0 +1,637 @@
+#root {
+    height: 100%;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+div {
+    display: block;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px
+}
+
+textarea {
+    font-family: inherit;
+}
+
+#scrollMoveHeader {
+    height: 3.6rem;
+}
+
+/* 여기도 나중에 설정 해보기 */
+/* .invisiblePosition{
+
+} */
+
+/* 내 벨로그-글쓴이 */
+.container {
+    padding-bottom: 4rem;
+}
+
+.invisiblePosition {
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4px;
+    background: #63e6be;
+    opacity: 1;
+}
+
+.myVelogPostingMargin {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.authorInfoMargin {
+    margin-top: 5.625rem;
+}
+
+.authorInfoMargin .authorInfo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.authorInfo img {
+    display: block;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
+}
+
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.infoSection .name {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: bold;
+    color: #212529;
+}
+
+.infoSection .name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.infoSection .description {
+    white-space: pre-wrap;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    margin-top: 0.25rem;
+    color: #495057;
+    letter-spacing: -0.004em;
+}
+
+.infoMargin {
+    background: #E9ECEF;
+    width: 100%;
+    height: 1px;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.infoUnderline {
+    color: #868E96;
+    display: flex;
+}
+
+.infoUnderline-margin {
+    background: #F8F9FA;
+    height: 1rem;
+    margin-top: 2rem;
+    box-shadow: rgb(0 0 0 / 4%) 0px 8px 8px -8px inset, rgb(0 0 0 / 4%) 0px -8px 8px -8px inset;
+    display: none;
+}
+
+
+/* 글 시리즈 소개 메뉴 */
+
+.middleMenu-margin {
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.middleMenu-margin .middleMenu {
+    display: flex;
+    position: relative;
+}
+
+.middleMenu-margin .middleMenu a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 1.325rem;
+    width: 8rem;
+    height: 3rem;
+    color: #495057;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.middleMenu-margin .middleMenu a.active {
+    color: #20C997;
+}
+
+.middleMenuUnderBar {
+    width: 8rem;
+    height: 2px;
+    background: #20C997;
+    position: absolute;
+    bottom: -2px;
+}
+
+/* 글 포스트 검색창 */
+
+.myVelogSearchBar {
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.myVelogSearchBar .SearchBar {
+    display: flex;
+    height: 2.25rem;
+    border: 1px solid #ADB5BD;
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    -webkit-box-align: center;
+    align-items: center;
+    cursor: text;
+}
+
+.SearchBar svg {
+    margin-right: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    fill: rgb(173, 181, 189);
+    flex-shrink: 0;
+}
+
+.SearchBar input {
+    font-size: 0.875rem;
+    flex: 1 1 0%;
+    display: block;
+    line-height: 1rem;
+    height: 1rem;
+    padding: 0px;
+    border: none;
+    outline: 0px;
+    background: transparent;
+    color: #495057;
+    min-width: 0px;
+}
+
+/* 태그 목록 */
+
+.tagPosition {
+    display: flex;
+    position: relative;
+}
+
+.tagListPosition {
+    position: relative;
+}
+
+/* @media 여기 다시보기 */
+@media (max-width: 1200px) {
+    .tagList {
+        display: none;
+    }
+}
+
+.tagList {
+    position: absolute;
+    width: 11.5rem;
+    left: -13.5rem;
+}
+
+.tagList-last ul {
+    list-style: none;
+    padding-left: 0px;
+}
+
+.tagList-last .title {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ADB5BD;
+    margin-bottom: 1rem;
+    color: #495057;
+    font-weight: bold;
+}
+
+.clickTag {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #20C997;
+    font-weight: bold;
+}
+
+.clickTag a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.clickTag span {
+    margin-left: 0.5rem;
+    color: #868E96;
+    font-weight: normal;
+}
+
+.clickTag + .otherTag {
+    margin-top: 0.25rem;
+}
+
+.otherTag {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.otherTag a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.otherTag span {
+    margin-left: 0.5rem;
+    color: #868E96;
+    font-weight: normal;
+}
+
+/* 글 포스트 없을 때*/
+
+.emptyPost {
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.emptyPost img {
+    width: 20rem; 
+}
+
+.emptyPost .message {
+    font-size: 2rem;
+    color: #868E96;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* 글 포스트 */
+
+.postList {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    line-height: 1.5;
+}
+
+.postList :first-child {
+    padding-top: 0px;
+}
+
+.postList > a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.postList .post-thumbnail {
+    margin-bottom: 1rem;
+}
+
+.postImg {
+    width: 100%;
+    position: relative;
+}
+
+.postImg img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.postList h2 {
+    font-size: 1.5rem;
+    margin: 0px;
+    color: #212529;
+    word-break: keep-all;
+}
+
+.postList p {
+    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #495057;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+}
+
+.postList .tags-wrapper {
+    margin-bottom: -0.875rem;
+}
+
+.postList .subinfo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 1rem;
+    color: #868E96;
+    font-size: 0.875rem;
+}
+
+.postList .subinfo .separator {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.postList .subinfo .likes {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.postList .subinfo .likes svg {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: 0.25rem;
+}
+
+.publicPrivate {
+    background: rgb(52, 58, 64);
+    color: white;
+    line-height: 1;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", arial, 나눔고딕, "Nanum Gothic", 돋움, Dotum, Tahoma, Geneva, sans-serif;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.publicPrivate svg {
+    margin-right: 0.5rem;
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+/* 시리즈 포스트 없을 때 */
+
+.seriesDiv {
+    display: none;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-top: -3rem;
+}
+
+.emptySeries {
+    width: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 6rem;
+    margin-bottom: 3rem;
+}
+
+.emptySeries img {
+    width: 20rem;
+}
+
+.emptySeries .message {
+    font-size: 2rem;
+    color: #868E96;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+/* 시리즈 포스트 */
+
+.seriesPost {
+    width: 46%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 3rem;
+}
+
+.seriesImgLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.seriesImg {
+    width: 100%;
+    position: relative;
+}
+
+.seriesImg img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.seriesPost h4 {
+    font-size: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: #212529;
+}
+
+.seriesPost h4 a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.seriesPost .seriesInfo {
+    font-size: 0.875rem;
+    color: #868E96;
+}
+
+.seriesPost .seriesInfo .seriesCount {
+    color: #212529;
+}
+
+.seriesPost .seriesInfo .dot {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+
+
+/* 소개 없을 때 */
+
+.introduce {
+    width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.introduceNoneDisplay {
+    display: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.introduceNoneDisplay img {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.introduceNoneDisplay .message {
+    font-size: 2rem;
+    color: #868E96;
+    margin-bottom: 2rem;
+}
+
+.introduceBtn {
+    display: inline flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #12B886;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 0px 1.125rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+}
+
+/* 소개 글 작성 */
+.introduce .introBox {
+    display: none;
+    width: 100%;
+}
+
+.rightIntroduceBox{
+    width: 100%;
+}
+
+.saveIntroduce {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+}
+
+.saveBtn {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #12B886;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 0px 1.125rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+}
+
+.writeIntroduce textarea {
+    width: 100%;
+}
+
+.writeIntroduce textarea::placeholder {
+    font-style: italic;
+    color: #868E96;
+}
+
+/* 소개글 수정 */
+
+.introduce .introReviseBox {
+    display: none;
+    width: 100%;
+}
+
+.reviseIntroduceBox {
+    width: 100%;
+}
+
+.reviseIntroduce {
+    width: 100%;
+    display: flex;
+    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+}
+
+.reviseBtn {
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: #12B886;
+    color: #FFFFFF;
+    border-radius: 4px;
+    padding: 0px 1.125rem;
+    height: 2.5rem;
+    font-size: 1.125rem;
+}
+
+.writeReviseBox  textarea {
+    width: 100%;
+}
+
+.writeReviseduce textarea::placeholder {
+    font-style: italic;
+    color: #868E96;
+}

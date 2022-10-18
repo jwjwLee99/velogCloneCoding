@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>velog</title>
+    <link rel="shortcut icon" href="https://static.velog.io/favicon.ico" type="image/x-icon">
+    
+    
+    <script src="/src/main/resources/static/javascript/user/login.js"></script>
+    <link rel="stylesheet" href="/src/main/resources/static/css/user/login.css">
+
+</head>
+
+<body>
+    <div class="login">
+        <!-- 로그인 -->
+        <div class="loginpage">
+            <div class="gray-block">
+                <div><img src="https://static.velog.io/static/media/undraw_joyride_hnno.fae6b95e.svg" alt="welcome">
+                    <div class="welcome">환영합니다!</div>
+                </div>
+            </div>
+            <div class="white-block">
+                <div class="exit-loginpage"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                        </path>
+                    </svg></div>
+                <div class="block-login">
+                    <div class="content-login">
+                        <div class="upper-loginpage">
+                            <h2 data-testid="title">로그인</h2>
+                            <section>
+                                <div class="loginSection">
+                                    <form class="pwid">
+                                        <input tabindex="2" placeholder="아이디를 입력하세요." type="text" value="">
+                                        <input tabindex="3" placeholder="비밀번호를 입력하세요." type="password" value="">
+                                    </form>
+                                    <button class="loginSubmit" tabindex="4">로그인</button>
+                                </div>
+
+                            </section>
+                            <section>
+                                <h4>
+                                    <div class="find-id" tabindex="5" data-testid="switchmode">아이디 찾기</div> |
+                                    <div class="find-pw" tabindex="6" data-testid="switchmode">비밀번호 찾기</div>
+                                </h4>
+                                <div class="sosciallogin"><a tabindex="7"
+                                        href="https://v2.velog.io/api/v2/auth/social/redirect/github?next=/"
+                                        class="sosciallogin git" style="background: rgb(39, 46, 51);"><svg width="20"
+                                            height="20" fill="currentColor" viewBox="0 0 20 20">
+                                            <mask id="github" width="20" height="20" x="0" y="0"
+                                                maskUnits="userSpaceOnUse">
+                                                <path fill="#ffffff" fill-rule="evenodd"
+                                                    d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z"
+                                                    clip-rule="evenodd"></path>
+                                            </mask>
+                                            <g mask="url(#github)">
+                                                <path fill="currentColor" d="M0 0h20v20H0z"></path>
+                                            </g>
+                                        </svg></a><a tabindex="8"
+                                        href="https://v2.velog.io/api/v2/auth/social/redirect/google?next=/"
+                                        class="sosciallogin google" style="background: white;"><svg width="20"
+                                            height="20" fill="none" viewBox="0 0 20 20">
+                                            <path fill="#4285F4"
+                                                d="M19.99 10.187c0-.82-.069-1.417-.216-2.037H10.2v3.698h5.62c-.113.92-.725 2.303-2.084 3.233l-.02.124 3.028 2.292.21.02c1.926-1.738 3.037-4.296 3.037-7.33z">
+                                            </path>
+                                            <path fill="#34A853"
+                                                d="M10.2 19.931c2.753 0 5.064-.886 6.753-2.414l-3.218-2.436c-.862.587-2.017.997-3.536.997a6.126 6.126 0 0 1-5.801-4.141l-.12.01-3.148 2.38-.041.112c1.677 3.256 5.122 5.492 9.11 5.492z">
+                                            </path>
+                                            <path fill="#FBBC05"
+                                                d="M4.398 11.937a6.008 6.008 0 0 1-.34-1.971c0-.687.125-1.351.329-1.971l-.006-.132-3.188-2.42-.104.05A9.79 9.79 0 0 0 .001 9.965a9.79 9.79 0 0 0 1.088 4.473l3.309-2.502z">
+                                            </path>
+                                            <path fill="#EB4335"
+                                                d="M10.2 3.853c1.914 0 3.206.809 3.943 1.484l2.878-2.746C15.253.985 12.953 0 10.199 0 6.211 0 2.766 2.237 1.09 5.492l3.297 2.503A6.152 6.152 0 0 1 10.2 3.853z">
+                                            </path>
+                                        </svg></a><a tabindex="9"
+                                        href="https://v2.velog.io/api/v2/auth/social/redirect/facebook?next=/"
+                                        class="sosciallogin facebook" style="background: rgb(59, 89, 152);"><svg
+                                            width="20" height="20" fill="none" viewBox="0 0 20 20">
+                                            <mask id="facebook" width="12" height="20" x="4" y="0"
+                                                maskUnits="userSpaceOnUse">
+                                                <path fill="#fff" fill-rule="evenodd"
+                                                    d="M7.84 20v-8.945H4.844V7.5H7.84V4.7C7.84 1.655 9.7 0 12.414 0c1.3 0 2.418.098 2.742.14v3.18h-1.883c-1.476 0-1.761.703-1.761 1.73V7.5h3.332l-.457 3.555h-2.875V20"
+                                                    clip-rule="evenodd"></path>
+                                            </mask>
+                                            <g mask="url(#facebook)">
+                                                <path fill="#fff" d="M0 0h20v20H0z"></path>
+                                            </g>
+                                        </svg></a></div>
+                            </section>
+                        </div>
+                        <div class="foot"><span>아직 회원이 아니신가요?</span>
+                            <div class="link" tabindex="10" data-testid="switchmode">회원가입</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 회원가입 -->
+        <!-- display : none -->
+        <!-- 회원가입 버튼 누를 시 위에 로그인 wrapper (display:none) > 회원가입을 display : block -->
+        <!-- 취소 확인 > 취소 누를 시 로그인 창 뜨게 -->
+    </div>
+
+    <div class="search">
+        <!-- 아이디,비밀번호 찾기 -->
+        <div class="searchpage">
+            <div class="white-block">
+                <div class="exit-searchpage"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                        </path>
+                    </svg></div>
+                <div class="block-searchpage">
+                    <div class="content-searchpage">
+                        <div class="upper-searchpage">
+                            <div class="search-title">
+                                <h2>아이디 찾기</h2>
+                            </div>
+                            <section>
+                                <div class="searchsection">
+                                    <form class="find-name">
+                                        <div class="name">
+                                            <label>이름&nbsp;&nbsp;<input tabindex="2" placeholder="이름을 입력하세요."
+                                                    type="text" value=""></label>
+                                        </div>
+                                        <div class="pnum">
+                                            <label>번호&nbsp;&nbsp;<input tabindex="3" placeholder="전화번호를 입력하세요."
+                                                    type="tel" value=""></label>
+                                        </div>
+                                    </form>
+                                    <div class="findsubmit">
+                                        <button tabindex="4" class="enter" value="찾기" onClick="id_search()"> 찾기 </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="clink">
+                            <div class="pwfind" tabindex="5" data-testid="switchmode">비밀번호 찾기</div>
+                            <div class="loginBtn" tabindex="6" data-testid="switchmode">&nbsp로그인</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="findpw">
+        <!-- 비밀번호 찾기 -->
+        <div class="findpwpage">
+            <div class="white-block">
+                <div class="exit-findpwpage"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
+                        viewBox="0 0 24 24" tabindex="1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                        </path>
+                    </svg></div>
+                <div class="block-findpwpage">
+                    <div class="content-findpwpage">
+                        <div class="upper-findpwpage">
+                            <div class="findpw-title">
+                                <h2>비밀번호 찾기</h2>
+                            </div>
+                            <section>
+                                <div class="findpwsection">
+                                    <form class="find-pw1">
+                                        <div class="pw">
+                                            <label>아이디&nbsp;&nbsp;<input tabindex="2" placeholder="아이디를 입력하세요."
+                                                    type="text" value=""></label>
+                                        </div>
+                                        <div class="email">
+                                            <label>이메일&nbsp;&nbsp;<input tabindex="3" placeholder="이메일을 입력하세요."
+                                                    type="text" value=""></label>
+                                        </div>
+                                    </form>
+                                    <div class="findpwsubmit">
+                                        <button tabindex="4" class="pwenter" value="찾기" onClick="id_search()"> 찾기 </button>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="dlink">
+                            <div class="pwaccount" tabindex="5" data-testid="switchmode">회원가입</div>
+                            <div class="loginBtn2" tabindex="6" data-testid="switchmode">&nbsp로그인</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

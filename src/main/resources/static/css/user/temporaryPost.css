@@ -1,0 +1,77 @@
+.headerBox {
+  height: 64px !important
+}
+
+.temporaryMain {
+  margin-top: 5rem;
+  width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.temporaryMain > h1 {
+  line-height: 1.5;
+  font-size: 3rem;
+  margin-top: 0px;
+  margin-bottom: 3rem;
+  color: #212529;
+}
+
+.singlePost {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.singlePost h3 {
+  font-size: 1.5rem;
+  margin-top: 0px;
+  margin-bottom: 1.5rem;
+  color: #212529;
+}
+
+#title {
+  font-weight: bold !important;
+}
+
+.singlePost a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.singlePost p {
+  font-size: 1rem;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+  color: #495057;
+}
+
+.singlePost section {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.singlePost section .time {
+  color: #868E96;
+}
+
+.singlePost section .remove:hover {
+  color: rgb(250, 82, 82);
+}
+
+.singlePost section .remove {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #212529;
+  outline: none;
+  border: none;
+  background: none;
+  font-size: inherit;
+  padding: 0px;
+}
+
+.singlePost + .singlePost {
+  border-top: 1px solid #DEE2E6;
+}
