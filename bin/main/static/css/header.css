@@ -1,0 +1,525 @@
+a {
+    cursor: pointer !important;
+    text-decoration: none;
+}
+
+.dpNone {
+    display: none !important;
+}
+
+/* header.css */
+* {
+    box-sizing: inherit;
+}
+
+#root {
+    margin: 0 auto;
+}
+
+/* 고정 헤더 */
+header,
+.section {
+    width: 90%;
+    height: 4rem;
+    margin: 0 auto;
+}
+
+/* headerBox */
+div.headerBox {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+header .headerBox {
+    width: 100%;
+}
+
+/* index logo */
+div.headerBox .logo div.indexLogo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #212529;
+    font-size: 1.3125rem;
+    text-decoration: none;
+    font-family: "Fira Mono", monospace;
+    user-select: none;
+}
+
+div.headerBox .logo div.indexLogo a {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* posting logo 게시물 상세 들어갈때 display : flex */
+div.headerBox .logo .postingLogo {
+    height: 1.5rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #212529;
+    font-size: 1.3125rem;
+    text-decoration: none;
+    user-select: none;
+}
+
+div.headerBox .logo div.postingLogo .imgLogo {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+    font-family: "Fira Mono", monospace;
+}
+
+div.headerBox .logo div.postingLogo .imgLogo svg {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 1rem;
+    color: inherit;
+    display: block;
+}
+
+div.headerBox .logo div.postingLogo .userLogo {
+    display: block;
+    max-width: calc(100vw - 200px);
+    height: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    align-items: center;
+    -webkit-box-align: center;
+}
+
+/* nav */
+nav {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+
+nav button.visualMode {
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2.5rem;
+    margin-right: 0.25rem;
+    color: white;
+    position: relative;
+}
+
+nav button.visualMode .visualBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.visualMode:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+nav button.visualMode .visualBtn .visual {
+    color: #212529;
+}
+
+nav button.visualMode .visualBtn .visual>svg {
+    display: block;
+}
+
+nav a.search {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    outline: none;
+    border-radius: 50%;
+    color: #212529;
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
+
+a.search:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+nav a.search>svg {
+    width: 1.125rem;
+    height: 1.125rem;
+}
+
+/* 새 글 작성 로그인 완료 후에만 display : block */
+nav button.newPosting {
+    display: none;
+    margin-right: 1.25rem;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    outline: none;
+    font-weight: bold;
+    word-break: keep-all;
+    background: #F8F9FA;
+    border: 1px solid #212529;
+    color: #212529;
+    transition: all 0.125s ease-in 0s;
+    cursor: pointer;
+}
+
+.newPosting:hover {
+    background: #212529;
+    color: #fff;
+}
+
+/* user Login Button 로그인 전에 display : block */
+nav button.userLoginBtn {
+    display: block;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    word-break: keep-all;
+    background-color: #212529;
+    color: #fff;
+    transition: all 0.125s ease-in 0s;
+    cursor: pointer;
+}
+
+.userLoginBtn:hover {
+    background: #343A40;
+}
+
+/* login 후 */
+nav div div.userSection {
+    cursor: pointer;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+nav div div.userSection img {
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    box-shadow: rgb(0 0 0 / 9%) 0px 0px 8px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.125s ease-in 0s;
+}
+
+nav div div.userSection svg {
+    font-size: 1.5rem;
+    margin-left: 0.25rem;
+    color: #868E96;
+    transition: all 0.125s ease-in 0s;
+    margin-right: -0.4375rem;
+}
+
+nav div div.userSection>svg:hover {
+    color: #212529 !important;
+}
+
+
+/* scroll move header : 마우스 휠 위로 올릴때 나오도록 설정 필요*/
+#scrollMoveHeader {
+    display: none;
+    position: fixed;
+    top: 0px;
+    background: #fff;
+    width: 100%;
+    z-index: 10;
+    box-shadow: rgb(0 0 0 /8%) 0px 0px 8px;
+    user-select: none;
+    margin: 0 auto;
+}
+
+/* 스크롤헤더 트렌딩 밑줄부분 박스랑 맞추는거 여기 했음*/
+#scrollMoveHeader .tabMenu {
+    margin-top: 0rem;
+    margin-bottom: -0.5rem;
+}
+
+#scrollMoveHeader .tabMenu .menu {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    height: 4rem;
+    margin: 0 auto;
+    margin-left: 0rem;
+    margin-right: auto;
+}
+
+
+/* left section */
+.section .leftSection {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+}
+
+.section .leftSection .leftMenu {
+    display: flex;
+    position: relative;
+    width: 14rem;
+}
+
+.section .leftSection .leftMenu a {
+    width: 7rem;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: #868E96;
+    height: 3rem;
+}
+
+.section .leftSection .leftMenu a.active {
+    color: #212529;
+    font-weight: bold;
+}
+
+.section .leftSection .leftMenu a svg {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.section .leftSection .leftMenu .underLine {
+    left: 0%;
+    width: 50%;
+    height: 2px;
+    position: absolute;
+    bottom: 0px;
+    background: #343A40;
+}
+
+.section .leftSection .recentSelect {
+    background: #fff;
+    height: 2rem;
+    width: 6rem;
+    border-radius: 4px;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.875rem;
+    box-shadow: rgb(0 0 0 / 5%) 0px 0px 4px;
+    cursor: pointer;
+}
+
+.section .leftSection .recentSelect svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.rightMenu {
+    display: none;
+    position: absolute;
+    right: 0px;
+    top: 100%;
+    z-index: 5;
+}
+
+.rightMenu .recentMenu {
+    margin-top: 0.5rem;
+    width: 12rem;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px 0px;
+    background: #fff;
+    color: #212529;
+    transform-origin: right top;
+    opacity: 1;
+    transform: scale(1);
+}
+
+.rightMenu .recentMenu ul :hover {
+    background: #F8F9FA;
+}
+
+.rightMenu .recentMenu ul {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+    display: block;
+}
+
+.rightMenu .recentMenu li {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #F1F3F5;
+}
+
+.rightMenu .recentMenu ul li a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.rightMenu .recentMenu ul li a.active :visited {
+    color: #12B886;
+}
+
+.background {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+/* right section */
+.section .rightSection {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: cen;
+    justify-content: center;
+}
+
+.section .rightSection svg {
+    cursor: pointer;
+    font-size: 1.5rem;
+    counter-reset: #868E96;
+}
+
+
+/* right etcmenubtn 클릭시 생성 */
+.section .etcMenuBox {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 5;
+}
+
+.section .etcMenuBox .etcMenuContents {
+    opacity: 1;
+    transform: scale(1);
+    border: 1px solid #DEE2E6;
+    margin-top: 0.5rem;
+    width: 12rem;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px 0px;
+    background-color: #fff;
+    color: #212529;
+    transform-origin: right top;
+}
+
+.section .etcMenuBox .etcMenuContents ul {
+    list-style: none;
+    padding-left: 0px;
+    margin: 0px;
+}
+
+.section .etcMenuBox .etcMenuContents ul li {
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0px;
+    border-top: 1px solid #F1F3F5;
+}
+
+.section .etcMenuBox .etcMenuContents ul li a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: inherit;
+    text-decoration: none;
+}
+
+.section .etcMenuBox .etcMenuContents ul li :hover {
+    color: #12B886;
+}
+
+.section .etcMenuBox .ask {
+    border-top: 1px solid #DEE2E6;
+    padding: 1rem;
+}
+
+.section .etcMenuBox .ask h5 {
+    margin: 0px;
+    font-size: 0.75rem;
+}
+
+.section .etcMenuBox .ask .askEmail {
+    color: #212529;
+    font-size: 0.75rem;
+}
+
+.section .etcMenuBox .poweredBy {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.section .etcMenuBox .poweredBy img {
+    width: 120px;
+    height: auto;
+}
+
+/* 공통 CSS */
+.tagElement {
+    margin-bottom: 0.875rem;
+    background: #F8F9FA;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-right: 0.875rem;
+    color: #12B886;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}

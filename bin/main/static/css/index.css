@@ -1,0 +1,223 @@
+/* index.css */
+/*
+ 이런식으로 하는데
+ 선택자 class를 불러올때는 .클래스명이고, id는 #아이디명
+ 아니면 그냥 태그를 불러올수 있어
+ 일단 html이랑 css로 기본적인 디자인을 하고, 기능적으로 있는거는 나중에 생각하자
+ */
+ /*여기 건드려서 고정 상단바 메뉴 바꾸기*/
+
+ .main-list {
+    display: flex;
+    margin-top: 2rem;
+    width: 90%;
+    height: 4rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    height: 5000px;
+}
+
+/* 이것도 flex 이지?ㅇㅇ */
+.main-list2 {
+    display: none;
+    margin-top: 2rem;
+    width: 90%;
+    height: 4rem;
+    margin: 0 auto;
+    margin-top: 4rem;
+    height: 5000px;
+}
+
+.list-box {
+    flex: 1 1 0%;
+}
+
+.all-post{
+    display: flex;
+    margin: -1rem;
+    flex-wrap: wrap;
+}
+
+.post-margin {
+    width: 19.8rem;
+    background: var(--bg-element1);
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+    transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+    margin: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-img {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.img-size { /*여기 클래스 어떻게 사용되는지 알아보기 */
+    width: 100%;
+    position: relative;
+    padding-top: 52.1921%;
+}
+
+.img-size img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.preview-padding {
+    padding: 1rem;
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    margin-bottom: -1rem;
+}
+
+.preview-post {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.preview-post h4 {
+    font-size: 1rem;
+    margin: 0px 0px 0.25rem;
+    line-height: 1.5;
+    word-break: break-word;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #212529;
+}
+h4 {
+    display: block;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+.desciption-wrapper {
+    flex: 1 1 0%;
+}
+
+.desciption-wrapper p {
+    margin: 0px 0px 1.5rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    height: 3.9375rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #495057;
+}
+
+p {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.preview-padding .sub-info {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #868E96;
+}
+
+.preview-padding .separator {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.writer-info {
+    padding: 0.625rem 1rem;
+    border-top: 1px solid #F1F3F5;
+    display: flex;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.writer-info .user-info {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.writer-info .user-info img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    margin-right: 0.5rem;
+}
+
+.writer-info .user-info span {
+    color: #868E96;
+}
+
+.writer-info .user-info span b {
+    color:#212529;
+}
+b {
+    font-weight: bold;
+}
+
+.writer-info .like {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.writer-info .likes svg {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.5rem;
+}
+
+/* index.html 헤더 따로 수정 */
+
+#scrollMoveHeader .section {
+    width: 94.75%;
+}
+
+#scrollMoveHeader .tabMenu .menu {
+    margin-left: 6rem;
+}
+
+.section {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    height: 4rem;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 0rem;
+    margin-right: auto;
+}
+
+.recentSelect{
+    cursor: pointer;
+}
+
+.recentMenu li a.active-list {
+    color: #12B886 !important;
+}

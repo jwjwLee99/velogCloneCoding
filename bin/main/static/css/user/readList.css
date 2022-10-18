@@ -1,0 +1,205 @@
+#container {
+  margin-top: 6rem;
+}
+
+.mainPost {
+  margin-top: 1.5rem;
+  width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mainPost2 {
+  display:none;
+  margin-top: 1.5rem;
+  width: 1728px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#scrollMoveHeader .postMenu {
+  margin-left: 6rem;
+}
+
+.postMenu {
+  margin-top: 1.5rem;
+  display: flex;
+}
+
+
+.postMenu .tab-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.postButton {
+  width: 8rem;
+  height: 3rem;
+  font-size: 1.125rem;
+  color: #868E96;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.postButtom {
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  background: #343A40;
+}
+
+.postButton.active {
+  font-weight: bold;
+  color: #212529;
+}
+
+.postButton.underLine {
+  height: 2px;
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  background: #343A40;
+}
+.posts-top {
+  margin-top: 3rem;
+}
+
+.posts {
+  display: flex;
+  margin: -1rem;
+  flex-wrap: wrap;
+}
+
+.single-post {
+  width: 20rem;
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: rgb(0 0 0 / 4%) 0px 4px 16px 0px;
+  transition: box-shadow 0.25s ease-in 0s, transform 0.25s ease-in 0s;
+  margin: 1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-img{
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-style {
+  width: 100%;
+  position: relative;
+}
+
+.post-style img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.post-border {
+  padding: 1rem;
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+}
+
+.post-border h4 {
+  font-size: 1rem;
+  margin: 0px 0px 0.25rem;
+  line-height: 1.5;
+  word-break: break-word;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #212529;
+}
+
+.post-border .description-wrapper {
+  flex: 1 1 0%;
+}
+
+.post-border p {
+  margin: 0px 0px 1.5rem;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  height: 3.9375rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #495057;
+}
+
+.post-border .sub-info {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #868E96;
+}
+
+.post-border .sub-info .separator {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+.postUser {
+  padding: 0.625rem 1rem;
+  border-top: 1px solid #F1F3F5;
+  display: flex;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.postUser .userinfo {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.postUser .userinfo img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: block;
+  margin-right: 0.5rem;
+}
+
+.postUser .userinfo span {
+  color: #868E96;
+}
+
+.postUser .userinfo span b {
+  color: #212529;
+}
+
+.postUser .likes {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.postUser .likes svg {
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-right: 0.5rem;
+}
+
