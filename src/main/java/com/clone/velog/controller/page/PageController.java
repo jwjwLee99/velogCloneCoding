@@ -16,13 +16,13 @@ import com.clone.velog.service.user.UserService;
 
 // PageController : UI에서 사용자가 요청하는 페이지를 띄움
 @Controller
-@RequestMapping("")
+@RequestMapping("/")
 public class PageController {
 
     @Autowired
     private UserService userService;
     
-    @RequestMapping("/home")
+    @RequestMapping("")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         if(session.getAttribute("userRes") != null){
@@ -35,7 +35,7 @@ public class PageController {
     }
 
     // login Success API
-    @RequestMapping("/{id}")
+    @RequestMapping("{id}")
     public ModelAndView login_ok(HttpServletRequest request, HttpServletResponse response, @PathVariable(name = "id") String id, Model model) throws Exception{
         HttpSession session = request.getSession();
         UserRes userRes = userService.login(id).getData();
@@ -48,7 +48,7 @@ public class PageController {
     }
 
     // logout Success API
-    @RequestMapping("/logout")
+    @RequestMapping("logout")
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         session.invalidate();; // session delete

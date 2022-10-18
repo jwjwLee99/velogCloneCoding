@@ -6,17 +6,18 @@ import org.springframework.stereotype.Service;
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.entity.user.UserEntity;
 import com.clone.velog.models.network.Header;
+import com.clone.velog.models.network.request.UserReq;
 import com.clone.velog.models.network.response.UserRes;
 import com.clone.velog.repository.UserRepository;
 
 @Service
-public class UserService implements CrudInterface {
+public class UserService implements CrudInterface<UserReq, UserRes> {
 
     @Autowired
     private UserRepository userRepository;
 
     @Override
-    public Header create(Header request) {
+    public Header<UserRes> create(Header<UserReq> request) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -28,7 +29,7 @@ public class UserService implements CrudInterface {
     }
 
     @Override
-    public Header update(Header request) {
+    public Header<UserRes> update(Header<UserReq> request) {
         // TODO Auto-generated method stub
         return null;
     }
@@ -48,6 +49,7 @@ public class UserService implements CrudInterface {
             );
     }
     
+    // response
     private Header<UserRes> response(UserEntity user){
         UserRes userRes = UserRes.builder()
             .id(user.getId())
