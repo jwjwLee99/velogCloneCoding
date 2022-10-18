@@ -1,23 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="fragment/head :: head"></div>
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <title>velog</title>
-  <link rel="shortcut icon" href="https://static.velog.io/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="/src/main/resources/static/css/header.css">
-    <script src="/src/main/resources/static/javascript/header.js"></script>
 
   <!-- temporaryPost.css -->
-  <link rel="stylesheet" href="/src/main/resources/static/css/user/temporaryPost.css">
-  <script src="/src/main/resources/static/javascript/user/temporaryPost.js"></script>
+  <link rel="stylesheet" href="/css/user/temporaryPost.css">
+  <script src="/javascript/user/temporaryPost.js"></script>
 </head>
 
 <body>
@@ -55,19 +43,7 @@
                 clip-rule="evenodd" fill="currentColor"></path>
             </svg>
           </a>
-          <button class="newPosting dpNone">
-            새 글 작성
-          </button>
-          <div>
-            <button class="userLoginBtn">로그인</button>
-            <div class="userSection dpNone">
-              <img src="https://cdn4.iconfinder.com/data/icons/linecon/512/photo-256.png" alt="user" srcset="">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
-                width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10l5 5 5-5z"></path>
-              </svg>
-            </div>
-          </div>
+          <div th:replace="${loginURL} :: login"></div>
         </nav>
       </div>
     </header>
@@ -105,19 +81,7 @@
                 clip-rule="evenodd" fill="currentColor"></path>
             </svg>
           </a>
-          <button class="newPosting dpNone">
-            새 글 작성
-          </button>
-          <div>
-            <button class="userLoginBtn">로그인</button>
-            <div class="userSection dpNone">
-              <img src="https://cdn4.iconfinder.com/data/icons/linecon/512/photo-256.png" alt="user" srcset="">
-              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em"
-                width="1em" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7 10l5 5 5-5z"></path>
-              </svg>
-            </div>
-          </div>
+          <div th:replace="${loginURL} :: login"></div>
         </nav>
       </div>
     </div>

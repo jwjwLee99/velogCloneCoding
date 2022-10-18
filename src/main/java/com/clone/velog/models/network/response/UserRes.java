@@ -12,17 +12,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class UserRes {
-    private int userIndex;
-    private String userName;
-    private String userId;
-    private String userPassword;
-    private String userRrn;
-    private String userHp;
-    private String userEmail;
-    private String userImgName;
-    private String userImgOriName;
-    private String userImgURL;
-    private String userTitle;
-    private String userDescription;
-    private LocalDateTime userRegDate;
+    private Integer id;
+    private String userid;
+    private String userpw;
+    private String name;
+    private String nickName;
+    private String hp;
+    private String title;
+    private String descript;
+    private String email;
+    private String git;
+    private String twitter;
+    private String facebook;
+    private String homePage;
+    private String isAggreeEmail;
+    private String isAggreeUpdate;
+    private LocalDateTime regdate;
 }
