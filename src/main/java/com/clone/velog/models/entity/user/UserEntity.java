@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "user")
 @Builder
 @EntityListeners(AuditingEntityListener.class)
 public class UserEntity {

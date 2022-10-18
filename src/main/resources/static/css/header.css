@@ -41,7 +41,7 @@ header .headerBox {
 }
 
 /* index logo */
-div.headerBox .logo div.indexLogo {
+.indexLogo {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -55,7 +55,7 @@ div.headerBox .logo div.indexLogo {
     user-select: none;
 }
 
-div.headerBox .logo div.indexLogo a {
+.indexLogo a {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -64,7 +64,7 @@ div.headerBox .logo div.indexLogo a {
 }
 
 /* posting logo 게시물 상세 들어갈때 display : flex */
-div.headerBox .logo .postingLogo {
+.postingLogo {
     height: 1.5rem;
     display: flex;
     -webkit-box-align: center;
@@ -78,7 +78,7 @@ div.headerBox .logo .postingLogo {
     user-select: none;
 }
 
-div.headerBox .logo div.postingLogo .imgLogo {
+.postingLogo .imgLogo {
     display: flex;
     -webkit-box-align: center;
     align-items: center;
@@ -87,7 +87,7 @@ div.headerBox .logo div.postingLogo .imgLogo {
     font-family: "Fira Mono", monospace;
 }
 
-div.headerBox .logo div.postingLogo .imgLogo svg {
+.postingLogo .imgLogo svg {
     width: 1.75rem;
     height: 1.75rem;
     margin-right: 1rem;
@@ -95,7 +95,7 @@ div.headerBox .logo div.postingLogo .imgLogo svg {
     display: block;
 }
 
-div.headerBox .logo div.postingLogo .userLogo {
+.postingLogo .userLogo {
     display: block;
     max-width: calc(100vw - 200px);
     height: 100%;
@@ -175,8 +175,8 @@ nav a.search>svg {
 }
 
 /* 새 글 작성 로그인 완료 후에만 display : block */
-nav button.newPosting {
-    display: none;
+.newPosting {
+    margin-top: 3px;
     margin-right: 1.25rem;
     height: 2rem;
     padding-left: 1rem;
@@ -221,24 +221,24 @@ nav button.userLoginBtn {
 }
 
 /* login 후 */
-nav div div.userSection {
+.userSection {
     cursor: pointer;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
 }
 
-nav div div.userSection img {
+.userHeaderImg {
     display: block;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2.5rem !important;
+    width: 2.5rem !important;
     box-shadow: rgb(0 0 0 / 9%) 0px 0px 8px;
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.125s ease-in 0s;
 }
 
-nav div div.userSection svg {
+.userSection svg {
     font-size: 1.5rem;
     margin-left: 0.25rem;
     color: #868E96;
@@ -246,7 +246,7 @@ nav div div.userSection svg {
     margin-right: -0.4375rem;
 }
 
-nav div div.userSection>svg:hover {
+.userSection>svg:hover {
     color: #212529 !important;
 }
 
@@ -522,4 +522,31 @@ nav div div.userSection>svg:hover {
     text-decoration: none;
     font-weight: 500;
     font-size: 1rem;
+}
+
+.userUtil {
+    display: none;
+    position: absolute;
+    top: 100%;
+    margin-top: 1rem;
+    right: 0px;
+}
+.userMenu {
+    position: relative;
+    z-index: 9;
+    width: 12rem;
+    background: #FFFFFF;
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 8px;
+}
+.userMenu a {
+    color: inherit;
+    text-decoration: none;
+}
+.menuItem {
+    color: #212529;
+    padding: 0.75rem 1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
 }
