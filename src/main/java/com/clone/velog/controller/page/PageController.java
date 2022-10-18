@@ -7,9 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -18,13 +16,13 @@ import com.clone.velog.service.user.UserService;
 
 // PageController : UI에서 사용자가 요청하는 페이지를 띄움
 @Controller
-@RequestMapping("/")
+@RequestMapping("")
 public class PageController {
 
     @Autowired
     private UserService userService;
     
-    @RequestMapping("")
+    @RequestMapping("/home")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         if(session.getAttribute("userRes") != null){
@@ -54,7 +52,7 @@ public class PageController {
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
         session.invalidate();; // session delete
-        model.addAttribute("loginURL", "/fragemet/header");
+        model.addAttribute("loginURL", "/fragment/header");
         return new ModelAndView("index")
             .addObject("code", "index");
     }
