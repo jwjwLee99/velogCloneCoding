@@ -34,6 +34,13 @@ public class PageController {
             .addObject("code", "index");
     }
 
+    // login page
+    @RequestMapping("login")
+    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model){
+        return new ModelAndView("user/login")
+            .addObject("code", "login");
+    }
+
     // login Success API
     @RequestMapping("{id}")
     public ModelAndView login_ok(HttpServletRequest request, HttpServletResponse response, @PathVariable(name = "id") String id, Model model) throws Exception{
