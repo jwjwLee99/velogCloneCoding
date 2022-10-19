@@ -17,13 +17,16 @@ $(() => {
         }
         previousScroll = currentScroll;
     })
-    $("nav div div.userSection img").mouseover(()=> {
-        $("nav div div.userSection > svg").css("color", "#212529")
+    $(".userSection img").mouseover(()=> {
+        $(".userSection > svg").css("color", "#212529")
     })
-    $("nav div div.userSection img").mouseout(()=> {
-        $("nav div div.userSection > svg").css("color", "#868E96")
+    $(".userSection img").mouseout(()=> {
+        $(".userSection > svg").css("color", "#868E96")
     })
-
+    $(".userSection").click(function(){
+        $(".userUtil").fadeIn(100)
+        $(".background").fadeIn(100)
+    })
     $(".recentSelect").click(() => {
         $(".rightMenu").fadeIn(200)
         $(".background").fadeIn(200)
@@ -35,6 +38,7 @@ $(() => {
     $(".background").click(() => {
         $(".rightMenu").fadeOut(200)
         $(".background").fadeOut(200)
+        $(".userUtil").fadeOut(100)
     })
 
     // 오른쪽 설정 메뉴
