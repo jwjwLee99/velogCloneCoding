@@ -57,4 +57,10 @@ $(() => {
     })
 
     // recentSelect 메뉴목록 active 활성화
+
+
+    // search btn
+    $(".search").click(function(){
+        location.href = "/search"
+    })
 })

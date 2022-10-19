@@ -21,25 +21,9 @@ public class PageController {
 
     @Autowired
     private UserService userService;
-    
-    @RequestMapping("")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
-        HttpSession session = request.getSession();
-        if(session.getAttribute("userRes") != null){
-            model.addAttribute("loginURL", "fragment/header_login");
-        }else{
-            model.addAttribute("loginURL", "fragment/header");
-        }
-        return new ModelAndView("index")
-            .addObject("code", "index");
-    }
 
-    // login page
-    @RequestMapping("login")
-    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model){
-        return new ModelAndView("user/login")
-            .addObject("code", "login");
-    }
+
+    // api
 
     // login Success API
     @RequestMapping("{id}")
@@ -60,5 +44,39 @@ public class PageController {
         session.invalidate();; // session delete
         model.addAttribute("loginURL", "fragment/header");
         return "redirect:/";
+    }
+
+    // page
+    
+    // index
+    @RequestMapping("")
+    public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
+        HttpSession session = request.getSession();
+        if(session.getAttribute("userRes") != null){
+            model.addAttribute("loginURL", "fragment/header_login");
+        }else{
+            model.addAttribute("loginURL", "fragment/header");
+        }
+        return new ModelAndView("index")
+            .addObject("code", "index");
+    }
+
+    // login page
+    @RequestMapping("login")
+    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model){
+        return new ModelAndView("user/login")
+            .addObject("code", "login");
+    }
+
+    @RequestMapping("search")
+    public ModelAndView search(HttpServletRequest request, HttpServletResponse response, Model model){
+        HttpSession session = request.getSession();
+        if(session.getAttribute("userRes") != null){
+            model.addAttribute("loginURL", "fragment/header_login");
+        }else{
+            model.addAttribute("loginURL", "fragment/header");
+        }
+        return new ModelAndView("post/search")
+            .addObject("code", "search");
     }
 }
