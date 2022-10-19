@@ -57,5 +57,4 @@ $(() => {
     })
 
     // recentSelect 메뉴목록 active 활성화
-
 })
