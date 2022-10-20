@@ -13,7 +13,7 @@ $(() => {
             sh.slideUp("fast")
         }
         if(scrollTop == 0){
-            sh.fadeOut(1)
+            sh.fadeOut(100)
         }
         previousScroll = currentScroll;
     })
