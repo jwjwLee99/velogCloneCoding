@@ -18,7 +18,7 @@
     width: 768px;
     margin: 0 auto;
 }
-#container .titleWrap h1{
+#container .titleWrap .title{
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.5;
@@ -243,7 +243,7 @@ div.shareIcon svg {
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 4px 0px;
     position: relative;
 }
-.seriesInfo h2 {
+.seriesInfo .seriesTitle {
     margin-top: 0px;
     margin-bottom: 1.5rem;
     color: #495057;
@@ -553,7 +553,7 @@ button.disable {
     font-weight: bold;
     color: #495057;
 }
-.beforeAfter .beforePost .beforeTitle h3 {
+.beforeAfter .beforePost .beforeTitle .bfTitle {
     width: 100%;
     font-size: 1.125rem;
     color: #495057;
@@ -612,7 +612,7 @@ button.disable {
     font-weight: bold;
     color: #495057;
 }
-.afterPost a .afterTitle h3 {
+.afterPost a .afterTitle .afTitle {
     text-align: right;
     font-weight: bolder;
     width: 100%;
@@ -650,7 +650,7 @@ button.disable {
     margin-left: auto;
     margin-right: auto;
 }
-.replyWrap h4 {
+.replyWrap .replyCntText {
     font-size: 1.125rem;
     line-height: 1.5;
     font-weight: 600;
@@ -1090,7 +1090,7 @@ button.disable {
     color: inherit;
     text-decoration: none;
 }
-.interestingWrap .iWrapContents .iWrapList .iWrapElement .iWrapDetail .iWrapDetailLink h4 {
+.interestingWrap .iWrapContents .iWrapList .iWrapElement .iWrapDetail .iWrapDetailLink .iWrapTitle {
     font-size: 1rem;
     margin: 0px 0px 0.25rem;
     line-height: 1.5;
@@ -1182,7 +1182,7 @@ footer a img {
     padding: 2rem 1.5rem;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
 }
-.modalMain h3 {
+.modalMain .replyRemoveTitle {
     margin: 0px;
     font-size: 1.5rem;
     color: #212529;

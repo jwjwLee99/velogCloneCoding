@@ -23,9 +23,13 @@ public class PageController {
     private UserService userService;
 
 
-    // api
+    /*
+    *
+        api
+    * 
+    */
 
-    // login Success API
+    // login Success API - /{id}
     @RequestMapping("{id}")
     public String login_ok(HttpServletRequest request, HttpServletResponse response, @PathVariable(name = "id") String id, Model model) throws Exception{
         HttpSession session = request.getSession();
@@ -37,7 +41,7 @@ public class PageController {
         return "redirect:/";
     }
 
-    // logout Success API
+    // logout Success API - /logout
     @RequestMapping("logout")
     public String logout(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
@@ -46,9 +50,13 @@ public class PageController {
         return "redirect:/";
     }
 
-    // page
+    /* 
+    * 
+        page list
+    * 
+    */
     
-    // index
+    // index page - /
     @RequestMapping("")
     public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
@@ -61,13 +69,14 @@ public class PageController {
             .addObject("code", "index");
     }
 
-    // login page
+    // login page - /login
     @RequestMapping("login")
     public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model){
         return new ModelAndView("user/login")
             .addObject("code", "login");
     }
 
+    // search page - /search
     @RequestMapping("search")
     public ModelAndView search(HttpServletRequest request, HttpServletResponse response, Model model){
         HttpSession session = request.getSession();
@@ -79,4 +88,10 @@ public class PageController {
         return new ModelAndView("post/search")
             .addObject("code", "search");
     }
+
+    // postDetail page
+
+
+    /* Mypage list */
+
 }
