@@ -13,7 +13,7 @@ $(() => {
             sh.slideUp("fast")
         }
         if(scrollTop == 0){
-            sh.fadeOut(1)
+            sh.fadeOut(100)
         }
         previousScroll = currentScroll;
     })
@@ -57,4 +57,10 @@ $(() => {
     })
 
     // recentSelect 메뉴목록 active 활성화
+
+
+    // search btn
+    $(".search").click(function(){
+        location.href = "/search"
+    })
 })
