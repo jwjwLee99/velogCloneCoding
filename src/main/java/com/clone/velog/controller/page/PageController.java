@@ -91,7 +91,6 @@ public class PageController {
 
     // postDetail page
 
-
     /* Mypage list */
 
 }
