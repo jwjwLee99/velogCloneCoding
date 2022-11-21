@@ -40,57 +40,56 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
         return null;
     }
 
-    public Header<UserRes> login(String id) throws Exception{
+    public Header<UserRes> login(String id, String pw) throws Exception {
         Thread.sleep(300);
-        return userRepository.findByUserid(id)
-            .map(user -> response(user))
-            .orElseGet(
-                () -> Header.ERROR("데이터 없음")
-            );
+        return userRepository.findByUseridAndUserpw(id, pw)
+                .map(user -> response(user))
+                .orElseGet(
+                        () -> Header.ERROR("데이터 없음"));
     }
-    
+
     // response
-    private Header<UserRes> response(UserEntity user){
+    private Header<UserRes> response(UserEntity user) {
         UserRes userRes = UserRes.builder()
-            .id(user.getId())
-            .userid(user.getUserid())
-            .userpw(user.getUserpw())
-            .name(user.getName())
-            .nickName(user.getNickName())
-            .hp(user.getHp())
-            .title(user.getTitle())
-            .descript(user.getDescript())
-            .email(user.getEmail())
-            .git(user.getGit())
-            .twitter(user.getTwitter())
-            .facebook(user.getFacebook())
-            .homePage(user.getHomePage())
-            .isAggreeEmail(user.getIsAggreeEmail())
-            .isAggreeUpdate(user.getIsAggreeUpdate())
-            .regdate(user.getRegdate())
-            .build();
+                .id(user.getId())
+                .userid(user.getUserid())
+                .userpw(user.getUserpw())
+                .name(user.getName())
+                .nickName(user.getNickName())
+                .hp(user.getHp())
+                .title(user.getTitle())
+                .descript(user.getDescript())
+                .email(user.getEmail())
+                .git(user.getGit())
+                .twitter(user.getTwitter())
+                .facebook(user.getFacebook())
+                .homePage(user.getHomePage())
+                .isAggreeEmail(user.getIsAggreeEmail())
+                .isAggreeUpdate(user.getIsAggreeUpdate())
+                .regdate(user.getRegdate())
+                .build();
         return Header.OK(userRes);
     }
 
-    private UserRes responseOnlyUser(UserEntity user){
+    private UserRes responseOnlyUser(UserEntity user) {
         UserRes userRes = UserRes.builder()
-            .id(user.getId())
-            .userid(user.getUserid())
-            .userpw(user.getUserpw())
-            .name(user.getName())
-            .nickName(user.getNickName())
-            .hp(user.getHp())
-            .title(user.getTitle())
-            .descript(user.getDescript())
-            .email(user.getEmail())
-            .git(user.getGit())
-            .twitter(user.getTwitter())
-            .facebook(user.getFacebook())
-            .homePage(user.getHomePage())
-            .isAggreeEmail(user.getIsAggreeEmail())
-            .isAggreeUpdate(user.getIsAggreeUpdate())
-            .regdate(user.getRegdate())
-            .build();
+                .id(user.getId())
+                .userid(user.getUserid())
+                .userpw(user.getUserpw())
+                .name(user.getName())
+                .nickName(user.getNickName())
+                .hp(user.getHp())
+                .title(user.getTitle())
+                .descript(user.getDescript())
+                .email(user.getEmail())
+                .git(user.getGit())
+                .twitter(user.getTwitter())
+                .facebook(user.getFacebook())
+                .homePage(user.getHomePage())
+                .isAggreeEmail(user.getIsAggreeEmail())
+                .isAggreeUpdate(user.getIsAggreeUpdate())
+                .regdate(user.getRegdate())
+                .build();
         return userRes;
     }
 }

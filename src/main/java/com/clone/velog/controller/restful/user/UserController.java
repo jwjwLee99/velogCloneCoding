@@ -16,10 +16,10 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequestMapping("/api/user")
 @RequiredArgsConstructor
-public class UserController implements CrudInterface<UserReq, UserRes>{
-    
+public class UserController implements CrudInterface<UserReq, UserRes> {
+
     private final UserService userservice;
-    
+
     @Override
     public Header<UserRes> create(Header<UserReq> request) {
         // TODO Auto-generated method stub
@@ -46,8 +46,9 @@ public class UserController implements CrudInterface<UserReq, UserRes>{
 
     // 로그인
     @GetMapping("/login/{id}")
-    public Header<UserRes> login(@PathVariable(name = "id")String id) throws Exception{
-        return userservice.login(id);
+    public Header<UserRes> login(@PathVariable(name = "id") String id, @PathVariable(name = "pw") String pw)
+            throws Exception {
+        return userservice.login(id, pw);
     }
 
 }

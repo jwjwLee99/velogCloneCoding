@@ -10,4 +10,5 @@ import com.clone.velog.models.entity.user.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Integer>{
     Optional<UserEntity> findByUserid(String userid);
+    Optional<UserEntity> findByUseridAndUserpw(String userid, String userpw);
 }

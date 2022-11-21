@@ -45,7 +45,7 @@ $(() => {
         cancleBtn2.removeClass("active")
         main4.css("display", "flex")
         main2.css("display", "none")
-    })  
+    })
 
     cancleBtn2.click(() => {
         pwBtn.removeClass("active")
@@ -79,24 +79,24 @@ $(() => {
         main3.css("display", "none")
     })
 
-    $(".loginSubmit").click(function(){
-        if(!$("#userid").val() || !$("#userpw").val()){
+    $(".loginSubmit").click(function () {
+        if (!$("#userid").val() || !$("#userpw").val()) {
             alert('아이디와 비번을 정확히 입력하세요')
-        }else{
-            toLogin($("#userid").val())
+        } else {
+            toLogin($("#userid").val(), $("#userpw").val())
         }
     })
 
-    function toLogin(userid){
-        $.get("/api/user/login/" + userid, function(response){
+    function toLogin(userid, userpw) {
+        $.get("/api/user/login/" + userid + "/" + userpw, function (response) {
             let item = response.data;
-            if(!item){
+            if (!item) {
                 alert("아이디 또는 비밀번호를 잘못 입력했습니다. \n" +
                     "입력하신 내용을 확인해주세요")
-            }else if(item.userid === $("#userid").val() && item.userpw !== $("#userpw").val()){
+            } else if (item.userid === $("#userid").val() && item.userpw !== $("#userpw").val()) {
                 alert('비밀번호를 잘못 입력했습니다.')
-            }else if(item.userid === $("#userid").val() && item.userpw === $("#userpw").val()){
-                location.href = "/"+userid;
+            } else if (item.userid === $("#userid").val() && item.userpw === $("#userpw").val()) {
+                location.href = "/" + userid;
             }
         })
     }

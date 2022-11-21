@@ -22,18 +22,18 @@ public class PageController {
     @Autowired
     private UserService userService;
 
-
     /*
-    *
-        api
-    * 
-    */
+     *
+     * api
+     * 
+     */
 
     // login Success API - /{id}
     @RequestMapping("{id}")
-    public String login_ok(HttpServletRequest request, HttpServletResponse response, @PathVariable(name = "id") String id, Model model) throws Exception{
+    public String login_ok(HttpServletRequest request, HttpServletResponse response,
+            @PathVariable(name = "id") String id, @PathVariable(name = "pw") String pw, Model model) throws Exception {
         HttpSession session = request.getSession();
-        UserRes userRes = userService.login(id).getData();
+        UserRes userRes = userService.login(id, pw).getData();
         session.setAttribute("userRes", userRes);
         model.addAttribute("userRes", session.getAttribute("userRes"));
         model.addAttribute("loginURL", "fragment/header_login");
@@ -43,50 +43,51 @@ public class PageController {
 
     // logout Success API - /logout
     @RequestMapping("logout")
-    public String logout(HttpServletRequest request, HttpServletResponse response, Model model){
+    public String logout(HttpServletRequest request, HttpServletResponse response, Model model) {
         HttpSession session = request.getSession();
-        session.invalidate();; // session delete
+        session.invalidate();
+        ; // session delete
         model.addAttribute("loginURL", "fragment/header");
         return "redirect:/";
     }
 
-    /* 
-    * 
-        page list
-    * 
-    */
-    
+    /*
+     * 
+     * page list
+     * 
+     */
+
     // index page - /
     @RequestMapping("")
-    public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model){
+    public ModelAndView index(HttpServletRequest request, HttpServletResponse response, Model model) {
         HttpSession session = request.getSession();
-        if(session.getAttribute("userRes") != null){
+        if (session.getAttribute("userRes") != null) {
             model.addAttribute("loginURL", "fragment/header_login");
-        }else{
+        } else {
             model.addAttribute("loginURL", "fragment/header");
         }
         return new ModelAndView("index")
-            .addObject("code", "index");
+                .addObject("code", "index");
     }
 
     // login page - /login
     @RequestMapping("login")
-    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model){
+    public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
         return new ModelAndView("user/login")
-            .addObject("code", "login");
+                .addObject("code", "login");
     }
 
     // search page - /search
     @RequestMapping("search")
-    public ModelAndView search(HttpServletRequest request, HttpServletResponse response, Model model){
+    public ModelAndView search(HttpServletRequest request, HttpServletResponse response, Model model) {
         HttpSession session = request.getSession();
-        if(session.getAttribute("userRes") != null){
+        if (session.getAttribute("userRes") != null) {
             model.addAttribute("loginURL", "fragment/header_login");
-        }else{
+        } else {
             model.addAttribute("loginURL", "fragment/header");
         }
         return new ModelAndView("post/search")
-            .addObject("code", "search");
+                .addObject("code", "search");
     }
 
     // postDetail page
