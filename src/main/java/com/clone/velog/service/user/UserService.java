@@ -40,9 +40,9 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
         return null;
     }
 
-    public Header<UserRes> login(String id, String pw) throws Exception {
+    public Header<UserRes> login(String id) throws Exception {
         Thread.sleep(300);
-        return userRepository.findByUseridAndUserpw(id, pw)
+        return userRepository.findByUserid(id)
                 .map(user -> response(user))
                 .orElseGet(
                         () -> Header.ERROR("데이터 없음"));

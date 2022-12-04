@@ -31,9 +31,9 @@ public class PageController {
     // login Success API - /{id}
     @RequestMapping("{id}")
     public String login_ok(HttpServletRequest request, HttpServletResponse response,
-            @PathVariable(name = "id") String id, @PathVariable(name = "pw") String pw, Model model) throws Exception {
+            @PathVariable(name = "id") String id, Model model) throws Exception {
         HttpSession session = request.getSession();
-        UserRes userRes = userService.login(id, pw).getData();
+        UserRes userRes = userService.login(id).getData();
         session.setAttribute("userRes", userRes);
         model.addAttribute("userRes", session.getAttribute("userRes"));
         model.addAttribute("loginURL", "fragment/header_login");
