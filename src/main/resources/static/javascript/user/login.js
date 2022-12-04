@@ -83,12 +83,12 @@ $(() => {
         if (!$("#userid").val() || !$("#userpw").val()) {
             alert('아이디와 비번을 정확히 입력하세요')
         } else {
-            toLogin($("#userid").val(), $("#userpw").val())
+            toLogin($("#userid").val())
         }
     })
 
-    function toLogin(userid, userpw) {
-        $.get("/api/user/login/" + userid + "/" + userpw, function (response) {
+    function toLogin(userid) {
+        $.get("/api/user/login/" + userid, function (response) {
             let item = response.data;
             if (!item) {
                 alert("아이디 또는 비밀번호를 잘못 입력했습니다. \n" +

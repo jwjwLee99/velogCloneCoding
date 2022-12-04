@@ -45,10 +45,10 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     }
 
     // 로그인
-    @GetMapping("/login/{id}")
-    public Header<UserRes> login(@PathVariable(name = "id") String id, @PathVariable(name = "pw") String pw)
+    @GetMapping("/login/{userid}")
+    public Header<UserRes> login(@PathVariable("userid") String id)
             throws Exception {
-        return userservice.login(id, pw);
+        return userservice.login(id);
     }
 
 }
