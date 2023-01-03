@@ -39,4 +39,6 @@ public class UserEntity {
     private String isAggreeEmail;
     private String isAggreeUpdate;
     private LocalDateTime regdate;
+
+    private Integer imgId;
 }

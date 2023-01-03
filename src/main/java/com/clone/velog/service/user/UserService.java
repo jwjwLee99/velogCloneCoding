@@ -1,7 +1,11 @@
 package com.clone.velog.service.user;
 
+import java.io.IOException;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.entity.user.UserEntity;
@@ -18,26 +22,58 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
 
     @Override
     public Header<UserRes> create(Header<UserReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+
+        UserReq user = request.getData();
+
+        UserEntity res = userRepository.save(user.toEntity());
+
+        return response(res);
     }
 
     @Override
-    public String read(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header<UserRes> read(Integer id) {
+        return userRepository.findById(id)
+                .map(user -> response(user))
+                .orElseGet(() -> Header.ERROR("No Data"));
     }
 
     @Override
     public Header<UserRes> update(Header<UserReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+        UserReq userReq = request.getData();
+        Optional<UserEntity> user = userRepository.findById(userReq.getId());
+
+        return user.map(member -> {
+            member.setUserid(userReq.getUserid());
+            member.setUserpw(userReq.getUserpw());
+            member.setName(userReq.getName());
+            member.setNickName(userReq.getNickName());
+            member.setHp(userReq.getHp());
+            member.setTitle(userReq.getTitle());
+            member.setDescript(userReq.getDescript());
+            member.setEmail(userReq.getEmail());
+            member.setGit(userReq.getGit());
+            member.setTwitter(userReq.getTwitter());
+            member.setFacebook(userReq.getFacebook());
+            member.setHomePage(userReq.getHomePage());
+            member.setIsAggreeEmail(userReq.getIsAggreeEmail());
+            member.setIsAggreeUpdate(userReq.getIsAggreeUpdate());
+
+            return member;
+        })
+                .map(member -> userRepository.save(member))
+                .map(member -> response(member))
+                .orElseGet(() -> Header.ERROR("No Data"));
     }
 
     @Override
-    public String delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header delete(Integer id) {
+        Optional<UserEntity> user = userRepository.findById(id);
+
+        return user.map(
+                member -> {
+                    userRepository.delete(member);
+                    return Header.OK();
+                }).orElseGet(() -> Header.ERROR("No Data"));
     }
 
     public Header<UserRes> login(String id) throws Exception {
@@ -67,6 +103,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 .isAggreeEmail(user.getIsAggreeEmail())
                 .isAggreeUpdate(user.getIsAggreeUpdate())
                 .regdate(user.getRegdate())
+                .imgId(user.getImgId())
                 .build();
         return Header.OK(userRes);
     }
@@ -89,6 +126,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 .isAggreeEmail(user.getIsAggreeEmail())
                 .isAggreeUpdate(user.getIsAggreeUpdate())
                 .regdate(user.getRegdate())
+                .imgId(user.getImgId())
                 .build();
         return userRes;
     }

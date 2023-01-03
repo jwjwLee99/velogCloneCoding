@@ -28,4 +28,6 @@ public class UserRes {
     private String isAggreeEmail;
     private String isAggreeUpdate;
     private LocalDateTime regdate;
+
+    private Integer imgId;
 }

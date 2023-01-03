@@ -1,9 +1,15 @@
 package com.clone.velog.controller.restful.user;
 
+import java.io.IOException;
+
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.network.Header;
@@ -21,27 +27,25 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     private final UserService userservice;
 
     @Override
-    public Header<UserRes> create(Header<UserReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+    @PostMapping(value = "", consumes = { MediaType.APPLICATION_JSON_VALUE, MediaType.MULTIPART_FORM_DATA_VALUE })
+    public Header<UserRes> create(
+            @RequestPart Header<UserReq> request) {
+        return userservice.create(request);
     }
 
     @Override
-    public String delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    @Override
-    public String read(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header<UserRes> read(Integer id) {
+        return userservice.read(id);
     }
 
     @Override
     public Header<UserRes> update(Header<UserReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+        return userservice.update(request);
+    }
+
+    @Override
+    public Header delete(Integer id) {
+        return userservice.delete(id);
     }
 
     // 로그인
