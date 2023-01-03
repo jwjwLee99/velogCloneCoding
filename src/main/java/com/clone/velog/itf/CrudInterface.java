@@ -1,9 +1,5 @@
 package com.clone.velog.itf;
 
-import java.io.IOException;
-
-import org.springframework.web.multipart.MultipartFile;
-
 import com.clone.velog.models.network.Header;
 
 public interface CrudInterface<Req, Res> {
