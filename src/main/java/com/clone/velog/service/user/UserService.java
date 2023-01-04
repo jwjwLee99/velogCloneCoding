@@ -20,12 +20,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
 
     @Override
     public Header<UserRes> create(Header<UserReq> request) {
-
-        UserReq user = request.getData();
-
-        UserEntity res = userRepository.save(user.toEntity());
-
-        return response(res);
+        return response(userRepository.save(request.getData().toEntity()));
     }
 
     @Override

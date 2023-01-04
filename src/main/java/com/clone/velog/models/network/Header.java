@@ -24,7 +24,7 @@ public class Header<T> {
 
     private T data;
 
-    public static <T> Header<T> OK(){
+    public static <T> Header<T> OK(){ // 삭제 로직을 수행할때 OK만 날림
         return (Header<T>)Header.builder()
                 .transactionTime(LocalDateTime.now())
                 .resultCode("OK")
