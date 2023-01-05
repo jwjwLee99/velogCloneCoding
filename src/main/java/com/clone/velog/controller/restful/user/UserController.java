@@ -25,7 +25,7 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     private final UserService userservice;
 
     @Override
-    @PostMapping(value = "", consumes = { MediaType.APPLICATION_JSON_VALUE})
+    @PostMapping(value = "", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public Header<UserRes> create(
             @RequestBody Header<UserReq> request) {
         return userservice.create(request);

@@ -1,9 +1,11 @@
 package com.clone.velog.service.user;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.entity.user.UserEntity;
@@ -11,12 +13,16 @@ import com.clone.velog.models.network.Header;
 import com.clone.velog.models.network.request.UserReq;
 import com.clone.velog.models.network.response.UserRes;
 import com.clone.velog.repository.UserRepository;
+import com.clone.velog.service.img.ImgService;
 
 @Service
 public class UserService implements CrudInterface<UserReq, UserRes> {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private ImgService imgService;
 
     @Override
     public Header<UserRes> create(Header<UserReq> request) {
@@ -69,12 +75,25 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 }).orElseGet(() -> Header.ERROR("No Data"));
     }
 
+    // login
     public Header<UserRes> login(String id) throws Exception {
         Thread.sleep(300);
         return userRepository.findByUserid(id)
                 .map(user -> response(user))
                 .orElseGet(
                         () -> Header.ERROR("데이터 없음"));
+    }
+
+    // 사용자 이미지 수정
+    /*
+     * 이미지의 인덱스를 담은 리스트를 반환
+     * null값 반환시 기본 이미지로 전환
+     */
+    public Header<List<Integer>> updateProfileImg(Header<List<MultipartFile>> img) throws Exception {
+        if (img.getData().isEmpty()) {
+            return Header.ERROROfNull();
+        }
+        return imgService.create(img.getData());
     }
 
     // response

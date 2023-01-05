@@ -2,6 +2,7 @@ package com.clone.velog.controller.restful.post;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -9,6 +10,7 @@ import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.network.Header;
 import com.clone.velog.models.network.request.PostReq;
 import com.clone.velog.models.network.response.PostRes;
+import com.clone.velog.service.post.PostService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,10 +20,12 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PostController implements CrudInterface<PostReq, PostRes> {
     
+    private final PostService postService;
+
     @Override
-    public Header<PostRes> create(Header<PostReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header<PostRes> create(
+            @RequestBody Header<PostReq> request) {
+        return postService.create(request);
     }
 
     @Override

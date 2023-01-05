@@ -1,6 +1,7 @@
 package com.clone.velog.models.entity.user;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -40,5 +41,5 @@ public class UserEntity {
     private String isAggreeUpdate;
     private LocalDateTime regdate;
 
-    private Integer imgId;
+    private List<Integer> imgId;
 }

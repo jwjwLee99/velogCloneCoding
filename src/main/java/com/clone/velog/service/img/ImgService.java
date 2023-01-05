@@ -2,6 +2,10 @@ package com.clone.velog.service.img;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,33 +27,42 @@ public class ImgService {
     @Autowired
     private ImgRepository imgRepository;
 
-    public Integer create(MultipartFile img) throws IllegalStateException, IOException {
-        if (img.isEmpty()) {
-            return null;
+    // 리스트 형식으로 변환
+    public Header<List<Integer>> create(List<MultipartFile> imgList) throws Exception {
+        List<Integer> returnData = new ArrayList<>();
+
+        if (imgList.isEmpty()) {
+            return Header.ERROROfNull();
         }
 
-        String originName = img.getOriginalFilename();
+        for (int i = 0; i < imgList.size(); i++) {
+            String originName = imgList.get(i).getOriginalFilename();
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmSS");
+            String current_date = simpleDateFormat.format(new Date());
+            String extension = originName.substring(originName.lastIndexOf(".")).toLowerCase();
 
-        String uuid = UUID.randomUUID().toString();
+            if (extension.isEmpty()) {
+                continue;
+            }
 
-        String extension = originName.substring(originName.lastIndexOf(".")).toLowerCase();
+            String savedName = current_date + extension;
+            String savedPath = dir + savedName;
 
-        String savedName = uuid + extension;
+            Folder.mkdir();
+            imgList.get(i).transferTo(new File(savedPath));
 
-        String savedPath = dir + savedName;
+            ImgEntity imgSave = ImgEntity.builder()
+                    .orgNm(originName)
+                    .savedNm(savedName)
+                    .savedPath(savedPath)
+                    .build();
 
-        Folder.mkdir();
-        img.transferTo(new File(savedPath));
+            ImgEntity save = imgRepository.save(imgSave);
 
-        ImgEntity imgSave = ImgEntity.builder()
-                .orgNm(originName)
-                .savedNm(savedName)
-                .savedPath(savedPath)
-                .build();
+            returnData.add(save.getId());
+        }
 
-        ImgEntity save = imgRepository.save(imgSave);
-        System.out.println(save.toString());
-        return save.getId();
+        return Header.OK(returnData);
     }
 
     public Header<ImgRes> read(Integer id) {

@@ -1,6 +1,7 @@
 package com.clone.velog.models.network.response;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,5 +30,5 @@ public class UserRes {
     private String isAggreeUpdate;
     private LocalDateTime regdate;
 
-    private Integer imgId;
+    private List<Integer> imgId;
 }

@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @JsonAutoDetect
 @Builder
 public class Header<T> {
-    
+
     private LocalDateTime transactionTime;
 
     private String resultCode;
@@ -24,7 +24,7 @@ public class Header<T> {
 
     private T data;
 
-    public static <T> Header<T> OK(){ // 삭제 로직을 수행할때 OK만 날림
+    public static <T> Header<T> OK(){
         return (Header<T>)Header.builder()
                 .transactionTime(LocalDateTime.now())
                 .resultCode("OK")
@@ -32,8 +32,8 @@ public class Header<T> {
                 .build();
     }
 
-    public static <T> Header<T> OK(T data){ // 통신객체를 만듬
-        return (Header<T>)Header.builder()
+    public static <T> Header<T> OK(T data) { // 통신객체를 만듬
+        return (Header<T>) Header.builder()
                 .transactionTime(LocalDateTime.now())
                 .resultCode("OK")
                 .description("OK")
@@ -41,13 +41,19 @@ public class Header<T> {
                 .build();
     }
 
-    public static <T> Header<T> ERROR(String description){
-        return (Header<T>)Header.builder()
+    public static <T> Header<T> ERROR(String description) {
+        return (Header<T>) Header.builder()
                 .transactionTime(LocalDateTime.now())
                 .resultCode("ERROR")
                 .description(description)
                 .build();
     }
 
-
+    public static <T> Header<T> ERROROfNull() {
+        return (Header<T>) Header.builder()
+                .transactionTime(LocalDateTime.now())
+                .resultCode("ERROR")
+                .description(null)
+                .build();
+    }
 }
