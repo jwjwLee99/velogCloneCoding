@@ -35,7 +35,7 @@ public class UserReq {
     @CreatedDate
     private LocalDateTime regdate;
 
-    private List<Integer> imgId;
+    private String imgId;
 
     public UserEntity toEntity() {
         UserEntity build = UserEntity.builder()

@@ -2,6 +2,8 @@ package com.clone.velog.controller.restful.post;
 
 import java.util.List;
 
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,13 +18,14 @@ import lombok.RequiredArgsConstructor;
 
 // Restful API 작동하는 Controller
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api/post")
 @RequiredArgsConstructor
 public class PostController implements CrudInterface<PostReq, PostRes> {
     
     private final PostService postService;
 
     @Override
+    @PostMapping(value = "/", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public Header<PostRes> create(
             @RequestBody Header<PostReq> request) {
         return postService.create(request);

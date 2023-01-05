@@ -1,6 +1,7 @@
 package com.clone.velog.controller.restful.user;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,7 +33,8 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     }
 
     @Override
-    public Header<UserRes> read(Integer id) {
+    @GetMapping("/{id}")
+    public Header<UserRes> read(@PathVariable Integer id) {
         return userservice.read(id);
     }
 
@@ -42,7 +44,8 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     }
 
     @Override
-    public Header delete(Integer id) {
+    @DeleteMapping("/{id}")
+    public Header delete(@PathVariable Integer id) {
         return userservice.delete(id);
     }
 

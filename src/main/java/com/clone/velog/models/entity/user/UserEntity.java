@@ -41,5 +41,5 @@ public class UserEntity {
     private String isAggreeUpdate;
     private LocalDateTime regdate;
 
-    private List<Integer> imgId;
+    private String imgId;
 }

@@ -1,6 +1,5 @@
 package com.clone.velog.service.post;
 
-import org.apache.catalina.connector.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +22,9 @@ public class PostService implements CrudInterface<PostReq, PostRes> {
 
     @Override
     public Header<PostRes> create(Header<PostReq> request) {
+        if(request.getData().getPostTitle() == null || request.getData().getPostDescription() == null || request.getData().getPostUserIndex() == 0){
+            return Header.ERROROfNull();
+        }
         return response(postRepository.save(request.getData().toEntity()));
     }
 
