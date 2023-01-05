@@ -28,11 +28,11 @@ public class ImgService {
     private ImgRepository imgRepository;
 
     // 리스트 형식으로 변환
-    public List<Integer> create(List<MultipartFile> imgList) throws Exception {
+    public Header<List<Integer>> create(List<MultipartFile> imgList) throws Exception {
         List<Integer> returnData = new ArrayList<>();
 
         if (imgList.isEmpty()) {
-            return null;
+            return Header.ERROROfNull();
         }
 
         for (int i = 0; i < imgList.size(); i++) {
@@ -62,7 +62,7 @@ public class ImgService {
             returnData.add(save.getId());
         }
 
-        return returnData;
+        return Header.OK(returnData);
     }
 
     public Header<ImgRes> read(Integer id) {

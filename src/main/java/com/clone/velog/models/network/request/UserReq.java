@@ -1,6 +1,7 @@
 package com.clone.velog.models.network.request;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 
@@ -34,7 +35,7 @@ public class UserReq {
     @CreatedDate
     private LocalDateTime regdate;
 
-    private Integer imgId;
+    private List<Integer> imgId;
 
     public UserEntity toEntity() {
         UserEntity build = UserEntity.builder()

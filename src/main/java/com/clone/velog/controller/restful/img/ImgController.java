@@ -30,7 +30,7 @@ public class ImgController {
     private ImgService imgService;
 
     @PostMapping(value = "/save/list", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-    private List<Integer> create(@RequestParam("files") List<MultipartFile> files) throws Exception {
+    private Header<List<Integer>> create(@RequestParam("files") List<MultipartFile> files) throws Exception {
         return imgService.create(files);
     }
 
