@@ -2,7 +2,11 @@ package com.clone.velog.controller.restful.post;
 
 import java.util.List;
 
+import javax.print.attribute.standard.Media;
+
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,9 +36,9 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
     }
 
     @Override
-    public Header<PostRes> read(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    @GetMapping(value = "/{postIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public Header<PostRes> read(@PathVariable Integer postIndex) {
+        return postService.read(postIndex);
     }
 
     @Override

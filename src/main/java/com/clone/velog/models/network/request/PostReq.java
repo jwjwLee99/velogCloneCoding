@@ -47,6 +47,8 @@ public class PostReq {
                 .postTag(postTag)
                 .postHits(postHits)
                 .postLove(postLove)
+                .postUserIndex(postUserIndex)
+                .SeriesIndex(SeriesIndex)
                 .build();
 
         return build;

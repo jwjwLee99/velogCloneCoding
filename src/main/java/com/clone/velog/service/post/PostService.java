@@ -1,5 +1,9 @@
 package com.clone.velog.service.post;
 
+import java.util.Optional;
+
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -45,11 +49,17 @@ public class PostService implements CrudInterface<PostReq, PostRes> {
                 .build();
         return Header.OK(postRes);
     }
-
+    
     @Override
-    public Header<PostRes> read(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header<PostRes> read(Integer postIndex) {
+        
+        Optional<PostEntity> post = postRepository.findBypostIndex(postIndex);
+        if(post.isEmpty()){
+            return Header.ERROROfNull();
+        }
+        PostEntity postEntity = post.get();
+        
+        return response(postEntity);
     }
 
     @Override
@@ -63,5 +73,7 @@ public class PostService implements CrudInterface<PostReq, PostRes> {
         // TODO Auto-generated method stub
         return null;
     }
+
+    
     
 }
