@@ -138,7 +138,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 .isAggreeEmail(user.getIsAggreeEmail())
                 .isAggreeUpdate(user.getIsAggreeUpdate())
                 .regdate(user.getRegdate())
-                .imgId(user.getImgId())
+                .imgId(user.getImgId().toString())
                 .build();
         return userRes;
     }
