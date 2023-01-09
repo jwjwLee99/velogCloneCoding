@@ -45,7 +45,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
             member.setUserid(userReq.getUserid());
             member.setUserpw(userReq.getUserpw());
             member.setName(userReq.getName());
-            member.setNickName(userReq.getNickName());
+            member.setNickname(userReq.getNickname());
             member.setHp(userReq.getHp());
             member.setTitle(userReq.getTitle());
             member.setDescript(userReq.getDescript());
@@ -103,7 +103,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 .userid(user.getUserid())
                 .userpw(user.getUserpw())
                 .name(user.getName())
-                .nickName(user.getNickName())
+                .nickname(user.getNickname())
                 .hp(user.getHp())
                 .title(user.getTitle())
                 .descript(user.getDescript())
@@ -126,7 +126,7 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                 .userid(user.getUserid())
                 .userpw(user.getUserpw())
                 .name(user.getName())
-                .nickName(user.getNickName())
+                .nickname(user.getNickname())
                 .hp(user.getHp())
                 .title(user.getTitle())
                 .descript(user.getDescript())

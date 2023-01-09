@@ -79,6 +79,10 @@ $(() => {
         main3.css("display", "none")
     })
 
+    $(".link").click(function () {
+        location.href = "/join"
+    })
+
     $(".loginSubmit").click(function () {
         if (!$("#userid").val() || !$("#userpw").val()) {
             alert('아이디와 비번을 정확히 입력하세요')

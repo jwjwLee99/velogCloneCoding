@@ -21,7 +21,7 @@ public class UserReq {
     private String userid;
     private String userpw;
     private String name;
-    private String nickName;
+    private String nickname;
     private String hp;
     private String title;
     private String descript;
@@ -35,7 +35,7 @@ public class UserReq {
     @CreatedDate
     private LocalDateTime regdate;
 
-    private List<Integer> imgId;
+    private String imgId;
 
     public UserEntity toEntity() {
         UserEntity build = UserEntity.builder()
@@ -43,7 +43,7 @@ public class UserReq {
                 .userid(userid)
                 .userpw(userpw)
                 .name(name)
-                .nickName(nickName)
+                .nickname(nickname)
                 .hp(hp)
                 .title(title)
                 .descript(descript)

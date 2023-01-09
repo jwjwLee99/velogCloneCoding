@@ -17,7 +17,7 @@ public class UserRes {
     private String userid;
     private String userpw;
     private String name;
-    private String nickName;
+    private String nickname;
     private String hp;
     private String title;
     private String descript;
@@ -30,5 +30,5 @@ public class UserRes {
     private String isAggreeUpdate;
     private LocalDateTime regdate;
 
-    private List<Integer> imgId;
+    private String imgId;
 }

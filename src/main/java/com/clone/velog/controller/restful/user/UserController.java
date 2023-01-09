@@ -4,6 +4,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,9 +25,10 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     private final UserService userservice;
 
     @Override
-    @PostMapping(value = "", consumes = { MediaType.APPLICATION_JSON_VALUE })
+    @PostMapping(value = "")
     public Header<UserRes> create(
-            @RequestPart Header<UserReq> request) {
+            @RequestBody Header<UserReq> request) {
+        System.out.println(request.getData());
         return userservice.create(request);
     }
 

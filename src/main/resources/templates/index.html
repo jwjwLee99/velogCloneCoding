@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
-    xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <div th:replace="fragment/head :: head"></div>
+
 <head>
-    <!-- 여기는 css나 js등 사이트를 들어갔을때 직접 보이지는 않지만 기능적인것을 넣어두는 공간이야 head 태그는 ㅇㅋ? -->
-    <!-- 그리고 일일히 코드 안치고 자동완성기능이 있어 -->
-    <link rel="stylesheet" href="css/index.css">
-    <!-- js는 link로 연결 안해 -->
-    <script src="javascript/index.js"></script>
+    <link th:href="@{css/index.css}" rel="stylesheet" />
+    <script src="/javascript/index.js"></script>
 </head>
 
 <body>
+    <input type="hidden" name="userIndex" id="sessionUserIndex" th:value="${sessionUserIndex}">
     <div id="root">
         <!-- 고정 헤더 -->
         <header>
