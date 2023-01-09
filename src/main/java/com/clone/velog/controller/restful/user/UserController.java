@@ -29,10 +29,6 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     @PostMapping(value = "")
     public Header<UserRes> create(
             @RequestBody Header<UserReq> request) {
-<<<<<<< HEAD
-        System.out.println(request.getData());
-=======
->>>>>>> dbf6efd181df9d2044df7b9bca101ea31c59bbc2
         return userservice.create(request);
     }
 
