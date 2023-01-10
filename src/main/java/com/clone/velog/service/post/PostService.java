@@ -5,7 +5,10 @@ import java.util.Optional;
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.entity.post.PostEntity;
@@ -46,6 +49,8 @@ public class PostService implements CrudInterface<PostReq, PostRes> {
                 .postTag(post.getPostTag())
                 .postHits(post.getPostHits())
                 .postLove(post.getPostLove())
+                .postUserIndex(post.getPostUserIndex())
+                .SeriesIndex(post.getSeriesIndex())
                 .build();
         return Header.OK(postRes);
     }
@@ -64,16 +69,41 @@ public class PostService implements CrudInterface<PostReq, PostRes> {
 
     @Override
     public Header<PostRes> update(Header<PostReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+        PostReq postReq = request.getData(); 
+        Optional<PostEntity> postId = postRepository.findById(postReq.getPostIndex());
+
+        return postId.map(post -> {
+            post.setPostIndex(postReq.getPostIndex());
+            post.setPostTitle(postReq.getPostTitle());
+            post.setPostDescription(postReq.getPostDescription());
+            post.setPostImgName(postReq.getPostImgName());
+            post.setPostImgOriName(postReq.getPostImgOriName());
+            post.setPostImgURL(postReq.getPostImgURL());
+            post.setPostTempSave(postReq.getPostTempSave());
+            post.setPostRegDate(postReq.getPostRegDate());
+            post.setPostUpdateDate(postReq.getPostUpdateDate());
+            post.setPostTag(postReq.getPostTag());
+            post.setPostHits(postReq.getPostHits());
+            post.setPostLove(postReq.getPostLove());
+            post.setPostUserIndex(postReq.getPostUserIndex());
+            post.setSeriesIndex(postReq.getSeriesIndex());
+
+            return post;
+        })
+                .map(post -> postRepository.save(post))
+                .map(post -> response(post))
+                .orElseGet(() -> Header.ERROR("No Data"));
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+    public Header delete(Integer postIndex) {
+        Optional<PostEntity> post = postRepository.findById(postIndex);
 
-    
+        return post.map(
+            PostRes -> {
+                postRepository.delete(PostRes);
+                return Header.OK();
+            }).orElseGet(() -> Header.ERROR(" No data"));
+    }   
     
 }

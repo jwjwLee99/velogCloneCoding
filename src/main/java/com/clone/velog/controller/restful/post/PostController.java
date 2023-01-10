@@ -5,6 +5,7 @@ import java.util.List;
 import javax.print.attribute.standard.Media;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class PostController implements CrudInterface<PostReq, PostRes> {
     
-    private final PostService postService;
+    public final PostService postService;
 
     @Override
     @PostMapping(value = "/", consumes = { MediaType.APPLICATION_JSON_VALUE })
@@ -42,15 +43,15 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
     }
 
     @Override
-    public Header<PostRes> update(Header<PostReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+    @PostMapping(value = "/update", consumes = { MediaType.APPLICATION_JSON_VALUE })
+    public Header<PostRes> update(@RequestBody Header<PostReq> request) {
+        return postService.update(request);
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    @DeleteMapping(value = "/{postIndex}")
+    public Header delete(@PathVariable Integer postIndex) {
+        return postService.delete(postIndex);
     }
 
     public Header<List<PostRes>> list(){
