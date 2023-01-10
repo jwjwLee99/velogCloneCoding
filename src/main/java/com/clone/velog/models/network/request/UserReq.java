@@ -1,7 +1,6 @@
 package com.clone.velog.models.network.request;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import org.springframework.data.annotation.CreatedDate;
 

@@ -1,13 +1,12 @@
 package com.clone.velog.controller.restful.user;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.clone.velog.itf.CrudInterface;
@@ -27,8 +26,7 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
 
     @Override
     @PostMapping(value = "")
-    public Header<UserRes> create(
-            @RequestBody Header<UserReq> request) {
+    public Header<UserRes> create(@RequestBody Header<UserReq> request) {
         return userservice.create(request);
     }
 
@@ -39,7 +37,8 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     }
 
     @Override
-    public Header<UserRes> update(Header<UserReq> request) {
+    @PutMapping("/{id}")
+    public Header<UserRes> update(@RequestBody Header<UserReq> request) {
         return userservice.update(request);
     }
 
