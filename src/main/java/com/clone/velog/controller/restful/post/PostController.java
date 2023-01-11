@@ -2,8 +2,6 @@ package com.clone.velog.controller.restful.post;
 
 import java.util.List;
 
-import javax.print.attribute.standard.Media;
-
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
