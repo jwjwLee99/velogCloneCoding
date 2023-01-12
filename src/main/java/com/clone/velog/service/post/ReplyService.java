@@ -44,14 +44,15 @@ public class ReplyService implements CrudInterface<ReplyReq, ReplyRes> {
 
     // 댓글 목록 메서드 --> replyPostIndex받아오는게 안됨 내일 다시 해보기
     public Header<List<ReplyRes>> readList(Integer replyPostIndex) {
-        // Optional<ReplyEntity> replypostIndex = replyRepository.findById(replyPostIndex);
+        // Optional<ReplyEntity> replypostIndex = replyRepository.findByreplyPostIndex(replyPostIndex);
         // if(replypostIndex.isEmpty()){
-        //     return Header.ERROR("안되는거야 시발아");
+        //     return Header.ERROR("No replypostIndex");
         // }
         List<ReplyEntity> replyEntities = replyRepository.findAll();
         List<ReplyRes> replyList = new ArrayList<>();
 
-        if (/*replypostIndex.get() != null*/replyPostIndex == 1) {
+        // 해당 포스트인덱스의 댓글만 뽑기위한 if문을 쓸라하는데 안되네 ㅅㅂ
+        if (/*replypostIndex.get().getReplyPostIndex() != replyPostIndex*/replyPostIndex == 1) {
             for (ReplyEntity replyEntity : replyEntities) {
                 ReplyRes replyRes = ReplyRes.builder()
                         .replyIndex(replyEntity.getReplyIndex())
@@ -66,20 +67,39 @@ public class ReplyService implements CrudInterface<ReplyReq, ReplyRes> {
             }
             return Header.OK(replyList);
         }
-        else return Header.ERROR("No Data");
+        else return Header.ERROR("Have replypostIndex but, No Data");
         
     }
 
     @Override
     public Header<ReplyRes> update(Header<ReplyReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+        ReplyReq replyReq = request.getData();
+        Optional<ReplyEntity> replyIndex = replyRepository.findById(replyReq.getReplyIndex());
+
+        return replyIndex.map(reply -> {
+            reply.setReplyIndex(replyReq.getReplyIndex());
+            reply.setReplyDescription(replyReq.getReplyDescription());
+            reply.setReplyRegdate(replyReq.getReplyRegdate());
+            reply.setReplyUpdatedate(replyReq.getReplyUpdateDate());
+            reply.setReplyUserIndex(replyReq.getReplyUserIndex());
+            reply.setReplyPostIndex(replyReq.getReplyPostIndex());
+
+            return reply;
+        })
+                .map(reply -> replyRepository.save(reply))
+                .map(reply -> response(reply))
+                .orElseGet(() -> Header.ERROR("No diffrence"));
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header delete(Integer replyIndex) {
+        Optional<ReplyEntity> ReplyIndex = replyRepository.findById(replyIndex);
+
+        return ReplyIndex.map(
+            ReplyRes -> {
+                replyRepository.delete(ReplyRes);
+                return Header.OK();
+            }).orElseGet(() -> Header.ERROR(" No data"));
     }
 
 }

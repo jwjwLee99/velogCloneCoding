@@ -36,7 +36,7 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
 
     @Override
     @GetMapping(value = "/{postIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public Header<PostRes> read(@PathVariable Integer postIndex) {
+    public Header<PostRes> read(@PathVariable("postIndex") Integer postIndex) {
         return postService.read(postIndex);
     }
 
@@ -48,7 +48,7 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
 
     @Override
     @DeleteMapping(value = "/{postIndex}")
-    public Header delete(@PathVariable Integer postIndex) {
+    public Header delete(@PathVariable("postIndex") Integer postIndex) {
         return postService.delete(postIndex);
     }
 
