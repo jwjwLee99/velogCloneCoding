@@ -4,6 +4,7 @@ package com.clone.velog.controller.restful.post;
 import java.util.List;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,22 +39,22 @@ public class ReplyController implements CrudInterface<ReplyReq, ReplyRes> {
         return null;
     }
     
-    @GetMapping(value = "/{postIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public Header<List<ReplyRes>> readreply(@PathVariable("postIndex") Integer replyPostIndex) {
+    @GetMapping(value = "/{replyPostIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
+    public Header<List<ReplyRes>> readreply(@PathVariable("replyPostIndex") Integer replyPostIndex) {
         
         return replyService.readList(replyPostIndex);
     }
 
     @Override
-    public Header<ReplyRes> update(Header<ReplyReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+    @PostMapping(value = "/update", consumes = { MediaType.APPLICATION_JSON_VALUE })
+    public Header<ReplyRes> update(@RequestBody Header<ReplyReq> request) {
+        return replyService.update(request);
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    @DeleteMapping(value = "/delete/{replyIndex}")
+    public Header delete(@PathVariable("replyIndex") Integer replyIndex) {
+        return replyService.delete(replyIndex);
     }
     
 }
