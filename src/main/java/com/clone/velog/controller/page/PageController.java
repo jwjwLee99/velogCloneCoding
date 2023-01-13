@@ -69,7 +69,6 @@ public class PageController {
         }
         System.out.println(session.getAttribute("userRes"));
         return new ModelAndView("index")
-                .addObject(request)
                 .addObject("code", "index");
     }
 
@@ -101,35 +100,34 @@ public class PageController {
                 .addObject("code", "search");
     }
 
-    // // postDetail page
-    // @RequestMapping("{postTitle}/{userName}")
-    // public ModelAndView postDetail(HttpServletRequest request,
-    // HttpServletResponse response, Model model) {
-    // HttpSession session = request.getSession();
-    // if (session.getAttribute("userRes") != null) {
-    // model.addAttribute("loginURL", "fragment/header_login");
-    // } else {
-    // model.addAttribute("loginURL", "fragment/header");
-    // }
-    // return new ModelAndView("post/post")
-    // .addObject("code", "post");
-    // }
+    // postDetail page
+    @RequestMapping("post/{postTitle}")
+    public ModelAndView postDetail(HttpServletRequest request,
+            HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            model.addAttribute("loginURL", "fragment/header");
+        }
+        return new ModelAndView("post/postDetail")
+                .addObject("code", "post");
+    }
 
-    // // post write
-    // @RequestMapping("write")
-    // public ModelAndView postWrite(HttpServletRequest request, HttpServletResponse
-    // response, Model model) {
-    // HttpSession session = request.getSession();
-    // if (session.getAttribute("userRes") != null) {
-    // model.addAttribute("loginURL", "fragment/header_login");
-    // } else {
-    // return new ModelAndView("user/login")
-    // .addObject("code", "login");
-    // }
+    // post write
+    @RequestMapping("write")
+    public ModelAndView postWrite(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
 
-    // return new ModelAndView("post/postwrite")
-    // .addObject("code", "postwirte");
-    // }
+        return new ModelAndView("post/postwrite")
+                .addObject("code", "postwirte");
+    }
 
     /*
      * 
@@ -138,34 +136,32 @@ public class PageController {
      */
 
     // myVelog
-    // @RequestMapping("{userNickName}")
-    // public ModelAndView myVelog(HttpServletRequest request, HttpServletResponse
-    // response, Model model) {
-    // HttpSession session = request.getSession();
-    // if (session.getAttribute("userRes") != null) {
-    // model.addAttribute("loginURL", "fragment/header_login");
-    // } else {
-    // return new ModelAndView("user/login")
-    // .addObject("code", "login");
-    // }
+    @RequestMapping("my/{userNickName}")
+    public ModelAndView myVelog(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
 
-    // return new ModelAndView("user/myVelog")
-    // .addObject("code", "myVelog");
-    // }
+        return new ModelAndView("user/myVelog")
+                .addObject("code", "myVelog");
+    }
 
-    // // readList
-    // @RequestMapping("read")
-    // public ModelAndView readList(HttpServletRequest request, HttpServletResponse
-    // response, Model model) {
-    // HttpSession session = request.getSession();
-    // if (session.getAttribute("userRes") != null) {
-    // model.addAttribute("loginURL", "fragment/header_login");
-    // } else {
-    // return new ModelAndView("user/login")
-    // .addObject("code", "login");
-    // }
-    // return new ModelAndView("user/readList")
-    // .addObject("code", "readList");
-    // }
+    // readList
+    @RequestMapping("read")
+    public ModelAndView readList(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+        return new ModelAndView("user/readList")
+                .addObject("code", "readList");
+    }
 
 }

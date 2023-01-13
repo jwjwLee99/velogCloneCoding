@@ -96,18 +96,26 @@ $(function () {
         }
         RABtn++;
     })
-    $(".updateAlims").click(function () {
-        isAggreeEmail = true;
-        if (UABtn % 2 == 0) {
-            isAggreeEmail = true;
-        } else {
-            isAggreeEmail = false;
-        }
-        UABtn++;
-    })
+    // $(".updateAlims").click(function () {
+    //     isAggreeEmail = true;
+    //     if (UABtn % 2 == 0) {
+    //         isAggreeEmail = true;
+    //     } else {
+    //         isAggreeEmail = false;
+    //     }
+    //     UABtn++;
+    // })
 
     let jsonData;
     function join() {
+        let vtitle = velogtitle.val()
+        let vdesc = velogdesc.val()
+        if (vtitle == "") {
+            vtitle = nickname.val();
+        }
+        if (vdesc == "") {
+            vdesc = "안녕하세요. " + nickname.val() + " 벨로그에 오신 것을 환영합니다."
+        }
         jsonData = {
             data: {
                 userid: userid.val(),
@@ -116,8 +124,8 @@ $(function () {
                 nickname: nickname.val(),
                 hp: hp.val(),
                 email: email.val(),
-                title: velogtitle.val(),
-                descript: velogdesc.val(),
+                title: vtitle,
+                descript: vdesc,
                 isAggreeEmail: isAggreeEmail,
                 isAggreeUpdate: isUpdateAlarm
             }
