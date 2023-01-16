@@ -111,7 +111,7 @@ public class PageController {
             model.addAttribute("loginURL", "fragment/header");
         }
         return new ModelAndView("post/postDetail")
-                .addObject("code", "post");
+                .addObject("code", "postDetial");
     }
 
     // post write
@@ -136,7 +136,7 @@ public class PageController {
      */
 
     // myVelog
-    @RequestMapping("my/{userNickName}")
+    @RequestMapping("my")
     public ModelAndView myVelog(HttpServletRequest request, HttpServletResponse response, Model model) {
         HttpSession session = request.getSession();
         if (session.getAttribute("userRes") != null) {
@@ -162,6 +162,35 @@ public class PageController {
         }
         return new ModelAndView("user/readList")
                 .addObject("code", "readList");
+    }
+
+    // settting
+    @RequestMapping("setting")
+    public ModelAndView setting(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+        return new ModelAndView("user/setting")
+                .addObject("code", "setting");
+    }
+
+    // temporary post
+    @RequestMapping("temp")
+    public ModelAndView temp(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+
+        return new ModelAndView("user/temporaryPost")
+                .addObject("code", "temporaryPost");
     }
 
 }
