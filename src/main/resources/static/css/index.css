@@ -5,9 +5,9 @@
  아니면 그냥 태그를 불러올수 있어
  일단 html이랑 css로 기본적인 디자인을 하고, 기능적으로 있는거는 나중에 생각하자
  */
- /*여기 건드려서 고정 상단바 메뉴 바꾸기*/
+/*여기 건드려서 고정 상단바 메뉴 바꾸기*/
 
- .main-list {
+.main-list {
     display: flex;
     margin-top: 2rem;
     width: 90%;
@@ -32,7 +32,7 @@
     flex: 1 1 0%;
 }
 
-.all-post{
+.all-post {
     display: flex;
     margin: -1rem;
     flex-wrap: wrap;
@@ -56,7 +56,8 @@
     text-decoration: none;
 }
 
-.img-size { /*여기 클래스 어떻게 사용되는지 알아보기 */
+.img-size {
+    /*여기 클래스 어떻게 사용되는지 알아보기 */
     width: 100%;
     position: relative;
     padding-top: 52.1921%;
@@ -85,6 +86,7 @@
     color: inherit;
     text-decoration: none;
 }
+
 .preview-post h4 {
     font-size: 1rem;
     margin: 0px 0px 0.25rem;
@@ -95,6 +97,7 @@
     overflow: hidden;
     color: #212529;
 }
+
 h4 {
     display: block;
     margin-block-start: 1.33em;
@@ -103,6 +106,7 @@ h4 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
 .desciption-wrapper {
     flex: 1 1 0%;
 }
@@ -172,8 +176,9 @@ p {
 }
 
 .writer-info .user-info span b {
-    color:#212529;
+    color: #212529;
 }
+
 b {
     font-weight: bold;
 }
@@ -192,23 +197,23 @@ b {
 
 /* index.html 헤더 따로 수정 */
 
-#scrollMoveHeader .section {
+/* #scrollMoveHeader .section {
     width: 94.75%;
-}
+} */
 
-#scrollMoveHeader .tabMenu .menu {
+/* #scrollMoveHeader .tabMenu .menu {
     margin-top: 0.7rem;
     margin-left: 6rem;
-}
-#scrollMoveHeader .headerBox {
+} */
+/* #scrollMoveHeader .headerBox {
     margin-top: 0.65rem !important;
-}
+} */
 .section {
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
     -webkit-box-align: center;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
     height: 4rem;
     width: 100%;
@@ -217,7 +222,22 @@ b {
     margin-right: auto;
 }
 
-.recentSelect{
+/* .tabmanu {
+    height: 100%;
+    width: 90%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0 auto;
+} */
+.menu {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.recentSelect {
     cursor: pointer;
 }
 

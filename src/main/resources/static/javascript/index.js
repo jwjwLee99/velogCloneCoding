@@ -75,16 +75,3 @@ $(function () {
     })
 
 })
-$(function () {
-
-    const session = $("#sessionUserIndex").val()
-    if (session == "") {
-        console.log("login 안함")
-    } else {
-        let sessionObject = session.split("(")[1]
-        let id = sessionObject.split(",")[0]
-        let number = id.split("=")[1]
-
-        console.log(number)
-    }
-})

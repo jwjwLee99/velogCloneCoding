@@ -11,7 +11,7 @@
     <input type="hidden" name="userIndex" id="sessionUserIndex" th:value="${sessionUserIndex}">
     <div id="root">
         <!-- 고정 헤더 -->
-        <header>
+        <div class="fixedHeader">
             <div class="headerBox">
                 <div class="logo">
                     <div class="indexLogo"> <!-- velog로고 -->
@@ -141,14 +141,14 @@
                 </div>
             </div>
             <!-- 고정 중단 메뉴 끝 -->
-        </header>
+        </div>
         <!-- 고정 헤더 끝 -->
         <!-- 스크롤 헤더 -->
         <div id="scrollMoveHeader">
             <div class="headerBox">
                 <div class="logo">
                     <div class="indexLogo">
-                        <a href="">
+                        <a href="/">
                             <svg width="71" height="24" viewBox="0 0 71 24" fill="none" data-testid="velog-logo"
                                 class="velog-logo">
                                 <path
@@ -206,7 +206,7 @@
                                 <div class="underLine"></div>
                             </div>
                             <div class="recentSelect">
-                                이번주
+                                <span></span>
                                 <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
                                     height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M7 10l5 5 5-5z"></path>
