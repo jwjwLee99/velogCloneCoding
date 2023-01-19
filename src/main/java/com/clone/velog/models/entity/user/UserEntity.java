@@ -27,7 +27,7 @@ public class UserEntity {
     private String userid;
     private String userpw;
     private String name;
-    private String nickname;
+    private String nickName;
     private String hp;
     private String title;
     private String descript;
@@ -39,6 +39,4 @@ public class UserEntity {
     private String isAggreeEmail;
     private String isAggreeUpdate;
     private LocalDateTime regdate;
-
-    private String imgId;
 }

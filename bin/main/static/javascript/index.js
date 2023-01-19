@@ -1,6 +1,6 @@
 // index.js
 
-$(function () {
+$(function() {
     // 트렌딩 최신 active활성화
     let trandingBtn = $(".tranding")
     let latestBtn = $(".latest")
@@ -12,7 +12,7 @@ $(function () {
 
     let rightMenuBtn = $(".recentSelect")
 
-    trandingBtn.click(() => {
+    trandingBtn.click(()=> {
         trandingBtn.addClass("active")
         latestBtn.removeClass("active")
         main1.css("display", "flex")
@@ -23,7 +23,7 @@ $(function () {
         }, 300)
     })
 
-    latestBtn.click(() => {
+    latestBtn.click(()=> {
         trandingBtn.removeClass("active")
         latestBtn.addClass("active")
         main1.css("display", "none")
@@ -34,15 +34,15 @@ $(function () {
         }, 300)
     })
 
-
-    let today = $(".today")
+    
+    let today =  $(".today")
     let week = $(".week")
     let month = $(".month")
     let year = $(".year")
 
     $(".recentSelect span").text($(".active-list").text())
 
-    $(".today").click(function () {
+    $(".today").click(function(){
         $(".today").addClass("active-list")
         week.removeClass("active-list")
         month.removeClass("active-list")
@@ -50,7 +50,7 @@ $(function () {
         $(".recentSelect span").text("오늘")
     })
 
-    $(".week").click(function () {
+    $(".week").click(function(){
         $(".week").addClass("active-list")
         today.removeClass("active-list")
         month.removeClass("active-list")
@@ -58,7 +58,7 @@ $(function () {
         $(".recentSelect span").text("이번 주")
     })
 
-    $(".month").click(function () {
+    $(".month").click(function(){
         $(".month").addClass("active-list")
         week.removeClass("active-list")
         today.removeClass("active-list")
@@ -66,7 +66,7 @@ $(function () {
         $(".recentSelect span").text("이번 달")
     })
 
-    $(".year").click(function () {
+    $(".year").click(function(){
         $(".year").addClass("active-list")
         week.removeClass("active-list")
         month.removeClass("active-list")
@@ -74,4 +74,8 @@ $(function () {
         $(".recentSelect span").text("올해")
     })
 
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> 4aa3c597bc5fbb9a6ac1e0260be9084fe5dd9db4

@@ -1,18 +1,9 @@
-.find-pw,
-.find-id,
-.clink,
-.dlink {
-    cursor: pointer !important;
-    user-select: none !important;
-}
-
-.find-pw,
-.find-id {
+.find-pw,.find-id, .clink, .dlink { cursor: pointer !important; user-select: none !important; }
+.find-pw, .find-id {
     display: inline;
     color: #12B886;
     text-decoration: none;
 }
-
 .login {
     position: fixed;
     top: 0px;
@@ -26,15 +17,13 @@
     justify-content: center;
     z-index: 20;
 }
-
 .login .loginpage {
     width: 606px;
     height: 530px;
     animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
-    /* box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px; */
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     display: flex;
 }
-
 .login .loginpage .gray-block {
     width: 216px;
     background: #F8F9FA;
@@ -46,13 +35,11 @@
     -webkit-box-align: center;
     align-items: center;
 }
-
 .login .loginpage .gray-block img {
     width: 100%;
     height: auto;
     display: block;
 }
-
 .login .loginpage .gray-block .welcome {
     font-size: 1.75rem;
     margin-top: 1.5rem;
@@ -68,7 +55,6 @@
     display: flex;
     flex-direction: column;
 }
-
 .login .loginpage .white-block .exit-loginpage {
     display: flex;
     -webkit-box-pack: end;
@@ -77,13 +63,11 @@
     color: #868E96;
     margin-bottom: 2.25rem;
 }
-
 .login .loginpage .white-block .block-login {
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
 }
-
 .content-login {
     display: flex;
     flex: 1 1 0%;
@@ -92,12 +76,10 @@
     justify-content: space-between;
     line-height: 1.5;
 }
-
 .content-login h2 {
     font-size: 1.3125rem;
     color: #212529;
 }
-
 h2 {
     display: block;
     font-size: 1.5em;
@@ -107,25 +89,21 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
-
 .content-login h4 {
     margin-top: 1rem;
     margin-bottom: 1rem;
     color: #868E96;
     user-select: none;
 }
-
 .pwid {
     width: 100%;
     height: 3rem;
 
 }
-
 .loginSection {
     display: flex;
     justify-content: space-between;
 }
-
 .pwid input {
     display: block;
     border-radius: 2px;
@@ -140,12 +118,10 @@ h2 {
     appearance: none;
     outline: none;
 }
-
 .pwid input:focus {
     appearance: none;
     outline: 2px solid #12B886;
 }
-
 button.loginSubmit {
     position: relative;
     right: 10px;
@@ -162,13 +138,11 @@ button.loginSubmit {
     cursor: pointer;
     height: 6.6rem;
 }
-
 .sosciallogin {
     display: flex;
     justify-content: space-around;
     margin-top: 1.5rem;
 }
-
 .git {
     width: 3rem;
     height: 3rem;
@@ -182,7 +156,6 @@ button.loginSubmit {
     transition: all 0.125s ease-in 0s;
     color: white;
 }
-
 .google {
     width: 3rem;
     height: 3rem;
@@ -197,7 +170,6 @@ button.loginSubmit {
     color: white;
     border: 1px solid #DEE2E6;
 }
-
 .facebook {
     width: 3rem;
     height: 3rem;
@@ -211,32 +183,25 @@ button.loginSubmit {
     transition: all 0.125s ease-in 0s;
     color: white;
 }
-
 .content-login .foot span {
     margin-right: 0.25rem;
 }
-
 .content-login .foot {
     text-align: right;
 }
-
 .content-login .foot .link {
     display: inline-block;
     font-weight: bold;
     color: #12B886;
     cursor: pointer;
 }
-
-button:hover.loginSubmit,
-button:focus.loginsubmit {
+button:hover.loginSubmit, button:focus.loginsubmit {
     background: #20C997;
 }
-
 b {
     color: #12B886;
     text-decoration: none;
 }
-
 .account {
     position: fixed;
     top: 0px;
@@ -250,15 +215,13 @@ b {
     justify-content: center;
     z-index: 20;
 }
-
 .account .accountpage {
     width: 606px;
     height: 530px;
     animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
-    /* box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px; */
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     display: flex;
 }
-
 .account .accountpage .white-block {
     flex: 1 1 0%;
     background: #FFFFFF;
@@ -266,7 +229,6 @@ b {
     display: flex;
     flex-direction: column;
 }
-
 .account .accountpage .white-block .exit-accountpage {
     display: flex;
     -webkit-box-pack: end;
@@ -275,13 +237,11 @@ b {
     color: #868E96;
     margin-bottom: 2.25rem;
 }
-
 .account .accountpage .white-block .block-accountpage {
     flex: 1 1 0%;
     display: flex;
     flex-direction: column;
 }
-
 .content-accountpage {
     display: flex;
     flex: 1 1 0%;
@@ -290,12 +250,10 @@ b {
     justify-content: space-between;
     line-height: 1.5;
 }
-
 .content-accountpage h2 {
     font-size: 1.3125rem;
     color: #212529;
 }
-
 h2 {
     display: block;
     font-size: 1.5em;
@@ -305,23 +263,19 @@ h2 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
-
 .content-accountpage h4 {
     margin-top: 5rem;
     margin-bottom: 1rem;
     color: #868E96;
 }
-
 .creataccount {
     width: 100%;
     height: 0.5rem;
 }
-
 .accountSection {
     display: flex;
     justify-content: space-between;
 }
-
 .creataccount input {
     display: block;
     border-radius: 2px;
@@ -336,18 +290,15 @@ h2 {
     appearance: none;
     outline: none;
 }
-
 .pn input {
     display: inline;
 }
-
 .creataccount input:focus {
     appearance: none;
     outline: 2px solid #12B886;
 }
-
 button.accountSubmit {
-    position: fixed;
+    position: fixed ;
     right: 10px;
     background: #12B886;
     color: #FFFFFF;
@@ -384,15 +335,13 @@ button.accountSubmit {
     justify-content: center;
     z-index: 20;
 }
-
 .search .searchpage {
     width: 606px;
     height: 530px;
     animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
-    /* box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px; */
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     display: flex;
 }
-
 .search .searchpage .white-block {
     flex: 1 1 0%;
     background: #FFFFFF;
@@ -400,7 +349,6 @@ button.accountSubmit {
     display: flex;
     flex-direction: column;
 }
-
 .search .searchpage .white-block .exit-searchpage {
     display: flex;
     -webkit-box-pack: end;
@@ -409,7 +357,6 @@ button.accountSubmit {
     color: #868E96;
     margin-bottom: 0.25rem;
 }
-
 .content-searchpage {
     display: flex;
     flex: 1 1 0%;
@@ -418,12 +365,10 @@ button.accountSubmit {
     justify-content: space-between;
     line-height: 1.5;
 }
-
 .content-searchpage h2 {
     font-size: 1.5rem;
     color: #212529;
 }
-
 h2 {
     display: block;
     font-size: 1.5em;
@@ -433,7 +378,6 @@ h2 {
     margin-inline-end: 0px;
     font-weight: 900;
 }
-
 .find-name input {
     border-radius: 2px;
     color: #000000;
@@ -446,22 +390,19 @@ h2 {
     appearance: none;
     outline: none;
 }
-
 .find-name input:focus {
     appearance: none;
     outline: 2px solid #12B886;
 }
-
 .find-name {
     line-height: 4rem;
     font-size: 1.4rem;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left:50%;
+    transform:translateX(-50%);
     margin-bottom: 1rem;
     bottom: 450px;
 }
-
 button.enter {
     justify-content: center;
     right: 10px;
@@ -486,7 +427,6 @@ button.enter {
     justify-content: center;
     bottom: -220px;
 }
-
 .clink {
     position: relative;
     display: flex;
@@ -496,9 +436,7 @@ button.enter {
     justify-content: center;
     color: #12B886;
 }
-
-.name,
-.pnum {
+.name , .pnum {
     font-weight: 550;
 }
 
@@ -515,15 +453,13 @@ button.enter {
     justify-content: center;
     z-index: 20;
 }
-
 .findpw .findpwpage {
     width: 606px;
     height: 530px;
     animation: 0.4s ease-in-out 0s 1 normal forwards running cptskd;
-    /* box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px; */
+    box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     display: flex;
 }
-
 .findpw .findpwpage .white-block {
     flex: 1 1 0%;
     background: #FFFFFF;
@@ -531,7 +467,6 @@ button.enter {
     display: flex;
     flex-direction: column;
 }
-
 .findpw .findpwpage .white-block .exit-findpwpage {
     display: flex;
     -webkit-box-pack: end;
@@ -540,7 +475,6 @@ button.enter {
     color: #868E96;
     margin-bottom: 0.25rem;
 }
-
 .content-findpwpage {
     display: flex;
     flex: 1 1 0%;
@@ -549,12 +483,10 @@ button.enter {
     justify-content: space-between;
     line-height: 1.5;
 }
-
 .content-findpwpage h2 {
     font-size: 1.5rem;
     color: #212529;
 }
-
 h2 {
     display: block;
     font-size: 1.5em;
@@ -564,7 +496,6 @@ h2 {
     margin-inline-end: 0px;
     font-weight: 900;
 }
-
 .find-pw1 input {
     border-radius: 2px;
     color: #000000;
@@ -577,22 +508,19 @@ h2 {
     appearance: none;
     outline: none;
 }
-
 .find-pw1 input:focus {
     appearance: none;
     outline: 2px solid #12B886;
 }
-
 .find-pw1 {
     line-height: 4rem;
     font-size: 1.4rem;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left:50%;
+    transform:translateX(-50%);
     margin-bottom: 1rem;
     bottom: 450px;
 }
-
 button.pwenter {
     justify-content: center;
     right: 10px;
@@ -610,7 +538,6 @@ button.pwenter {
     height: 3.5rem;
     margin-right: 2px;
 }
-
 button.pwcancle {
     position: relative;
     right: 10px;
@@ -627,14 +554,12 @@ button.pwcancle {
     cursor: pointer;
     height: 3rem;
 }
-
 .findpwsubmit {
     position: relative;
     display: flex;
     justify-content: center;
     bottom: -220px;
 }
-
 .dlink {
     position: relative;
     display: flex;
@@ -644,9 +569,7 @@ button.pwcancle {
     text-align: right;
     color: #12B886;
 }
-
-.pw,
-.email {
+.pw , .email {
     font-weight: 550;
 }
 

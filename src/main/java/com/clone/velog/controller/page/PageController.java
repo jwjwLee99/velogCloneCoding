@@ -63,11 +63,9 @@ public class PageController {
         HttpSession session = request.getSession();
         if (session.getAttribute("userRes") != null) {
             model.addAttribute("loginURL", "fragment/header_login");
-            model.addAttribute("sessionUserIndex", session.getAttribute("userRes"));
         } else {
             model.addAttribute("loginURL", "fragment/header");
         }
-        System.out.println(session.getAttribute("userRes"));
         return new ModelAndView("index")
                 .addObject("code", "index");
     }
@@ -77,14 +75,6 @@ public class PageController {
     public ModelAndView loginPage(HttpServletRequest request, HttpServletResponse response, Model model) {
         return new ModelAndView("user/login")
                 .addObject("code", "login");
-    }
-
-    // join page
-    @RequestMapping(value = "join")
-    public ModelAndView requestMethodName(HttpServletRequest request, HttpServletResponse response, Model model) {
-        model.addAttribute("loginUrl", "fragment/header");
-        return new ModelAndView("user/join")
-                .addObject("code", "join");
     }
 
     // search page - /search

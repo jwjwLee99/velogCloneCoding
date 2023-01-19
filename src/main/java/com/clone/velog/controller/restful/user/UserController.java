@@ -1,11 +1,7 @@
 package com.clone.velog.controller.restful.user;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,27 +21,27 @@ public class UserController implements CrudInterface<UserReq, UserRes> {
     private final UserService userservice;
 
     @Override
-    @PostMapping(value = "")
-    public Header<UserRes> create(@RequestBody Header<UserReq> request) {
-        return userservice.create(request);
+    public Header<UserRes> create(Header<UserReq> request) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
-    @GetMapping("/{id}")
-    public Header<UserRes> read(@PathVariable Integer id) {
-        return userservice.read(id);
+    public String delete(Integer id) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
-    @PutMapping("/{id}")
-    public Header<UserRes> update(@RequestBody Header<UserReq> request) {
-        return userservice.update(request);
+    public String read(Integer id) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
-    @DeleteMapping("/{id}")
-    public Header delete(@PathVariable Integer id) {
-        return userservice.delete(id);
+    public Header<UserRes> update(Header<UserReq> request) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     // 로그인

@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <div th:replace="fragment/head :: head"></div>
-
 <head>
 
-    <link rel="stylesheet" th:href="@{css/post/postDetail.css}">
-    <script src="/javascript/post/postDetail.js"></script>
+    <link rel="stylesheet" href="/css/post/post.css">
+    <script src="/javascript/post/post.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -128,34 +127,24 @@
                                     <!-- facebook -->
                                     <div class="etcbox1">
                                         <div class="shareTag hoverLSM"">
-                                            <svg class=" shareSvg" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z">
-                                            </path>
+                                            <svg class="shareSvg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path>
                                             </svg>
                                         </div>
                                     </div>
                                     <!-- twitter -->
                                     <div class="etcbox2">
                                         <div class="shareTag hoverLSM"">
-                                            <svg class=" shareSvg" stroke="currentColor" fill="currentColor"
-                                            stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path
-                                                d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z">
-                                            </path>
+                                            <svg class="shareSvg" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
                                             </svg>
                                         </div>
                                     </div>
                                     <!-- 링크복사 -->
                                     <div class="etcbox3">
                                         <div class="shareTag hoverLSM"">
-                                            <svg class=" shareSvg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path
-                                                d="M21.586 10.461l-10.05 10.075c-1.95 1.949-5.122 1.949-7.071 0s-1.95-5.122 0-7.072l10.628-10.585c1.17-1.17 3.073-1.17 4.243 0 1.169 1.17 1.17 3.072 0 4.242l-8.507 8.464c-.39.39-1.024.39-1.414 0s-.39-1.024 0-1.414l7.093-7.05-1.415-1.414-7.093 7.049c-1.172 1.172-1.171 3.073 0 4.244s3.071 1.171 4.242 0l8.507-8.464c.977-.977 1.464-2.256 1.464-3.536 0-2.769-2.246-4.999-5-4.999-1.28 0-2.559.488-3.536 1.465l-10.627 10.583c-1.366 1.368-2.05 3.159-2.05 4.951 0 3.863 3.13 7 7 7 1.792 0 3.583-.684 4.95-2.05l10.05-10.075-1.414-1.414z"
-                                                fill="currentColor"></path>
+                                            <svg class="shareSvg" width="24" height="24" viewBox="0 0 24 24">
+                                                <path d="M21.586 10.461l-10.05 10.075c-1.95 1.949-5.122 1.949-7.071 0s-1.95-5.122 0-7.072l10.628-10.585c1.17-1.17 3.073-1.17 4.243 0 1.169 1.17 1.17 3.072 0 4.242l-8.507 8.464c-.39.39-1.024.39-1.414 0s-.39-1.024 0-1.414l7.093-7.05-1.415-1.414-7.093 7.049c-1.172 1.172-1.171 3.073 0 4.244s3.071 1.171 4.242 0l8.507-8.464c.977-.977 1.464-2.256 1.464-3.536 0-2.769-2.246-4.999-5-4.999-1.28 0-2.559.488-3.536 1.465l-10.627 10.583c-1.366 1.368-2.05 3.159-2.05 4.951 0 3.863 3.13 7 7 7 1.792 0 3.583-.684 4.95-2.05l10.05-10.075-1.414-1.414z" fill="currentColor"></path>
                                             </svg>
                                         </div>
                                     </div>
@@ -164,9 +153,7 @@
                             <div class="asdf">
                                 <div class="shareIcon hoverLSM">
                                     <svg width="24" height="24" viewBox="0 0 24 24" class="share">
-                                        <path fill="currentColor"
-                                            d="M5 7c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5zm11.122 12.065c-.073.301-.122.611-.122.935 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-1.165 0-2.204.506-2.935 1.301l-5.488-2.927c-.23.636-.549 1.229-.943 1.764l5.488 2.927zm7.878-15.065c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 .324.049.634.122.935l-5.488 2.927c.395.535.713 1.127.943 1.764l5.488-2.927c.731.795 1.77 1.301 2.935 1.301 2.209 0 4-1.791 4-4z">
-                                        </path>
+                                        <path fill="currentColor" d="M5 7c2.761 0 5 2.239 5 5s-2.239 5-5 5-5-2.239-5-5 2.239-5 5-5zm11.122 12.065c-.073.301-.122.611-.122.935 0 2.209 1.791 4 4 4s4-1.791 4-4-1.791-4-4-4c-1.165 0-2.204.506-2.935 1.301l-5.488-2.927c-.23.636-.549 1.229-.943 1.764l5.488 2.927zm7.878-15.065c0-2.209-1.791-4-4-4s-4 1.791-4 4c0 .324.049.634.122.935l-5.488 2.927c.395.535.713 1.127.943 1.764l5.488-2.927c.731.795 1.77 1.301 2.935 1.301 2.209 0 4-1.791 4-4z"></path>
                                     </svg>
                                 </div>
                             </div>
@@ -211,14 +198,12 @@
                             <div class="seriesNum">1/5</div>
                             <div class="seriesArrow">
                                 <button class="leftArrow disable">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                        height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
                                     </svg>
                                 </button>
                                 <button class="rightArrow">
-                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                        height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"></path>
                                     </svg>
                                 </button>
@@ -233,61 +218,46 @@
             <div class="mainContents">
                 Lorem Ipsum
                 "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
-                "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is
-                pain..."
-
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus neque purus, non fermentum metus
-                convallis vel.
-                Vivamus id neque nunc. Nullam vitae sollicitudin nibh. Sed sed ligula in orci dapibus efficitur vitae et
-                purus.
-                Sed nec libero mauris. Curabitur in enim augue. Etiam nec ante metus. Donec augue orci, feugiat vitae
-                accumsan vitae,
-                lobortis vel felis. Etiam eu dignissim odio, id pellentesque diam. Cras nibh felis, semper eu aliquet
-                at, viverra at turpis.
-                Phasellus facilisis consectetur nunc, id malesuada dolor tempus at.
+                "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."
+                
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus neque purus, non fermentum metus convallis vel. 
+                Vivamus id neque nunc. Nullam vitae sollicitudin nibh. Sed sed ligula in orci dapibus efficitur vitae et purus. 
+                Sed nec libero mauris. Curabitur in enim augue. Etiam nec ante metus. Donec augue orci, feugiat vitae accumsan vitae, 
+                lobortis vel felis. Etiam eu dignissim odio, id pellentesque diam. Cras nibh felis, semper eu aliquet at, viverra at turpis. 
+                Phasellus facilisis consectetur nunc, id malesuada dolor tempus at. 
                 Vivamus nec mauris ac sapien tristique pharetra id nec orci. Morbi vitae convallis nulla.
-                Etiam gravida libero id sapien pharetra, non pellentesque lectus mollis.
-                Vestibulum mattis ultrices dolor, ac elementum sem ullamcorper fermentum. Cras vestibulum odio ac luctus
-                ultrices.
-
-                Fusce euismod ac neque quis pulvinar. Fusce non iaculis erat, at pellentesque tortor.
-                Suspendisse ultricies ligula ac sapien tempor, sed pellentesque ex pulvinar. Integer fringilla,
-                augue et vulputate malesuada, quam enim posuere elit, blandit consectetur purus metus ac risus.
-                Duis ut massa mi. Aliquam interdum orci sit amet lorem aliquam porttitor. Phasellus fermentum,
-                massa eget viverra mattis, eros elit tempor massa, quis interdum tortor ipsum convallis metus.
-                Curabitur gravida congue neque, ac aliquet odio eleifend at. Integer urna ligula, tincidunt vitae
-                interdum et,
-                tristique at felis. Fusce vel erat commodo, gravida odio vitae, scelerisque massa. Quisque luctus
-                accumsan tortor ut porta.
-                Cras vitae finibus ligula. Quisque et pulvinar urna, ac ultrices magna. Etiam mauris felis, suscipit in
-                risus ac,
+                Etiam gravida libero id sapien pharetra, non pellentesque lectus mollis. 
+                Vestibulum mattis ultrices dolor, ac elementum sem ullamcorper fermentum. Cras vestibulum odio ac luctus ultrices.
+                
+                Fusce euismod ac neque quis pulvinar. Fusce non iaculis erat, at pellentesque tortor. 
+                Suspendisse ultricies ligula ac sapien tempor, sed pellentesque ex pulvinar. Integer fringilla, 
+                augue et vulputate malesuada, quam enim posuere elit, blandit consectetur purus metus ac risus. 
+                Duis ut massa mi. Aliquam interdum orci sit amet lorem aliquam porttitor. Phasellus fermentum, 
+                massa eget viverra mattis, eros elit tempor massa, quis interdum tortor ipsum convallis metus. 
+                Curabitur gravida congue neque, ac aliquet odio eleifend at. Integer urna ligula, tincidunt vitae interdum et, 
+                tristique at felis. Fusce vel erat commodo, gravida odio vitae, scelerisque massa. Quisque luctus accumsan tortor ut porta. 
+                Cras vitae finibus ligula. Quisque et pulvinar urna, ac ultrices magna. Etiam mauris felis, suscipit in risus ac, 
                 tempus sollicitudin quam.
-
-                Mauris tincidunt odio velit. Mauris iaculis, ex ac ultricies imperdiet, sapien turpis scelerisque diam,
-                iaculis interdum tellus ante vitae sapien. Cras nec egestas erat. Integer laoreet eu magna at lacinia.
-                In viverra massa vel felis bibendum, et dignissim ante consequat. Duis sed vulputate tellus.
-                Cras eget sem faucibus, varius ipsum ac, imperdiet nulla. Ut pharetra rhoncus ligula. Cras finibus,
-                ante et rhoncus vestibulum, ex nibh mattis odio, vel ultrices quam ex et tortor. Ut augue metus,
+                
+                Mauris tincidunt odio velit. Mauris iaculis, ex ac ultricies imperdiet, sapien turpis scelerisque diam, 
+                iaculis interdum tellus ante vitae sapien. Cras nec egestas erat. Integer laoreet eu magna at lacinia. 
+                In viverra massa vel felis bibendum, et dignissim ante consequat. Duis sed vulputate tellus. 
+                Cras eget sem faucibus, varius ipsum ac, imperdiet nulla. Ut pharetra rhoncus ligula. Cras finibus, 
+                ante et rhoncus vestibulum, ex nibh mattis odio, vel ultrices quam ex et tortor. Ut augue metus, 
                 blandit tempus fringilla sed, varius nec dui.
-
-                Quisque aliquet sodales erat, eu gravida sem feugiat in. Maecenas vestibulum elementum diam non
-                fringilla.
-                Etiam sed sapien eget felis bibendum vehicula vitae at enim. Vestibulum finibus ex sed feugiat ornare.
-                Suspendisse dictum porta imperdiet. Aenean lobortis molestie lectus, non blandit ante rutrum non.
-                Quisque posuere nunc neque, eget maximus mi porttitor non. Fusce rhoncus dui lectus, ut rutrum augue
-                blandit eu.
-                Proin eu molestie sapien. Duis ac neque ipsum. Integer nisl ex, euismod vitae hendrerit vel, aliquam a
-                sem.
-                Ut viverra aliquam suscipit. Morbi magna quam, cursus sed ligula eget, sollicitudin accumsan orci.
-                Curabitur congue augue condimentum, malesuada tortor sit amet, scelerisque nisi. Proin in enim
-                dignissim,
+                
+                Quisque aliquet sodales erat, eu gravida sem feugiat in. Maecenas vestibulum elementum diam non fringilla. 
+                Etiam sed sapien eget felis bibendum vehicula vitae at enim. Vestibulum finibus ex sed feugiat ornare. 
+                Suspendisse dictum porta imperdiet. Aenean lobortis molestie lectus, non blandit ante rutrum non. 
+                Quisque posuere nunc neque, eget maximus mi porttitor non. Fusce rhoncus dui lectus, ut rutrum augue blandit eu. 
+                Proin eu molestie sapien. Duis ac neque ipsum. Integer nisl ex, euismod vitae hendrerit vel, aliquam a sem. 
+                Ut viverra aliquam suscipit. Morbi magna quam, cursus sed ligula eget, sollicitudin accumsan orci. 
+                Curabitur congue augue condimentum, malesuada tortor sit amet, scelerisque nisi. Proin in enim dignissim, 
                 bibendum dolor ut, commodo dui.
-
-                Sed sed molestie eros, at rhoncus felis. Fusce molestie justo orci, id consequat odio porttitor ut.
-                Integer posuere, metus sit amet pulvinar fringilla, purus nisi ullamcorper massa, vitae ultrices ligula
-                massa ut nisi.
-                Pellentesque ac purus euismod, mollis nisl quis, dignissim mauris. Pellentesque tortor velit, consequat
-                sit amet lectus a,
+                
+                Sed sed molestie eros, at rhoncus felis. Fusce molestie justo orci, id consequat odio porttitor ut. 
+                Integer posuere, metus sit amet pulvinar fringilla, purus nisi ullamcorper massa, vitae ultrices ligula massa ut nisi. 
+                Pellentesque ac purus euismod, mollis nisl quis, dignissim mauris. Pellentesque tortor velit, consequat sit amet lectus a, 
                 dictum lacinia lectus. Etiam quis nisl ultricies, iaculis quam vel, mollis sem.
             </div>
             <!-- 게시물 상세 - 내용 끝 -->
@@ -296,8 +266,7 @@
                 <div>
                     <div class="author">
                         <a href="">
-                            <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG"
-                                alt="글쓴이 프로필">
+                            <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="글쓴이 프로필">
                         </a>
                         <div class="authorDetail">
                             <div class="authorName">
@@ -313,9 +282,7 @@
                         <a href="" class="authorHover">
                             <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
                                 <mask id="github" width="20" height="20" x="0" y="0" maskUnits="userSpaceOnUse">
-                                    <path fill="#ffffff" fill-rule="evenodd"
-                                        d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z"
-                                        clip-rule="evenodd"></path>
+                                    <path fill="#ffffff" fill-rule="evenodd" d="M6.69 15.944c0 .08-.093.145-.21.145-.133.012-.226-.053-.226-.145 0-.081.093-.146.21-.146.12-.012.226.053.226.146zm-1.255-.182c-.028.08.053.173.174.198.105.04.226 0 .25-.081.024-.08-.053-.173-.174-.21-.104-.028-.221.012-.25.093zm1.783-.068c-.117.028-.198.104-.186.197.012.08.117.133.238.105.117-.028.198-.105.186-.186-.012-.076-.121-.129-.238-.116zM9.87.242C4.278.242 0 4.488 0 10.08c0 4.471 2.815 8.298 6.835 9.645.516.093.697-.226.697-.488 0-.25-.012-1.63-.012-2.476 0 0-2.822.605-3.415-1.202 0 0-.46-1.173-1.121-1.475 0 0-.924-.633.064-.621 0 0 1.004.08 1.557 1.04.883 1.557 2.363 1.109 2.94.843.092-.645.354-1.093.645-1.36-2.255-.25-4.529-.576-4.529-4.455 0-1.109.307-1.665.952-2.375-.105-.262-.448-1.342.105-2.738C5.56 4.157 7.5 5.51 7.5 5.51a9.474 9.474 0 0 1 2.532-.344c.86 0 1.726.117 2.533.343 0 0 1.939-1.355 2.782-1.089.552 1.4.21 2.476.105 2.738.645.714 1.04 1.27 1.04 2.375 0 3.891-2.375 4.202-4.63 4.456.372.319.686.923.686 1.87 0 1.36-.012 3.041-.012 3.372 0 .262.186.58.698.488C17.266 18.379 20 14.552 20 10.08 20 4.488 15.464.24 9.871.24zM3.919 14.149c-.052.04-.04.133.029.21.064.064.157.093.21.04.052-.04.04-.133-.029-.21-.064-.064-.157-.092-.21-.04zm-.435-.326c-.028.052.012.117.093.157.064.04.145.028.173-.028.028-.053-.012-.117-.093-.158-.08-.024-.145-.012-.173.029zm1.306 1.435c-.064.053-.04.174.053.25.092.093.21.105.262.04.052-.052.028-.173-.053-.25-.088-.092-.21-.104-.262-.04zm-.46-.593c-.064.04-.064.146 0 .238.065.093.174.133.226.093.065-.053.065-.157 0-.25-.056-.093-.16-.133-.225-.08z" clip-rule="evenodd"></path>
                                 </mask>
                                 <g mask="url(#github)">
                                     <path fill="currentColor" d="M0 0h20v20H0z"></path>
@@ -323,16 +290,13 @@
                             </svg>
                         </a>
                         <a href="" class="authorHover">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
                             </svg>
                         </a>
                         <a href="" class="authorHover authorEmail">
                             <svg width="32" height="32" fill="none" viewBox="0 0 32 32" data-testid="email">
-                                <path fill="currentColor"
-                                    d="M16 16.871L1.019 5H30.98L16 16.871zm0 3.146L1 8.131V27h30V8.131L16 20.017z">
-                                </path>
+                                <path fill="currentColor" d="M16 16.871L1.019 5H30.98L16 16.871zm0 3.146L1 8.131V27h30V8.131L16 20.017z"></path>
                             </svg>
                         </a>
                         <div class="emailHover">
@@ -347,8 +311,7 @@
                 <div class="beforePost baHover">
                     <a href="">
                         <div class="beforeArrow">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"></path>
                             </svg>
                         </div>
@@ -363,8 +326,7 @@
                 <div class="afterPost baHover">
                     <a href="">
                         <div class="afterArrow">
-                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
-                                height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"></path>
                             </svg>
                         </div>
@@ -393,8 +355,7 @@
                                 <div class="replyHeader">
                                     <div class="replyProfile">
                                         <a href="">
-                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG"
-                                                alt="댓글 프로필">
+                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG" alt="댓글 프로필">
                                         </a>
                                         <div class="replyInfo">
                                             <div class="replyName">
@@ -425,30 +386,14 @@
                                 </div>
                                 <div class="replyToReply">
                                     <!-- 답글보기 - 답글이 있을때 -->
-                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none"
-                                            viewBox="0 0 12 12">
-                                            <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z">
-                                            </path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z"
-                                                clip-rule="evenodd"></path>
-                                        </svg><span>n개의 답글</span></div>
+                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>n개의 답글</span></div>
                                     <!-- 답글 달기 - 답글이 없을 때 -->
-                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none"
-                                            viewBox="0 0 12 12">
-                                            <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z">
-                                            </path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z"
-                                                clip-rule="evenodd"></path>
-                                        </svg><span>답글달기</span></div>
+                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>답글달기</span></div>
                                     <!-- 답글 숨기기 -->
                                     <div class="hideRtr rtrTogglBtn dpNone">
                                         <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
                                             <path fill="currentColor" d="M9.5 6.5v-1h-7v1h7z"></path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z"
-                                                clip-rule="evenodd"></path>
+                                            <path fill="currentColor" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z" clip-rule="evenodd"></path>
                                         </svg>
                                         <span>숨기기</span>
                                     </div>
@@ -469,8 +414,7 @@
                                                     <div class="rtrUser">
                                                         <div class="rtrProfile">
                                                             <a href="">
-                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG"
-                                                                    alt="답글프로필">
+                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="답글프로필">
                                                             </a>
                                                             <div class="rtrInfo">
                                                                 <div class="rtrName">
@@ -492,11 +436,7 @@
                                                     <div class="rtrText2">
                                                         <div class="rt2Btn rtrTogglBtn">
                                                             <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
-                                                                <path fill="currentColor"
-                                                                    d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path>
-                                                                <path fill="currentColor" fill-rule="evenodd"
-                                                                    d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z"
-                                                                    clip-rule="evenodd"></path>
+                                                                <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path>
                                                             </svg>
                                                             <span>답글 달기</span>
                                                         </div>
@@ -517,8 +457,7 @@
                                 <div class="replyHeader">
                                     <div class="replyProfile">
                                         <a href="">
-                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG"
-                                                alt="댓글 프로필">
+                                            <img src="https://velog.velcdn.com/images/hax0r/profile/99769383-72dc-4466-a903-a88262da6636/P20200124_201720582_F0849C4C-632A-4189-942B-0ED41F0C6A5F.JPG" alt="댓글 프로필">
                                         </a>
                                         <div class="replyInfo">
                                             <div class="replyName">
@@ -549,30 +488,14 @@
                                 </div>
                                 <div class="replyToReply">
                                     <!-- 답글보기 - 답글이 있을때 -->
-                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none"
-                                            viewBox="0 0 12 12">
-                                            <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z">
-                                            </path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z"
-                                                clip-rule="evenodd"></path>
-                                        </svg><span>n개의 답글</span></div>
+                                    <div class="showRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>n개의 답글</span></div>
                                     <!-- 답글 달기 - 답글이 없을 때 -->
-                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none"
-                                            viewBox="0 0 12 12">
-                                            <path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z">
-                                            </path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z"
-                                                clip-rule="evenodd"></path>
-                                        </svg><span>답글달기</span></div>
+                                    <div class="writeRtr rtrTogglBtn"><svg width="12" height="12" fill="none" viewBox="0 0 12 12"><path fill="currentColor" d="M5.5 2.5h1v3h3v1h-3v3h-1v-3h-3v-1h3v-3z"></path><path fill="currentColor" fill-rule="evenodd" d="M1 0a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm10 1H1v10h10V1z" clip-rule="evenodd"></path></svg><span>답글달기</span></div>
                                     <!-- 답글 숨기기 -->
                                     <div class="hideRtr rtrTogglBtn dpNone">
                                         <svg width="12" height="12" fill="none" viewBox="0 0 12 12">
                                             <path fill="currentColor" d="M9.5 6.5v-1h-7v1h7z"></path>
-                                            <path fill="currentColor" fill-rule="evenodd"
-                                                d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z"
-                                                clip-rule="evenodd"></path>
+                                            <path fill="currentColor" fill-rule="evenodd" d="M0 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm1 0h10v10H1V1z" clip-rule="evenodd"></path>
                                         </svg>
                                         <span>숨기기</span>
                                     </div>
@@ -593,8 +516,7 @@
                                                     <div class="rtrUser">
                                                         <div class="rtrProfile">
                                                             <a href="">
-                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG"
-                                                                    alt="답글프로필">
+                                                                <img src="https://velog.velcdn.com/images/woo0_hooo/profile/8b0a121b-7ef2-43ad-a221-1866b19615ba/FCA5DD5A-050E-4381-AA18-D4A4534EE1FD-12868-000005C908BB3506.JPG" alt="답글프로필">
                                                             </a>
                                                             <div class="rtrInfo">
                                                                 <div class="rtrName">
@@ -645,8 +567,7 @@
                         <div class="iWrapElement">
                             <a class="iWrapHeaderImg">
                                 <div class="iWrapImgBox">
-                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png"
-                                        alt="추천글 이미지"></img>
+                                    <img src="https://velog.velcdn.com/images/sylagape1231/post/f5355da9-b05f-4612-a9dd-04960f41d326/%EA%B7%B8%EB%A6%BC1.png" alt="추천글 이미지"></img>
                                 </div>
                             </a>
                             <div class="iWrapDetail">
@@ -654,12 +575,10 @@
                                     <span class="iWrapTitle">추천글 제목</span>
                                     <div class="iWrapDesc">
                                         <p>
-                                            추천글 내용
-                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores
-                                            officiis,
-                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque
-                                            sapiente.
+                                            추천글 내용 
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+                                            In commodi, aliquid minus saepe praesentium blanditiis asperiores dolores officiis,
+                                            odit, earum quam libero delectus laborum nobis quis tenetur quisquam atque sapiente.
                                         </p>
                                     </div>
                                 </a>
