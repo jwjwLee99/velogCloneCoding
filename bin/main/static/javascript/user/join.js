@@ -1,7 +1,7 @@
 $(() => {
     $(".etcInput").focusin(function(){
         $(this).next('.focus-border').css("visibility", "visible").animate({
-            width: "99%"
+            width: "100%"
         }, 400)
     })
     $(".etcInput").focusout(function(){

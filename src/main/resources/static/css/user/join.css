@@ -2,65 +2,85 @@
     width: 100%;
     user-select: none;
 }
+
 .account .accountpage {
     width: 50%;
     margin: 0 auto;
     margin-top: 5%;
 }
-.account .accountpage .white-block h2{
+
+.account .accountpage .white-block h2 {
     height: 4rem;
     text-align: center;
     font-size: 2.25rem;
     font-weight: 900;
 }
+
 section {
     margin-top: 1rem;
 }
+
 section table {
     position: relative;
     width: 50%;
     margin: 0 auto;
+    border: none;
     border-bottom: 1px solid rgb(18, 184, 134, 0.6);
 }
+
 section table tr {
     height: 4rem;
     width: 500px;
     overflow: hidden;
+    border: none;
 }
+
 section table .last {
     border-top: 1px solid rgb(18, 184, 134, 0.6);
 }
+
 .last td {
     padding-top: 20px;
 }
-section table tr:nth-child(odd){
+
+section table tr:nth-child(odd) {
     height: 2.5rem;
 }
-section table tr:nth-child(2n){
+
+section table tr:nth-child(2n) {
     height: 6rem;
 }
+
 section table tr td {
+    width: 100%;
+    border: none;
     font-weight: bold;
     font-size: 1.25rem;
     padding-top: 0.5rem;
 }
-section table tr td input{
+
+section table tr td input {
     appearance: none;
-    width: 475px;
+    width: 99%;
     height: 2.25rem;
     border: none;
     outline: none;
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    margin: 0 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 }
-.focus-border{
+
+.focus-border {
     visibility: hidden;
     position: relative;
+    display: inline-block;
     left: 0;
-    bottom: 15px;
-    width: 0;
+    bottom: 16.5px;
+    width: 0.0001px;
     height: 2px;
+    margin: 0 auto;
     background-color: #12B886;
 }
+
 .isIdBox {
     position: absolute;
     right: 0;
@@ -70,6 +90,7 @@ section table tr td input{
     padding: 5px;
     color: #12B886;
 }
+
 .isPWBox {
     position: absolute;
     right: 0;
@@ -78,6 +99,7 @@ section table tr td input{
     text-align: right;
     color: #12B886;
 }
+
 .isPWCBox {
     position: absolute;
     right: 0;
@@ -86,27 +108,35 @@ section table tr td input{
     text-align: right;
     color: #12B886;
 }
-.isId, .isPW, .isPWC {
+
+.isId,
+.isPW,
+.isPWC {
     font-size: 0.95rem;
 }
+
 .tt {
     color: #495057;
 }
+
 span {
     margin-right: 5px;
     color: red;
 }
+
 .btnBox {
     margin-top: 50px;
     margin-bottom: 100px;
 }
+
 .btnBox section {
     width: 50%;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
+
 .btnBox section button {
     width: 200px;
     height: 50px;
@@ -117,39 +147,48 @@ span {
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     cursor: pointer;
 }
+
 .btnBox section button:hover {
     background: #20C997;
 }
-.btnBox section button.accountCancel{
+
+.btnBox section button.accountCancel {
     background: #FFF;
     color: #495057;
 }
+
 .btnBox section button.accountCancel:hover {
     background: #F8F9FA;
 }
+
 .etcNotice {
     text-align: right;
     width: 100%;
 }
+
 strong {
     margin-right: 220px;
     vertical-align: middle;
 }
-.selection{
+
+.selection {
     color: #212529;
     width: 14rem;
     font-size: 1rem;
 }
+
 ul {
     list-style: none;
     margin: 0px;
     padding: 0px;
 }
+
 ul li {
     height: 3rem;
     display: flex;
     align-items: center;
 }
+
 .checkBox {
     cursor: pointer;
     display: flex;
@@ -163,6 +202,7 @@ ul li {
     border: none;
     margin-left: 150px;
 }
+
 .circle {
     position: relative;
     width: 1.25rem;
@@ -171,7 +211,7 @@ ul li {
     background: #FFF;
 }
 
-.background{
+.background {
     display: none;
     position: fixed;
     top: 0;
@@ -180,6 +220,7 @@ ul li {
     height: 100%;
     background: rgb(0 0 0 / 9%);
 }
+
 .modal {
     margin: 0 auto;
     margin-top: 200px;
@@ -189,6 +230,7 @@ ul li {
     border: none;
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
 }
+
 .modal h6 {
     display: flex;
     height: 100px;
@@ -197,12 +239,14 @@ ul li {
     font-size: 1.55rem;
     font-weight: bold;
 }
+
 .descBtn {
     margin-top: 90px;
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
+
 .descBtn button {
     width: 200px;
     height: 50px;
@@ -213,13 +257,16 @@ ul li {
     box-shadow: rgb(0 0 0 / 9%) 0px 2px 12px 0px;
     cursor: pointer;
 }
+
 .descBtn button:hover {
     background: #20C997;
 }
-.descBtn button.modalCancel{
+
+.descBtn button.modalCancel {
     background: #FFF;
     color: #495057;
 }
+
 .descBtn button.modalCancel:hover {
     background: #F8F9FA;
 }

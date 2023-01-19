@@ -91,7 +91,96 @@ public class PageController {
     }
 
     // postDetail page
+    @RequestMapping("post/{postTitle}")
+    public ModelAndView postDetail(HttpServletRequest request,
+            HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            model.addAttribute("loginURL", "fragment/header");
+        }
+        return new ModelAndView("post/postDetail")
+                .addObject("code", "postDetial");
+    }
 
-    /* Mypage list */
+    // post write
+    @RequestMapping("write")
+    public ModelAndView postWrite(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+
+        return new ModelAndView("post/postwrite")
+                .addObject("code", "postwirte");
+    }
+
+    /*
+     * 
+     * mypage list
+     * 
+     */
+
+    // myVelog
+    @RequestMapping("my")
+    public ModelAndView myVelog(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+
+        return new ModelAndView("user/myVelog")
+                .addObject("code", "myVelog");
+    }
+
+    // readList
+    @RequestMapping("read")
+    public ModelAndView readList(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+        return new ModelAndView("user/readList")
+                .addObject("code", "readList");
+    }
+
+    // settting
+    @RequestMapping("setting")
+    public ModelAndView setting(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+        return new ModelAndView("user/setting")
+                .addObject("code", "setting");
+    }
+
+    // temporary post
+    @RequestMapping("temp")
+    public ModelAndView temp(HttpServletRequest request, HttpServletResponse response, Model model) {
+        HttpSession session = request.getSession();
+        if (session.getAttribute("userRes") != null) {
+            model.addAttribute("loginURL", "fragment/header_login");
+        } else {
+            return new ModelAndView("user/login")
+                    .addObject("code", "login");
+        }
+
+        return new ModelAndView("user/temporaryPost")
+                .addObject("code", "temporaryPost");
+    }
 
 }

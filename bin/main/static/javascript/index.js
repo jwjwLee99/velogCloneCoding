@@ -74,4 +74,8 @@ $(function() {
         $(".recentSelect span").text("올해")
     })
 
+<<<<<<< HEAD
 })
+=======
+})
+>>>>>>> 4aa3c597bc5fbb9a6ac1e0260be9084fe5dd9db4
