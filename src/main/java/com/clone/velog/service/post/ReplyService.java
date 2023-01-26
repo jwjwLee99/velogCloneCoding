@@ -88,7 +88,7 @@ public class ReplyService implements CrudInterface<ReplyReq, ReplyRes> {
         })
                 .map(reply -> replyRepository.save(reply))
                 .map(reply -> response(reply))
-                .orElseGet(() -> Header.ERROR("No diffrence"));
+                .orElseGet(() -> Header.ERROR("No difference"));
     }
 
     @Override

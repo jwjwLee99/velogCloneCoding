@@ -40,11 +40,13 @@ public class ReplyController implements CrudInterface<ReplyReq, ReplyRes> {
     }
     
     @GetMapping(value = "/{replyPostIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
-    public Header<List<ReplyRes>> readreply(@PathVariable("replyPostIndex") Integer replyPostIndex) {
+    public Header<List<ReplyRes>> readReply(@PathVariable("replyPostIndex") Integer replyPostIndex) {
         
         return replyService.readList(replyPostIndex);
     }
 
+    // replyIndex 키 값 확인해서 변경
+    // postman에서 replyIndex 값을 지정해서 변경함
     @Override
     @PostMapping(value = "/update", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public Header<ReplyRes> update(@RequestBody Header<ReplyReq> request) {
