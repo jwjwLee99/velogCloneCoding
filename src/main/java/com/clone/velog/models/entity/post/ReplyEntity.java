@@ -23,10 +23,10 @@ import lombok.NoArgsConstructor;
 public class ReplyEntity {
     @Id
     @GeneratedValue
-    private int replyIndex;
+    private Integer replyIndex;
     private String replyDescription;
     private LocalDateTime replyRegdate;
     private LocalDateTime replyUpdatedate;
-    private int replyPostIndex;
-    private int replyUserIndex;
+    private Integer replyPostIndex;
+    private Integer replyUserIndex;
 }

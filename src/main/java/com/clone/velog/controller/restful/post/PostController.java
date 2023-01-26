@@ -51,9 +51,5 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
     public Header delete(@PathVariable("postIndex") Integer postIndex) {
         return postService.delete(postIndex);
     }
-
-    public Header<List<PostRes>> list(){
-        return null;
-    }
     
 }

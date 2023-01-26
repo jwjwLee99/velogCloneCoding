@@ -39,6 +39,7 @@ public class ReplyController implements CrudInterface<ReplyReq, ReplyRes> {
         return null;
     }
     
+    // 해당 포스트 댓글들 불러오기
     @GetMapping(value = "/{replyPostIndex}", produces = { MediaType.APPLICATION_JSON_VALUE })
     public Header<List<ReplyRes>> readReply(@PathVariable("replyPostIndex") Integer replyPostIndex) {
         

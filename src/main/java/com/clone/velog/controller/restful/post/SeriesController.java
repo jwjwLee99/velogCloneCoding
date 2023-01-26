@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clone.velog.itf.CrudInterface;
 import com.clone.velog.models.network.Header;
 import com.clone.velog.models.network.request.SeriesReq;
+import com.clone.velog.models.network.response.PostRes;
 import com.clone.velog.models.network.response.SeriesRes;
 import com.clone.velog.service.post.SeriesService;
 
@@ -45,7 +46,7 @@ public class SeriesController implements CrudInterface<SeriesReq, SeriesRes> {
 
     //시리즈 게시글 목록
     @GetMapping(value = "/List/{seriesIndex}", produces = {MediaType.APPLICATION_JSON_VALUE})
-    public Header<SeriesRes> seriesPostList(@PathVariable("seriesIndex") Integer seriesIndex) {
+    public Header<List<PostRes>> seriesPostList(@PathVariable("seriesIndex") Integer seriesIndex) {
         return seriesService.seriesPostList(seriesIndex);
     }
   
