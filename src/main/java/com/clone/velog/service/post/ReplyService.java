@@ -42,17 +42,11 @@ public class ReplyService implements CrudInterface<ReplyReq, ReplyRes> {
         return null;
     }
 
-    // 댓글 목록 메서드 --> replyPostIndex받아오는게 안됨 내일 다시 해보기
+    // 댓글 목록 메서드
     public Header<List<ReplyRes>> readList(Integer replyPostIndex) {
-        // Optional<ReplyEntity> replypostIndex = replyRepository.findByreplyPostIndex(replyPostIndex);
-        // if(replypostIndex.isEmpty()){
-        //     return Header.ERROR("No replypostIndex");
-        // }
-        List<ReplyEntity> replyEntities = replyRepository.findAll();
+        List<ReplyEntity> replyEntities = replyRepository.findByreplyPostIndex(replyPostIndex);
         List<ReplyRes> replyList = new ArrayList<>();
 
-        // 해당 포스트인덱스의 댓글만 뽑기위한 if문을 쓸라하는데 안되네 ㅅㅂ
-        if (/*replypostIndex.get().getReplyPostIndex() != replyPostIndex*/replyPostIndex == 1) {
             for (ReplyEntity replyEntity : replyEntities) {
                 ReplyRes replyRes = ReplyRes.builder()
                         .replyIndex(replyEntity.getReplyIndex())
@@ -66,8 +60,6 @@ public class ReplyService implements CrudInterface<ReplyReq, ReplyRes> {
                         replyList.add(replyRes);
             }
             return Header.OK(replyList);
-        }
-        else return Header.ERROR("Have replypostIndex but, No Data");
         
     }
 

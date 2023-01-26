@@ -23,10 +23,10 @@ import lombok.NoArgsConstructor;
 public class SeriesEntity {
   @Id
   @GeneratedValue
-  private int seriesIndex;
+  private Integer seriesIndex;
   private String seriesTitle;
   private LocalDateTime seriesRegData;
   private LocalDateTime seriesUpdateDate;
-  private int seriesCount;
-  private int seriesUserIndex;
+  private Integer seriesCount;
+  private Integer seriesUserIndex;
 }

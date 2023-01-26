@@ -1,5 +1,6 @@
 package com.clone.velog.repository;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,4 +11,6 @@ import com.clone.velog.models.entity.post.PostEntity;
 @Repository
 public interface PostRepository extends JpaRepository<PostEntity, Integer> {
     Optional<PostEntity> findBypostIndex(Integer postIdex);
+
+    List<PostEntity> findBySeriesIndex(Integer seriesIndex);
 }

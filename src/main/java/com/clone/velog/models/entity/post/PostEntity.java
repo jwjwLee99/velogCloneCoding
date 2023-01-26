@@ -26,7 +26,7 @@ public class PostEntity {
 
     @Id
     @GeneratedValue
-    private int postIndex;
+    private Integer postIndex;
     private String postTitle;
     private String postDescription;
     private String postImgName;
@@ -36,11 +36,11 @@ public class PostEntity {
     private LocalDateTime postRegDate;
     private LocalDateTime postUpdateDate;
     private String postTag;
-    private int postHits;
-    private int postLove;
+    private Integer postHits;
+    private Integer postLove;
     
     // 참조 인덱스
-    private int postUserIndex;
-    private int SeriesIndex;
+    private Integer postUserIndex;
+    private Integer seriesIndex;
     
 }
