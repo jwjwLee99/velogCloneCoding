@@ -84,18 +84,6 @@ public class UserService implements CrudInterface<UserReq, UserRes> {
                         () -> Header.ERROR("데이터 없음"));
     }
 
-    // 사용자 이미지 수정
-    /*
-     * 이미지의 인덱스를 담은 리스트를 반환
-     * null값 반환시 기본 이미지로 전환
-     */
-    public Header<List<Integer>> updateProfileImg(Header<List<MultipartFile>> img) throws Exception {
-        if (img.getData().isEmpty()) {
-            return Header.ERROROfNull();
-        }
-        return imgService.create(img.getData());
-    }
-
     // response
     private Header<UserRes> response(UserEntity user) {
         UserRes userRes = UserRes.builder()

@@ -1,6 +1,11 @@
 package com.clone.velog.controller.restful.post;
 
+import java.util.List;
+
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,25 +32,36 @@ public class SeriesController implements CrudInterface<SeriesReq, SeriesRes> {
         return seriesService.create(request);
     }
 
-    // 시리즈 게시물 목록
     @Override
     public Header<SeriesRes> read(Integer id) {
-        // TODO Auto-generated method stub
         return null;
     }
 
-    //시리즈 목록도 만들어야 됨    
+    // 시리즈 목록
+    @GetMapping(value = "/List", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public Header<List<SeriesRes>> readSeriesList() {
+        return seriesService.readSeriesList();
+    }
 
+    //시리즈 게시글 목록
+    @GetMapping(value = "/List/{seriesIndex}", produces = {MediaType.APPLICATION_JSON_VALUE})
+    public Header<SeriesRes> seriesPostList(@PathVariable("seriesIndex") Integer seriesIndex) {
+        return seriesService.seriesPostList(seriesIndex);
+    }
+
+
+    // seriesIndex 키 값 확인해서 변경
+    // postman에서 seriesIndex 값을 지정해서 변경함
     @Override
-    public Header<SeriesRes> update(Header<SeriesReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+    @PostMapping(value = "/update", consumes = {MediaType.APPLICATION_JSON_VALUE})
+    public Header<SeriesRes> update(@RequestBody Header<SeriesReq> request) {
+        return seriesService.update(request);
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    @DeleteMapping(value = "/delete/{seriesIndex}")
+    public Header delete(@PathVariable("seriesIndex") Integer seriesIndex) {
+        return seriesService.delete(seriesIndex);
     }
     
 }

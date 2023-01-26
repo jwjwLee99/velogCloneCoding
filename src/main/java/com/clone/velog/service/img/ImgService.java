@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.clone.velog.models.entity.img.ImgEntity;
 import com.clone.velog.models.network.Header;
-import com.clone.velog.models.network.request.ImgReq;
 import com.clone.velog.models.network.response.ImgRes;
 import com.clone.velog.repository.ImgRepository;
 
@@ -34,6 +34,10 @@ public class ImgService {
         }
 
         for (int i = 0; i < imgList.size(); i++) {
+            if(imgList.get(i).getContentType().startsWith("image") == false) {
+                continue;
+            }
+
             String originName = imgList.get(i).getOriginalFilename();
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmSS");
             String current_date = simpleDateFormat.format(new Date());
@@ -69,15 +73,19 @@ public class ImgService {
                 .orElseGet(() -> Header.ERROR("No data"));
     }
 
-    public Header<ImgRes> update(Header<ImgReq> request) {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
-    }
+        Optional<ImgEntity> ImgIndex = imgRepository.findById(id);
+        
+        
+
+
+        return ImgIndex.map(
+            ImgRes -> {
+                imgRepository.delete(ImgRes);
+                return Header.OK();
+            }).orElseGet(() -> Header.ERROR("No data"));
+    }    
+
 
     private Header<ImgRes> response(ImgEntity img) {
         ImgRes imgRes = ImgRes.builder()

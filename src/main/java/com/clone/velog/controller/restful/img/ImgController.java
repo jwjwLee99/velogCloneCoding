@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,12 +28,17 @@ public class ImgController {
     private ImgService imgService;
 
     @PostMapping(value = "/save/list", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
-    private Header<List<Integer>> create(@RequestParam("files") List<MultipartFile> files) throws Exception {
+    public Header<List<Integer>> create(@RequestParam("files") List<MultipartFile> files) throws Exception {
         return imgService.create(files);
     }
 
     @GetMapping("/{id}")
-    private Header<ImgRes> read(@PathVariable Integer id) {
+    public Header<ImgRes> read(@PathVariable Integer id) {
         return imgService.read(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public Header delete(@PathVariable Integer id) {
+        return imgService.delete(id);
     }
 }

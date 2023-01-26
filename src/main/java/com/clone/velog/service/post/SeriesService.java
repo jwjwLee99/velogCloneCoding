@@ -1,5 +1,9 @@
 package com.clone.velog.service.post;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,20 +39,61 @@ public class SeriesService implements CrudInterface<SeriesReq, SeriesRes> {
 
     @Override
     public Header<SeriesRes> read(Integer id) {
-        // TODO Auto-generated method stub
+        return null;
+    }
+
+    public Header<List<SeriesRes>> readSeriesList() {
+        List<SeriesEntity> seriesEntities = seriesRepository.findAll();
+        List<SeriesRes> seriesList = new ArrayList<>();
+
+        for (SeriesEntity seriesEntity : seriesEntities) {
+            SeriesRes seriesRes = SeriesRes.builder() 
+                    .seriesIndex(seriesEntity.getSeriesIndex())
+                    .seriesTitle(seriesEntity.getSeriesTitle())
+                    .seriesRegData(seriesEntity.getSeriesRegData())
+                    .seriesUpdateDate(seriesEntity.getSeriesUpdateDate())
+                    .seriesCount(seriesEntity.getSeriesCount())
+                    .seriesUserIndex(seriesEntity.getSeriesUserIndex())
+                    .build();
+
+                    seriesList.add(seriesRes);
+            }
+            return Header.OK(seriesList);
+    }
+
+    //해야 됨
+    public Header<SeriesRes> seriesPostList(Integer seriesIndex) {
         return null;
     }
 
     @Override
     public Header<SeriesRes> update(Header<SeriesReq> request) {
-        // TODO Auto-generated method stub
-        return null;
+        SeriesReq seriesReq = request.getData();
+        Optional<SeriesEntity> seriesIndex = seriesRepository.findById(seriesReq.getSeriesIndex());
+
+        return seriesIndex.map(series -> {
+            series.setSeriesIndex(seriesReq.getSeriesIndex());
+            series.setSeriesTitle(seriesReq.getSeriesTitle());
+            series.setSeriesRegData(seriesReq.getSeriesRegData());
+            series.setSeriesUpdateDate(seriesReq.getSeriesUpdateDate());
+            series.setSeriesCount(seriesReq.getSeriesCount());
+            series.setSeriesUserIndex(seriesReq.getSeriesUserIndex());
+
+            return series;
+        })
+                .map(series -> seriesRepository.save(series))
+                .map(series -> response(series))
+                .orElseGet(() -> Header.ERROR("No difference"));
     }
 
     @Override
-    public Header delete(Integer id) {
-        // TODO Auto-generated method stub
-        return null;
+    public Header delete(Integer seriesIndIndex) {
+        Optional<SeriesEntity> seriesIndex = seriesRepository.findById(seriesIndIndex);
+        return seriesIndex.map(
+            SeriesRes -> {
+                seriesRepository.delete(SeriesRes);
+                return Header.OK();
+            }).orElseGet(()-> Header.ERROR("No Data"));    
     }
     
 }
