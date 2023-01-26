@@ -48,17 +48,6 @@ public class SeriesService implements CrudInterface<SeriesReq, SeriesRes> {
 
         for (SeriesEntity seriesEntity : seriesEntities) {
             SeriesRes seriesRes = SeriesRes.builder() 
-<<<<<<< HEAD
-                    .seriesIndex(seriesEntity.getSeriesIndex())
-                    .seriesTitle(seriesEntity.getSeriesTitle())
-                    .seriesRegData(seriesEntity.getSeriesRegData())
-                    .seriesUpdateDate(seriesEntity.getSeriesUpdateDate())
-                    .seriesCount(seriesEntity.getSeriesCount())
-                    .seriesUserIndex(seriesEntity.getSeriesUserIndex())
-                    .build();
-
-                    seriesList.add(seriesRes);
-=======
                    .seriesIndex(seriesEntity.getSeriesIndex())
                    .seriesTitle(seriesEntity.getSeriesTitle())
                    .seriesRegData(seriesEntity.getSeriesRegData())
@@ -68,7 +57,6 @@ public class SeriesService implements CrudInterface<SeriesReq, SeriesRes> {
                    .build();
 
                    seriesList.add(seriesRes);
->>>>>>> 41e34bc (series method update)
             }
             return Header.OK(seriesList);
     }

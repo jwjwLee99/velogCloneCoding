@@ -48,11 +48,7 @@ public class SeriesController implements CrudInterface<SeriesReq, SeriesRes> {
     public Header<SeriesRes> seriesPostList(@PathVariable("seriesIndex") Integer seriesIndex) {
         return seriesService.seriesPostList(seriesIndex);
     }
-<<<<<<< HEAD
-
-=======
   
->>>>>>> 41e34bc (series method update)
 
     // seriesIndex 키 값 확인해서 변경
     // postman에서 seriesIndex 값을 지정해서 변경함
