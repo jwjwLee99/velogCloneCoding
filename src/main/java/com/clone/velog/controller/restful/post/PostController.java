@@ -40,6 +40,7 @@ public class PostController implements CrudInterface<PostReq, PostRes> {
         return postService.read(postIndex);
     }
 
+    // 바꿀 포스트의 postIndex가 데이터를 보낼 때 무조건 필요함
     @Override
     @PostMapping(value = "/update", consumes = { MediaType.APPLICATION_JSON_VALUE })
     public Header<PostRes> update(@RequestBody Header<PostReq> request) {

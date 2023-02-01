@@ -18,12 +18,14 @@ import com.clone.velog.models.network.response.PostRes;
 import com.clone.velog.repository.PostRepository;
 import com.clone.velog.service.img.ImgService;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
 public class PostService implements CrudInterface<PostReq, PostRes> {
 
     @Autowired
     private PostRepository postRepository;
-
+    
     @Autowired
     private ImgService imgService;
 
