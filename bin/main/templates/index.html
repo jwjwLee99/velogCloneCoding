@@ -3,8 +3,17 @@
 <div th:replace="fragment/head :: head"></div>
 
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
     <link th:href="@{css/index.css}" rel="stylesheet" />
     <script src="/javascript/index.js"></script>
+
+    <script>
+        $(function(){
+
+        })
+    </script>
 </head>
 
 <body>
@@ -282,30 +291,30 @@
             <!-- 트렌딩 -->
             <div class="main-list">
                 <main class="list-box">
-                    <div class="all-post">
+                    <div class="all-post" v-for="index in postList">
                         <div class="post-margin">
                             <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
+                            <a class="post-img" v-bind:href='`"post/{postTitle}"`'>
+                                <div style="padding-top:52.19206680584551%" class="img-size">
+                                    <img :src="require(`@/assets/images/${img}`)" /> 
+                                </div>
                             </a>
                             <!-- 메인화면 포스트 img 끝 -->
                             <!-- 메인화면 포스트 미리보기 -->
                             <div class="preview-padding">
                                 <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
+                                    <h4>{{index.postTitle}}</h4>
                                     <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
+                                        <p>{{index.postDescription}}</p>
                                     </div>
                                 </a>
                                 <!-- 메인화면 포스트 미리보기 끝 -->
                                 <!-- 몇일 전, 댓글 -->
                                 <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
+                                    <span>{{index.postRegDate}}</span>
                                     <span class="separator">.</span>
                                     <span>
-                                        "(댓글 개수)"
+                                        "(댓글 개수"
                                         "개의 댓글"
                                     </span>
                                 </div>
@@ -327,252 +336,7 @@
                                         <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
                                     </svg>
                                     <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
+                                   {{index.postLove}}
                                 </div>
                             </div>
                             <!-- 작성자 이름, 좋아요 끝-->
@@ -597,251 +361,6 @@
                             <div class="preview-padding">
                                 <a class="preview-post" href="">
                                     <h4>글 제목 미리보기22</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
-                                    <div class="desciption-wrapper">
-                                        <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
-                                    </div>
-                                </a>
-                                <!-- 메인화면 포스트 미리보기 끝 -->
-                                <!-- 몇일 전, 댓글 -->
-                                <div class="sub-info">
-                                    <span>글쓴지 몇일전인지</span>
-                                    <span class="separator">.</span>
-                                    <span>
-                                        "(댓글 개수)"
-                                        "개의 댓글"
-                                    </span>
-                                </div>
-                            </div>
-                            <!-- 몇일 전, 댓글 끝 -->
-                            <!-- 작성자 이름, 좋아요 -->
-                            <div class="writer-info">
-                                <a class="user-info" href="">
-                                    <img src="" alt="user thumbnail of ~~">
-                                    <span>
-                                        "by "
-                                        <b>
-                                            <!--작성자 이름 -->유녀누
-                                        </b>
-                                    </span>
-                                </a>
-                                <div class="likes">
-                                    <svg width="24" height="24" viewBox="0 0 24 24">
-                                        <path fill="currentColor" d="M18 1l-6 4-6-4-6 5v7l12 10 12-10v-7z"></path>
-                                    </svg>
-                                    <!--좋아요 개수-->
-                                    "202"
-                                </div>
-                            </div>
-                            <!-- 작성자 이름, 좋아요 끝-->
-                        </div>
-                        <div class="post-margin">
-                            <!-- 메인화면 포스트 img-->
-                            <a class="post-img" href="">
-                                <div style="padding-top:52.19206680584551%" class="img-size"><img src="">
-                                    <img src="">
-                                </div> <!-- 여기 클래스 이름 다시 정하기 -->
-                            </a>
-                            <!-- 메인화면 포스트 img 끝 -->
-                            <!-- 메인화면 포스트 미리보기 -->
-                            <div class="preview-padding">
-                                <a class="preview-post" href="">
-                                    <h4>글 제목 미리보기</h4>
                                     <div class="desciption-wrapper">
                                         <p>글 미리보기샬라샬라샤라라라라라라라라ㅏ라라라라라라라라ㅏ라랄라라라</p>
                                     </div>
